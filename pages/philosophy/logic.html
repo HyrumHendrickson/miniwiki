@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logic — Mini Wiki</title>
+  <meta name="description" content="An introduction to logic: the formal study of valid inference, from Aristotle's syllogistic to propositional and predicate logic.">
+  <link rel="stylesheet" href="../../assets/css/wiki.css">
+</head>
+<body>
+<main id="wiki-content">
+
+  <div class="wiki-breadcrumb">
+    <a href="../../index.html">Home</a><span class="sep">›</span>
+    <a href="../categories.html">Philosophy</a><span class="sep">›</span>
+    <span>Logic</span>
+  </div>
+
+  <h1>Logic</h1>
+
+  <div class="wiki-toc floating"></div>
+
+  <div class="wiki-infobox">
+    <div class="wiki-infobox-title">Logic</div>
+    <table>
+      <tr><td>Branch</td><td>Philosophy, Mathematics</td></tr>
+      <tr><td>Founded by</td><td>Aristotle (4th century BC)</td></tr>
+      <tr><td>Key figures</td><td>Aristotle, Stoics, Boethius, Leibniz, Frege, Russell</td></tr>
+      <tr><td>Core concern</td><td>Valid inference and the structure of argument</td></tr>
+      <tr><td>Foundational to</td><td>Mathematics, philosophy, computer science, rhetoric</td></tr>
+    </table>
+  </div>
+
+  <p><strong>Logic</strong> is the branch of philosophy concerned with the principles of valid inference and correct reasoning. It asks not merely whether a conclusion is true, but whether it <em>follows</em> from the premises offered in support of it — whether the argument's structure compels assent regardless of the subject matter involved. In this sense, logic is the grammar of reason itself: the discipline that makes explicit the rules by which sound thinking operates.</p>
+
+  <p>The Western logical tradition begins with Aristotle, whose <em>Organon</em> established the systematic study of the syllogism. From Aristotle it passed through the Stoics, who developed propositional logic, through the medieval logicians who made Aristotelian logic the cornerstone of university education, to Leibniz's dream of a universal calculus of reasoning, and finally to the modern mathematical logic of Frege and Russell, which underlies all of computer science and formal mathematics.</p>
+
+  <div class="clearfix"></div>
+
+  <h2>The Aristotelian Syllogism</h2>
+
+  <p>Aristotle defined logic as the science of demonstration — of showing why something must be the case given what we already know. His central instrument was the <strong>syllogism</strong>: a form of argument in which a conclusion follows necessarily from two premises that share a common term.</p>
+
+  <p>The most famous syllogism in philosophy illustrates the structure:</p>
+
+  <div class="wiki-table-wrap">
+    <table class="wiki-table">
+      <thead>
+        <tr><th>Role</th><th>Proposition</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Major premise</td><td>All men are mortal.</td></tr>
+        <tr><td>Minor premise</td><td>Socrates is a man.</td></tr>
+        <tr><td>Conclusion</td><td>Therefore, Socrates is mortal.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>The power of the syllogism lies in its <em>form</em>: if both premises are true and the form is valid, the conclusion cannot be false. No inspection of the particular content is required — the structure alone guarantees the inference. Aristotle catalogued the valid syllogistic forms (called <em>moods</em>) organized by <em>figures</em> according to the position of the common (middle) term.</p>
+
+  <h3>The Four Categorical Propositions</h3>
+
+  <p>Aristotelian logic operates on four types of categorical proposition, traditionally designated by the vowels A, E, I, O:</p>
+
+  <div class="wiki-table-wrap">
+    <table class="wiki-table">
+      <thead>
+        <tr><th>Type</th><th>Form</th><th>Example</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>A</strong> — Universal affirmative</td><td>All S are P</td><td>All humans are mortal</td></tr>
+        <tr><td><strong>E</strong> — Universal negative</td><td>No S are P</td><td>No fish are mammals</td></tr>
+        <tr><td><strong>I</strong> — Particular affirmative</td><td>Some S are P</td><td>Some philosophers are wise</td></tr>
+        <tr><td><strong>O</strong> — Particular negative</td><td>Some S are not P</td><td>Some rulers are not just</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>The relationships among these four forms — what follows from what, what contradicts what — are displayed in the <em>Square of Opposition</em>, one of the most elegant diagrams in the history of philosophy.</p>
+
+  <h2>Validity and Soundness</h2>
+
+  <p>One of logic's most important distinctions is between <strong>validity</strong> and <strong>soundness</strong>:</p>
+
+  <ul>
+    <li>An argument is <strong>valid</strong> if the conclusion follows necessarily from the premises — that is, if it is impossible for the premises to be true and the conclusion false. Validity is a structural property; it does not require the premises to actually be true.</li>
+    <li>An argument is <strong>sound</strong> if it is both valid <em>and</em> its premises are in fact true. A sound argument guarantees a true conclusion.</li>
+  </ul>
+
+  <div class="wiki-callout note">
+    <div class="wiki-callout-title">Valid but Unsound</div>
+    <p>The following argument is valid (the conclusion follows from the premises) but unsound (the first premise is false): "All cats are dogs. Socrates is a cat. Therefore, Socrates is a dog." Much philosophical confusion arises from failing to distinguish these two properties.</p>
+  </div>
+
+  <h2>Propositional Logic</h2>
+
+  <p>While Aristotelian logic analyzes the internal structure of propositions (subject, predicate, quantifier), <strong>propositional logic</strong> — developed by the Stoics and later formalized in the nineteenth century — treats whole propositions as the basic units and studies the logical connectives that combine them.</p>
+
+  <h3>Logical Connectives</h3>
+
+  <p>The five principal connectives of propositional logic are:</p>
+
+  <div class="wiki-table-wrap">
+    <table class="wiki-table">
+      <thead>
+        <tr><th>Connective</th><th>Symbol</th><th>Read as</th><th>True when</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Negation</td><td>¬P</td><td>not P</td><td>P is false</td></tr>
+        <tr><td>Conjunction</td><td>P ∧ Q</td><td>P and Q</td><td>both P and Q are true</td></tr>
+        <tr><td>Disjunction</td><td>P ∨ Q</td><td>P or Q</td><td>at least one of P, Q is true</td></tr>
+        <tr><td>Conditional</td><td>P → Q</td><td>if P then Q</td><td>P is false, or Q is true</td></tr>
+        <tr><td>Biconditional</td><td>P ↔ Q</td><td>P if and only if Q</td><td>P and Q have the same truth value</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>A <strong>tautology</strong> is a propositional formula that is true under every possible assignment of truth values to its variables — for example, <em>P ∨ ¬P</em> (the law of excluded middle) and <em>¬(P ∧ ¬P)</em> (the law of non-contradiction). These laws, foundational since Aristotle, are among the most basic commitments of classical logic.</p>
+
+  <h3>The Law of Non-Contradiction</h3>
+
+  <p>Aristotle considered the law of non-contradiction — that a thing cannot both be and not be in the same respect at the same time — the most certain of all principles, the one that underlies all rational discourse. He argued that it cannot be strictly proven (since any proof must use it), but can be defended dialectically by showing that anyone who denies it cannot coherently say anything at all.</p>
+
+  <div class="wiki-callout note">
+    <div class="wiki-callout-title">Aristotle, Metaphysics IV</div>
+    <p>"It is impossible for the same thing to belong and not belong to the same thing at the same time and in the same respect." This is the firmest of all principles — the one from which all demonstration ultimately depends.</p>
+  </div>
+
+  <h2>Predicate Logic</h2>
+
+  <p><strong>Predicate logic</strong> (or first-order logic), developed rigorously by Gottlob Frege in his <em>Begriffsschrift</em> (1879), extends propositional logic by analyzing the internal structure of propositions. It introduces <strong>quantifiers</strong> — symbols that range over individuals in a domain — enabling the full expression of Aristotelian syllogistic and far more besides.</p>
+
+  <p>The two fundamental quantifiers are:</p>
+
+  <ul>
+    <li><strong>Universal quantifier</strong> (∀): "For all x, ..." — written ∀x P(x), meaning every object in the domain satisfies predicate P.</li>
+    <li><strong>Existential quantifier</strong> (∃): "There exists an x such that ..." — written ∃x P(x), meaning at least one object in the domain satisfies predicate P.</li>
+  </ul>
+
+  <p>The classical syllogism "All men are mortal; Socrates is a man; therefore Socrates is mortal" becomes, in predicate logic:</p>
+
+  <div class="wiki-callout note">
+    <div class="wiki-callout-title">Syllogism in Predicate Logic</div>
+    <p>∀x (Man(x) → Mortal(x))<br>Man(Socrates)<br>∴ Mortal(Socrates)</p>
+  </div>
+
+  <p>Frege's formalization made possible the logicist program of Bertrand Russell and Alfred North Whitehead — the attempt, in <em>Principia Mathematica</em> (1910–1913), to derive all of mathematics from purely logical axioms.</p>
+
+  <h2>Informal Fallacies</h2>
+
+  <p>Alongside the formal study of valid argument, the logical tradition has always catalogued <strong>fallacies</strong> — patterns of reasoning that appear to be valid but are not. Medieval logicians organized these extensively; their relevance to rhetoric, law, and theology made the study of fallacies a practical discipline.</p>
+
+  <div class="wiki-tabs">
+    <div class="wiki-tab-nav">
+      <button class="wiki-tab-btn">Fallacies of Relevance</button>
+      <button class="wiki-tab-btn">Fallacies of Presumption</button>
+      <button class="wiki-tab-btn">Fallacies of Ambiguity</button>
+    </div>
+    <div class="wiki-tab-panel">
+      <p><strong>Ad hominem</strong>: Attacking the person making the argument rather than the argument itself. <strong>Ad populum</strong>: Appealing to popular opinion or majority belief as a substitute for argument. <strong>Straw man</strong>: Misrepresenting an opponent's position in order to refute a weaker version of it. <strong>Appeal to authority</strong>: Treating the testimony of an authority as decisive in a domain outside their competence.</p>
+    </div>
+    <div class="wiki-tab-panel">
+      <p><strong>Begging the question</strong> (<em>petitio principii</em>): Assuming in one's premises the very conclusion one is trying to prove. <strong>False dilemma</strong>: Presenting only two options when more exist. <strong>Slippery slope</strong>: Claiming that one step will inevitably lead to a chain of increasingly dire consequences without establishing the causal links. <strong>Hasty generalization</strong>: Drawing a universal conclusion from an insufficient sample.</p>
+    </div>
+    <div class="wiki-tab-panel">
+      <p><strong>Equivocation</strong>: Using the same word in two different senses within a single argument. <strong>Amphiboly</strong>: Exploiting grammatical ambiguity in a premise. <strong>Composition</strong>: Inferring that a whole has a property because its parts have it. <strong>Division</strong>: Inferring that the parts have a property because the whole has it.</p>
+    </div>
+  </div>
+
+  <h2>Logic in the Western Tradition</h2>
+
+  <p>The study of logic has occupied a central place in Western education from antiquity through the present. For the ancient Greeks, logic was the tool by which philosophy justified its claim to be a science. For the medieval university, it was the first of the seven liberal arts — the prerequisite to all other learning. For the early modern natural philosophers, it was the method by which reliable knowledge could be distinguished from mere opinion. And for modern mathematics and computer science, formal logic is the very foundation of proof and computation.</p>
+
+  <div class="wiki-collapsible">
+    <div class="wiki-collapsible-header">Logic and the Liberal Arts Tradition (click to expand)</div>
+    <div class="wiki-collapsible-body">
+      <p>The medieval university organized its lower division — the <em>trivium</em> — around three arts: grammar, rhetoric, and logic (dialectic). Grammar taught how to speak correctly; rhetoric, how to speak persuasively; logic, how to speak truly — how to construct arguments that compel assent because they are valid. Logic was the queen of the trivium precisely because truth is the end of all serious discourse. The recovery of Aristotle's complete logical writings in the twelfth century (the <em>logica nova</em>) transformed European intellectual life and contributed directly to the development of scholastic philosophy and the university system.</p>
+    </div>
+  </div>
+
+  <h2>See Also</h2>
+
+  <ul>
+    <li><a href="virtue-ethics.html">Virtue Ethics</a> — Aristotle's account of the good life, from the same philosophical tradition</li>
+    <li><a href="natural-law.html">Natural Law</a> — The application of reason to moral and political questions</li>
+    <li><a href="christian-humanism.html">Christian Humanism</a> — The tradition that preserved and transmitted classical learning, including logic</li>
+  </ul>
+
+  <div class="wiki-references">
+    <h2>References</h2>
+    <ol>
+      <li>Aristotle. <em>Organon</em> (Prior Analytics, Posterior Analytics, Topics, Sophistical Refutations). Trans. A. J. Jenkinson and W. A. Pickard-Cambridge. In <em>The Complete Works of Aristotle</em>, ed. Jonathan Barnes. Princeton University Press, 1984.</li>
+      <li>Aristotle. <em>Metaphysics</em>, Book IV. Trans. W. D. Ross. In <em>The Complete Works of Aristotle</em>. Princeton University Press, 1984.</li>
+      <li>Frege, G. (1879). <em>Begriffsschrift</em>. Trans. S. Bauer-Mengelberg. In <em>From Frege to Gödel</em>, ed. J. van Heijenoort. Harvard University Press, 1967.</li>
+      <li>Copi, I. M., &amp; Cohen, C. (2014). <em>Introduction to Logic</em> (14th ed.). Pearson.</li>
+      <li>Prior, A. N. (1962). <em>Formal Logic</em> (2nd ed.). Oxford University Press.</li>
+    </ol>
+  </div>
+
+  <div class="wiki-tags">
+    <span class="wiki-tags-label">Tags:</span>
+    <a class="wiki-tag" href="../categories.html">Philosophy</a>
+    <a class="wiki-tag" href="../categories.html">Logic</a>
+    <a class="wiki-tag" href="../categories.html">Aristotle</a>
+    <a class="wiki-tag" href="../categories.html">Liberal Arts</a>
+  </div>
+  <div class="wiki-page-meta">
+    <span>Last edited: <time>2026-02-21</time></span>
+    <span>Category: Philosophy</span>
+  </div>
+
+</main>
+
+<script>
+window.WIKI_ROOT = '../../';
+window.WIKI_PAGE = { title: 'Logic', category: 'Philosophy', tags: ['philosophy','logic','aristotle','liberal arts'] };
+window.WIKI_SIDEBAR = [
+  { label: 'Navigation', links: [
+    { text: 'Home',               href: '../../index.html' },
+    { text: 'All Categories',     href: '../categories.html' },
+  ]},
+  { label: 'Philosophy', links: [
+    { text: 'Philosophy (all articles)', href: 'index.html' },
+    { text: 'Logic',              href: 'logic.html' },
+    { text: 'Virtue Ethics',      href: 'virtue-ethics.html' },
+    { text: 'Natural Law',        href: 'natural-law.html' },
+    { text: 'Christian Humanism', href: 'christian-humanism.html' },
+  ]},
+  { label: 'Other Categories', links: [
+    { text: 'Theology',           href: '../theology/index.html' },
+    { text: 'Mathematics',        href: '../math/index.html' },
+    { text: 'American History',   href: '../history/american/index.html' },
+    { text: 'Classical History',  href: '../history/classical/index.html' },
+  ]},
+];
+</script>
+<script src="../../assets/js/wiki.js"></script>
+</body>
+</html>
