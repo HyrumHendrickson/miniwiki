@@ -1,8 +1,6 @@
 # Mini Wiki
 
-A personal static wiki built with plain HTML, CSS, and JavaScript.  
-No server, no database, no build step — just files.  
-Deploy to GitHub Pages in minutes.
+https://hyrumhendrickson.github.io/miniwiki/
 
 ---
 
