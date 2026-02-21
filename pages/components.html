@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component Reference — MyWiki</title>
+  <meta name="description" content="All modular wiki components demonstrated in one place.">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+</head>
+<body>
+
+<main id="wiki-content">
+
+  <div class="wiki-breadcrumb">
+    <a href="../index.html">Home</a><span class="sep">›</span><span>Component Reference</span>
+  </div>
+
+  <h1>Component Reference</h1>
+
+  <div class="wiki-toc floating"></div>
+
+  <p>This page demonstrates every modular component available in MyWiki. All components are driven purely by CSS classes and a small amount of JavaScript in <code>wiki.js</code>.</p>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <h2>Infoboxes</h2>
+
+  <p>Infoboxes float to the right by default. Add class <code>left</code> to float left instead.</p>
+
+  <div class="wiki-infobox">
+    <div class="wiki-infobox-title">Standard Infobox</div>
+    <table>
+      <tr><td>Type</td><td>Standard right-floating</td></tr>
+      <tr><td>Class</td><td><code>.wiki-infobox</code></td></tr>
+      <tr><td>Float</td><td>Right (default)</td></tr>
+      <tr><td>Width</td><td>280px</td></tr>
+    </table>
+  </div>
+
+  <p>Place <code>&lt;div class="wiki-infobox"&gt;</code> before or after any paragraph. The box floats to the right and text wraps around it. Use <code>&lt;div class="clearfix"&gt;&lt;/div&gt;</code> after the wrapped content to reset the float.</p>
+
+  <div class="clearfix"></div>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <h2>Callout Boxes</h2>
+
+  <p>Callouts highlight important information. Four types are available:</p>
+
+  <div class="wiki-callout note">
+    <div class="wiki-callout-title">📝 Note</div>
+    <p>Class: <code>.wiki-callout.note</code> — For general notes, tips, or supplementary information. Green accent.</p>
+  </div>
+
+  <div class="wiki-callout info">
+    <div class="wiki-callout-title">ℹ️ Info</div>
+    <p>Class: <code>.wiki-callout.info</code> — For informational context. Blue accent.</p>
+  </div>
+
+  <div class="wiki-callout warning">
+    <div class="wiki-callout-title">⚠️ Warning</div>
+    <p>Class: <code>.wiki-callout.warning</code> — For warnings or important caveats. Yellow accent.</p>
+  </div>
+
+  <div class="wiki-callout danger">
+    <div class="wiki-callout-title">🚨 Danger</div>
+    <p>Class: <code>.wiki-callout.danger</code> — For critical warnings. Red accent.</p>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <h2>Tables</h2>
+
+  <div class="wiki-table-wrap">
+    <table class="wiki-table">
+      <thead>
+        <tr>
+          <th>Column 1</th>
+          <th>Column 2</th>
+          <th>Column 3</th>
+          <th>Column 4</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Cell A1</td><td>Cell A2</td><td>Cell A3</td><td>Cell A4</td></tr>
+        <tr><td>Cell B1</td><td>Cell B2</td><td>Cell B3</td><td>Cell B4</td></tr>
+        <tr><td>Cell C1</td><td>Cell C2</td><td>Cell C3</td><td>Cell C4</td></tr>
+        <tr><td>Cell D1</td><td>Cell D2</td><td>Cell D3</td><td>Cell D4</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Wrap tables in <code>&lt;div class="wiki-table-wrap"&gt;</code> for horizontal overflow scrolling on mobile. Add class <code>wiki-table</code> to the <code>&lt;table&gt;</code> element.</p>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <h2>Tabs</h2>
+
+  <p>Group related content into switchable panels with <code>.wiki-tabs</code>:</p>
+
+  <div class="wiki-tabs">
+    <div class="wiki-tab-nav">
+      <button class="wiki-tab-btn">Tab One</button>
+      <button class="wiki-tab-btn">Tab Two</button>
+      <button class="wiki-tab-btn">Tab Three</button>
+    </div>
+    <div class="wiki-tab-panel">
+      <h3>Content for Tab One</h3>
+      <p>Each tab panel is a sibling <code>.wiki-tab-panel</code> div. The first tab is activated by default. Tabs are matched to panels by index order.</p>
+    </div>
+    <div class="wiki-tab-panel">
+      <h3>Content for Tab Two</h3>
+      <p>You can put any content in a tab panel: text, tables, code, math, even Desmos graphs.</p>
+      <p>Inline math: $\pi \approx 3.14159$</p>
+    </div>
+    <div class="wiki-tab-panel">
+      <h3>Content for Tab Three</h3>
+      <pre><code>// Code in a tab panel
+function greet(name) {
+  return `Hello, ${name}!`;
+}</code></pre>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <h2>Collapsibles</h2>
+
+  <p>Use collapsibles for supplementary material, long derivations, or spoilers:</p>
+
+  <div class="wiki-collapsible open">
+    <div class="wiki-collapsible-header">This collapsible starts open</div>
+    <div class="wiki-collapsible-body">
+      <p>Add class <code>open</code> to the <code>.wiki-collapsible</code> element to have it expanded by default. Click the header to toggle.</p>
+    </div>
+  </div>
+
+  <div class="wiki-collapsible">
+    <div class="wiki-collapsible-header">This collapsible starts closed</div>
+    <div class="wiki-collapsible-body">
+      <p>Content revealed after clicking. Useful for answers to exercises, detailed proofs, or extended reference material.</p>
+      $$\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}$$
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <h2>Code Blocks</h2>
+
+  <p>Use <code>&lt;pre&gt;&lt;code&gt;</code> for multi-line code blocks. Inline <code>code</code> uses the <code>&lt;code&gt;</code> tag.</p>
+
+  <pre><code>// JavaScript example
+function fibonacci(n) {
+  if (n &lt;= 1) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+console.log(fibonacci(10)); // 55</code></pre>
+
+  <pre><code>/* CSS example */
+.wiki-callout {
+  border-left: 4px solid var(--border-dark);
+  background: var(--bg-alt);
+  padding: 0.8rem 1rem;
+  margin: 1.2rem 0;
+}</code></pre>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <h2>Blockquotes</h2>
+
+  <blockquote>
+    The measure of intelligence is the ability to change.
+    <cite>Albert Einstein</cite>
+  </blockquote>
+
+  <blockquote>
+    An investment in knowledge pays the best interest.
+    <cite>Benjamin Franklin</cite>
+  </blockquote>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <h2>Timeline</h2>
+
+  <p>Use <code>.wiki-timeline</code> for chronological event sequences:</p>
+
+  <div class="wiki-timeline">
+    <div class="wiki-timeline-item">
+      <div class="wiki-timeline-date">1900</div>
+      <div class="wiki-timeline-title">Planck's Quantum Hypothesis</div>
+      <div class="wiki-timeline-body">Max Planck proposes that energy is quantized, laying the groundwork for quantum mechanics.</div>
+    </div>
+    <div class="wiki-timeline-item">
+      <div class="wiki-timeline-date">1905</div>
+      <div class="wiki-timeline-title">Einstein's Annus Mirabilis</div>
+      <div class="wiki-timeline-body">Special relativity, the photoelectric effect, Brownian motion, and $E=mc^2$ all published in a single year.</div>
+    </div>
+    <div class="wiki-timeline-item">
+      <div class="wiki-timeline-date">1925–1926</div>
+      <div class="wiki-timeline-title">Quantum Mechanics Formalized</div>
+      <div class="wiki-timeline-body">Heisenberg (matrix mechanics) and Schrödinger (wave mechanics) independently formalize quantum mechanics.</div>
+    </div>
+    <div class="wiki-timeline-item">
+      <div class="wiki-timeline-date">1927</div>
+      <div class="wiki-timeline-title">Uncertainty Principle</div>
+      <div class="wiki-timeline-body">Heisenberg states that $\Delta x \cdot \Delta p \geq \hbar/2$ — position and momentum cannot both be precisely known.</div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <h2>Comparison Table</h2>
+
+  <p>Use <code>.wiki-comparison</code> for feature comparison tables with check/cross symbols:</p>
+
+  <div class="wiki-comparison">
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Plan A</th>
+          <th>Plan B</th>
+          <th>Plan C</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Feature One</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+        <tr><td>Feature Two</td><td class="cross">✗</td><td class="check">✓</td><td class="check">✓</td></tr>
+        <tr><td>Feature Three</td><td class="cross">✗</td><td class="cross">✗</td><td class="check">✓</td></tr>
+        <tr><td>Feature Four</td><td class="partial">Partial</td><td class="check">✓</td><td class="check">✓</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <h2>Card Grids</h2>
+
+  <p>Display article links or features in a grid with <code>.wiki-card-grid</code>:</p>
+
+  <div class="wiki-card-grid cols-2">
+    <div class="wiki-card">
+      <div class="wiki-card-body">
+        <div class="wiki-card-title">Card Title One</div>
+        <div class="wiki-card-desc">A short description of what this card links to or represents.</div>
+      </div>
+    </div>
+    <div class="wiki-card">
+      <div class="wiki-card-body">
+        <div class="wiki-card-title">Card Title Two</div>
+        <div class="wiki-card-desc">Cards can contain text, links, or any inline HTML.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <h2>Gallery</h2>
+
+  <p>A responsive image gallery with auto-lightbox support:</p>
+
+  <div class="wiki-gallery cols-3">
+    <div class="wiki-gallery-item">
+      <img src="../assets/media/placeholder.svg" alt="Gallery image 1">
+      <div class="wiki-gallery-item-cap">Caption for image 1</div>
+    </div>
+    <div class="wiki-gallery-item">
+      <img src="../assets/media/placeholder.svg" alt="Gallery image 2">
+      <div class="wiki-gallery-item-cap">Caption for image 2</div>
+    </div>
+    <div class="wiki-gallery-item">
+      <img src="../assets/media/placeholder.svg" alt="Gallery image 3">
+      <div class="wiki-gallery-item-cap">Caption for image 3</div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <h2>Figures</h2>
+
+  <p>Float images left or right with captions using <code>.wiki-figure</code>:</p>
+
+  <figure class="wiki-figure left">
+    <img src="../assets/media/placeholder.svg" alt="Left-floated figure" width="200">
+    <figcaption>Fig. 1: Left-floating figure with <code>.wiki-figure.left</code></figcaption>
+  </figure>
+
+  <p>Text wraps around the floating figure. The figure gets a border, border-radius, and caption area automatically. Use <code>.wiki-figure.right</code> for right-floating, or <code>.wiki-figure</code> alone for centered/full-width.</p>
+
+  <p>Click any figure or gallery image to open a lightbox overlay. Press Escape or click outside the image to close.</p>
+
+  <div class="clearfix"></div>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <h2>Hatnotes</h2>
+
+  <p class="wiki-hatnote">For the broader topic, see <a href="#">Related Article</a>. For a list of similar items, see <a href="#">List of Things</a>.</p>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <h2>Stub Notice</h2>
+
+  <div class="wiki-stub">
+    <div class="wiki-stub-icon">🔨</div>
+    <div>
+      <strong>This article is a stub.</strong>
+      You can help MyWiki by expanding it.
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <h2>Redirect Notice</h2>
+
+  <div class="wiki-redirect-notice">
+    ↩ Redirected from <a href="#">Original Article Name</a>.
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <h2>Definition Lists</h2>
+
+  <dl>
+    <dt>Term One</dt>
+    <dd>The definition of term one goes here. It can span multiple lines if needed.</dd>
+
+    <dt>Term Two</dt>
+    <dd>The definition of term two. Definition lists are useful for glossaries, dictionaries, and FAQs.</dd>
+
+    <dt>Term Three</dt>
+    <dd>Use <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, and <code>&lt;dd&gt;</code> HTML elements.</dd>
+  </dl>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <h2>Citations</h2>
+
+  <p>Inline citations use superscript links<a class="wiki-ref" href="#ref-1">[1]</a>. Multiple citations can appear together<a class="wiki-ref" href="#ref-2">[2]</a><a class="wiki-ref" href="#ref-3">[3]</a>. The references section appears at the bottom.</p>
+
+  <div class="wiki-references">
+    <h2>References</h2>
+    <ol>
+      <li id="ref-1">Smith, J. (2023). <em>Example Reference</em>. Publisher.</li>
+      <li id="ref-2">Doe, A. &amp; Brown, B. (2022). "Article in a Journal." <em>Journal Name</em>, 5(1), 10–25.</li>
+      <li id="ref-3">Organization. (2021). <em>Report Title</em>. Retrieved from <a href="#">https://example.com</a></li>
+    </ol>
+  </div>
+
+  <div class="wiki-tags">
+    <span class="wiki-tags-label">Tags:</span>
+    <a class="wiki-tag" href="categories.html">Components</a>
+    <a class="wiki-tag" href="categories.html">Reference</a>
+    <a class="wiki-tag" href="categories.html">Documentation</a>
+  </div>
+  <div class="wiki-page-meta">
+    <span>Last edited: <time>2024-01-01</time></span>
+    <span>Category: Reference</span>
+  </div>
+
+</main>
+
+<script>
+window.WIKI_PAGE = { title: 'Component Reference', category: 'Reference' };
+window.WIKI_SIDEBAR = [
+  { label: 'Reference', links: [
+    { text: '🏠 Home',         href: '../index.html' },
+    { text: 'Math Demo',       href: 'math-demo.html' },
+    { text: 'Desmos Demo',     href: 'desmos-demo.html' },
+    { text: 'Components',      href: 'components.html' },
+    { text: 'Article Template',href: 'article-template.html' },
+  ]},
+];
+</script>
+
+<script src="../assets/js/wiki.js"></script>
+</body>
+</html>

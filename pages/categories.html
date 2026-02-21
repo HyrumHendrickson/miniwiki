@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Categories — MyWiki</title>
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+</head>
+<body>
+<main id="wiki-content">
+  <div class="wiki-breadcrumb">
+    <a href="../index.html">Home</a><span class="sep">›</span><span>All Categories</span>
+  </div>
+  <h1>All Categories</h1>
+  <p>Browse articles by category. Add your own categories and pages by editing this file and the sidebar definitions in each page.</p>
+
+  <h2>Reference</h2>
+  <ul>
+    <li><a href="components.html">Component Reference</a> — All wiki components demonstrated</li>
+    <li><a href="math-demo.html">Mathematics Demo</a> — LaTeX and KaTeX examples</li>
+    <li><a href="desmos-demo.html">Desmos Demo</a> — Interactive graph embeds</li>
+    <li><a href="article-template.html">Article Template</a> — Blank article for new pages</li>
+  </ul>
+
+  <h2>Physics</h2>
+  <ul>
+    <li><a href="science-example.html">Quantum Mechanics</a> — Principles, equations, history</li>
+  </ul>
+
+  <h2>History</h2>
+  <ul>
+    <li><a href="history-example.html">The Renaissance</a> — European cultural and scientific rebirth</li>
+  </ul>
+
+  <div class="wiki-callout info">
+    <div class="wiki-callout-title">ℹ️ Adding Categories</div>
+    <p>Add a new category by creating a section here and linking your new <code>pages/*.html</code> files. Add the same page to <code>window.WIKI_SEARCH_PAGES</code> in <code>index.html</code> to make it searchable.</p>
+  </div>
+</main>
+
+<script>
+window.WIKI_PAGE = { title: 'All Categories', category: 'Meta' };
+window.WIKI_SIDEBAR = [
+  { label: 'Navigation', links: [
+    { text: '🏠 Home',        href: '../index.html' },
+    { text: '📚 Categories',  href: 'categories.html' },
+  ]},
+];
+</script>
+<script src="../assets/js/wiki.js"></script>
+</body>
+</html>

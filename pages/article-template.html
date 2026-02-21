@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article Title — MyWiki</title>
+  <meta name="description" content="Short description of this article for SEO and search.">
+
+  <!-- KaTeX (remove if this page has no math) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <!-- Desmos (remove if this page has no Desmos graphs) -->
+  <script src="https://www.desmos.com/api/v1.8/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+</head>
+<body>
+
+<main id="wiki-content">
+
+  <!-- ── Breadcrumb ── -->
+  <div class="wiki-breadcrumb">
+    <a href="../index.html">Home</a>
+    <span class="sep">›</span>
+    <a href="categories.html">Category Name</a>
+    <span class="sep">›</span>
+    <span>Article Title</span>
+  </div>
+
+  <!-- ── Page Title ── -->
+  <h1>Article Title</h1>
+
+  <!-- ── Hatnote (optional "See also: ..." line) ── -->
+  <p class="wiki-hatnote">For a related topic, see <a href="#">Other Article</a>.</p>
+
+  <!-- ── Floating TOC (auto-populated by wiki.js) ── -->
+  <div class="wiki-toc floating">
+    <!-- wiki.js will fill this in automatically -->
+  </div>
+
+  <!-- ── Infobox (optional — delete if not needed) ── -->
+  <div class="wiki-infobox">
+    <div class="wiki-infobox-title">Infobox Title</div>
+    <!-- Optional image:
+    <div class="wiki-infobox-image">
+      <img src="../assets/media/placeholder.jpg" alt="Description">
+    </div>
+    <div class="wiki-infobox-caption">Caption for the image.</div>
+    -->
+    <table>
+      <tr><td>Field 1</td><td>Value 1</td></tr>
+      <tr><td>Field 2</td><td>Value 2</td></tr>
+      <tr><td>Field 3</td><td><a href="#">Linked value</a></td></tr>
+      <tr><td>Field 4</td><td>Value 4</td></tr>
+    </table>
+  </div>
+
+  <!-- ── Introduction paragraph ── -->
+  <p><strong>Article subject</strong> is a brief, two- to three-sentence introduction to the topic. This paragraph should define the subject clearly and mention the most important aspects. Wikipedia-style articles begin with the title in <strong>bold</strong>.</p>
+
+  <p>The second paragraph of the introduction provides additional context. It should be readable by someone unfamiliar with the subject and should not assume prior knowledge.</p>
+
+  <div class="clearfix"></div>
+
+  <!-- ════════════════════════════════════════════════════════
+       SECTIONS — Add, rename, or remove as needed
+       ════════════════════════════════════════════════════════ -->
+
+  <h2>Background</h2>
+
+  <p>This section provides historical context or foundational information. Use clear, encyclopedic prose. Avoid first-person language.</p>
+
+  <p>You can include inline math like $E = mc^2$ anywhere in the text.</p>
+
+  <!-- Example callout -->
+  <div class="wiki-callout note">
+    <div class="wiki-callout-title">📝 Note</div>
+    <p>This is a note callout. Use it to highlight important supplementary information.</p>
+  </div>
+
+  <h2>Main Content</h2>
+
+  <p>The main body of the article. Break complex topics into subsections using <code>&lt;h3&gt;</code> tags.</p>
+
+  <h3>Subsection One</h3>
+
+  <p>Content for the first subsection. You can use any component here — tables, figures, code blocks, etc.</p>
+
+  <!-- Example figure -->
+  <figure class="wiki-figure right">
+    <img src="../assets/media/placeholder.svg" alt="Descriptive alt text" width="280">
+    <figcaption>Figure 1: A descriptive caption explaining the image.</figcaption>
+  </figure>
+
+  <p>Text continues after the figure. On desktop, the figure floats to the right. On mobile, it becomes full-width and inline.</p>
+
+  <div class="clearfix"></div>
+
+  <h3>Subsection Two</h3>
+
+  <p>More content. Display-mode math goes on its own line:</p>
+
+  $$\int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}$$
+
+  <h3>Subsection Three</h3>
+
+  <!-- Example table -->
+  <div class="wiki-table-wrap">
+    <table class="wiki-table">
+      <thead>
+        <tr>
+          <th>Column A</th>
+          <th>Column B</th>
+          <th>Column C</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Row 1A</td><td>Row 1B</td><td>Row 1C</td></tr>
+        <tr><td>Row 2A</td><td>Row 2B</td><td>Row 2C</td></tr>
+        <tr><td>Row 3A</td><td>Row 3B</td><td>Row 3C</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Analysis</h2>
+
+  <p>Discussion, interpretation, or deeper analysis goes here.</p>
+
+  <!-- Example collapsible -->
+  <div class="wiki-collapsible">
+    <div class="wiki-collapsible-header">Detailed Derivation (click to expand)</div>
+    <div class="wiki-collapsible-body">
+      <p>Content that is too detailed for the main flow but still useful. Great for proofs, derivations, code examples, or supplementary material.</p>
+    </div>
+  </div>
+
+  <!-- Example tabs -->
+  <div class="wiki-tabs">
+    <div class="wiki-tab-nav">
+      <button class="wiki-tab-btn">Perspective A</button>
+      <button class="wiki-tab-btn">Perspective B</button>
+      <button class="wiki-tab-btn">Perspective C</button>
+    </div>
+    <div class="wiki-tab-panel">
+      <p>Content for the first tab. Each tab panel is shown independently.</p>
+    </div>
+    <div class="wiki-tab-panel">
+      <p>Content for the second tab.</p>
+    </div>
+    <div class="wiki-tab-panel">
+      <p>Content for the third tab.</p>
+    </div>
+  </div>
+
+  <h2>See Also</h2>
+
+  <ul>
+    <li><a href="#">Related Article 1</a> — Brief description</li>
+    <li><a href="#">Related Article 2</a> — Brief description</li>
+    <li><a href="#">External Resource</a> — Brief description</li>
+  </ul>
+
+  <!-- ── References ── -->
+  <div class="wiki-references">
+    <h2>References</h2>
+    <ol>
+      <li id="ref-1">Author, A. (Year). <em>Title of Source</em>. Publisher. <a href="#">doi:xxx</a></li>
+      <li id="ref-2">Author, B. (Year). "Article Title." <em>Journal Name</em>, 10(2), 45–67.</li>
+      <li id="ref-3">Organization Name. (Year). <em>Report Title</em>. Retrieved from <a href="#">URL</a></li>
+    </ol>
+  </div>
+
+  <!-- ── Tags ── -->
+  <div class="wiki-tags">
+    <span class="wiki-tags-label">Tags:</span>
+    <a class="wiki-tag" href="categories.html">Tag One</a>
+    <a class="wiki-tag" href="categories.html">Tag Two</a>
+    <a class="wiki-tag" href="categories.html">Tag Three</a>
+  </div>
+
+  <!-- ── Page Meta ── -->
+  <div class="wiki-page-meta">
+    <span>Last edited: <time datetime="2024-01-01">January 1, 2024</time></span>
+    <span>Author: Your Name</span>
+    <span>Category: <a href="categories.html">Category Name</a></span>
+  </div>
+
+</main>
+
+<!-- ── Page configuration ── -->
+<script>
+window.WIKI_PAGE = {
+  title:     'Article Title',
+  category:  'Category Name',
+  tags:      ['tag-one', 'tag-two'],
+  lastEdited: '2024-01-01',
+  author:    'Your Name',
+};
+
+window.WIKI_SIDEBAR = [
+  {
+    label: 'Navigation',
+    links: [
+      { text: '🏠 Home',              href: '../index.html' },
+      { text: '📚 All Articles',      href: 'categories.html' },
+    ]
+  },
+  {
+    label: 'In This Category',
+    links: [
+      { text: 'This Article',         href: 'article-template.html' },
+      { text: 'Another Article',      href: '#' },
+    ]
+  },
+];
+
+// Required: add this page to the search index on index.html too.
+</script>
+
+<script src="../assets/js/wiki.js"></script>
+</body>
+</html>

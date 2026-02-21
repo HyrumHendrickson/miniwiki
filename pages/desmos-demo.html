@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desmos Demo — MyWiki</title>
+  <meta name="description" content="Interactive Desmos graphing calculator embeds in MyWiki.">
+
+  <!-- KaTeX for any inline math -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <!-- Desmos Graphing Calculator API -->
+  <script src="https://www.desmos.com/api/v1.8/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+</head>
+<body>
+
+<main id="wiki-content">
+
+  <div class="wiki-breadcrumb">
+    <a href="../index.html">Home</a>
+    <span class="sep">›</span>
+    <span>Desmos Demo</span>
+  </div>
+
+  <h1>Desmos Graph Embeds</h1>
+
+  <div class="wiki-toc floating"></div>
+
+  <div class="wiki-infobox">
+    <div class="wiki-infobox-title">Desmos Integration</div>
+    <table>
+      <tr><td>API Version</td><td>v1.8</td></tr>
+      <tr><td>Type</td><td>Graphing Calculator</td></tr>
+      <tr><td>Interactive</td><td>Yes — pan, zoom, edit</td></tr>
+      <tr><td>Method</td><td>HTML element + JS init</td></tr>
+    </table>
+  </div>
+
+  <p>This wiki supports fully interactive <a href="https://www.desmos.com" target="_blank" rel="noopener">Desmos</a> graphing calculators embedded directly into any article. Graphs are live: you can pan, zoom, and even edit the expressions if the calculator is not locked.</p>
+
+  <div class="clearfix"></div>
+
+  <h2>Method 1: HTML Data Attributes (Declarative)</h2>
+
+  <p>Add a <code>.wiki-desmos</code> div with a <code>data-exprs</code> attribute containing a JSON array of expressions. The <code>wiki.js</code> engine will automatically instantiate the calculator on page load.</p>
+
+  <p>Example: $y = \sin(x)$ and its derivative $y = \cos(x)$:</p>
+
+  <!-- Declarative Desmos embed -->
+  <div class="wiki-desmos"
+       data-exprs='[{"latex":"y=\\sin(x)","color":"#c74440"},{"latex":"y=\\cos(x)","color":"#2d70b3"}]'
+       data-opts='{"keypad":false}'
+       style="height:400px; border:1px solid var(--border); border-radius:3px;">
+  </div>
+
+  <p>The HTML for this embed is simply:</p>
+  <pre><code>&lt;div class="wiki-desmos"
+     data-exprs='[
+       {"latex":"y=\\\\sin(x)","color":"#c74440"},
+       {"latex":"y=\\\\cos(x)","color":"#2d70b3"}
+     ]'
+     style="height:400px;"&gt;
+&lt;/div&gt;</code></pre>
+
+  <h2>Method 2: JavaScript API (Programmatic)</h2>
+
+  <p>For more control, call <code>wikiDesmos()</code> from a script block. This gives you full access to the Desmos API.</p>
+
+  <p>Example: A family of parabolas $y = ax^2$ with a slider for $a$:</p>
+
+  <!-- Programmatic Desmos embed -->
+  <div id="desmos-parabola" style="height:420px; border:1px solid var(--border); border-radius:3px;"></div>
+
+  <pre><code>&lt;div id="desmos-parabola" style="height:420px;"&gt;&lt;/div&gt;
+&lt;script&gt;
+document.addEventListener('DOMContentLoaded', () =&gt; {
+  const calc = wikiDesmos('desmos-parabola', [], { keypad: false });
+  if (calc) {
+    calc.setExpression({ id: 'a', latex: 'a=1', sliderBounds: { min: -3, max: 3 } });
+    calc.setExpression({ id: 'p', latex: 'y = a x^2', color: Desmos.Colors.RED });
+  }
+});
+&lt;/script&gt;</code></pre>
+
+  <h2>Method 3: Desmos iframe (No JS Required)</h2>
+
+  <p>If you prefer zero JavaScript, you can embed a saved Desmos graph as an <code>&lt;iframe&gt;</code> using a public Desmos share link. This works even without the API key.</p>
+
+  <div class="wiki-desmos">
+    <div class="wiki-desmos-header">Desmos Graph — Saved Share Link Example</div>
+    <iframe
+      src="https://www.desmos.com/calculator/yshfal6wry?embed"
+      height="400"
+      style="width:100%;border:none;"
+      title="Desmos graph embed">
+    </iframe>
+  </div>
+
+  <p>To get a share link: create your graph on <a href="https://www.desmos.com/calculator" target="_blank" rel="noopener">desmos.com</a>, click Share, copy the URL, and append <code>?embed</code> to it.</p>
+
+  <h2>More Example Graphs</h2>
+
+  <h3>Trigonometric Functions</h3>
+  <p>The six standard trig functions on one graph:</p>
+
+  <div class="wiki-desmos"
+       data-exprs='[
+         {"latex":"y=\\sin(x)","color":"#c74440"},
+         {"latex":"y=\\cos(x)","color":"#2d70b3"},
+         {"latex":"y=\\tan(x)","color":"#388c46"}
+       ]'
+       data-opts='{"keypad":false}'
+       style="height:380px; border:1px solid var(--border); border-radius:3px;">
+  </div>
+
+  <h3>Conic Sections</h3>
+  <p>The standard conic sections: $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$ (ellipse), $x^2-y^2=1$ (hyperbola), $y=x^2$ (parabola):</p>
+
+  <div id="desmos-conics" style="height:400px; border:1px solid var(--border); border-radius:3px;"></div>
+
+  <h2>Expression Reference</h2>
+
+  <div class="wiki-table-wrap">
+    <table class="wiki-table">
+      <thead>
+        <tr><th>Purpose</th><th>Desmos LaTeX</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Function</td><td><code>y = x^2</code></td><td>Standard y= form</td></tr>
+        <tr><td>Implicit</td><td><code>x^2 + y^2 = 25</code></td><td>Circle of radius 5</td></tr>
+        <tr><td>Parametric</td><td><code>(t\cos t, t\sin t)</code></td><td>Spiral</td></tr>
+        <tr><td>Inequality</td><td><code>y &gt; x^2</code></td><td>Shaded region</td></tr>
+        <tr><td>Slider</td><td><code>a = 1</code></td><td>Creates a draggable slider</td></tr>
+        <tr><td>Point</td><td><code>(2, 3)</code></td><td>Single labeled point</td></tr>
+        <tr><td>Table</td><td>Set via API</td><td>Use <code>setExpression({type:'table'})</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="wiki-callout info">
+    <div class="wiki-callout-title">ℹ️ API Key</div>
+    <p>The demo API key (<code>dcb31709b452b1cf9dc26972add0fda6</code>) is Desmos's public demo key and is suitable for non-commercial personal wikis. For a production wiki, register for a key at <a href="https://www.desmos.com/api" target="_blank" rel="noopener">desmos.com/api</a>.</p>
+  </div>
+
+  <div class="wiki-tags">
+    <span class="wiki-tags-label">Tags:</span>
+    <a class="wiki-tag" href="categories.html">Desmos</a>
+    <a class="wiki-tag" href="categories.html">Graphing</a>
+    <a class="wiki-tag" href="categories.html">Mathematics</a>
+    <a class="wiki-tag" href="categories.html">Demo</a>
+  </div>
+  <div class="wiki-page-meta">
+    <span>Last edited: <time>2024-01-01</time></span>
+    <span>Category: Reference</span>
+  </div>
+
+</main>
+
+<script>
+window.WIKI_PAGE = { title: 'Desmos Demo', category: 'Reference' };
+window.WIKI_SIDEBAR = [
+  { label: 'Navigation', links: [
+    { text: '🏠 Home',         href: '../index.html' },
+    { text: 'Math Demo',       href: 'math-demo.html' },
+    { text: 'Components',      href: 'components.html' },
+  ]},
+];
+</script>
+
+<script src="../assets/js/wiki.js"></script>
+
+<script>
+// Programmatic graph examples — run after wiki.js and Desmos load
+function initDesmosExamples() {
+  if (typeof Desmos === 'undefined') return;
+
+  // Parabola with slider
+  const parabolaEl = document.getElementById('desmos-parabola');
+  if (parabolaEl && !parabolaEl.dataset.init) {
+    parabolaEl.dataset.init = '1';
+    const calc = Desmos.GraphingCalculator(parabolaEl, { keypad: false });
+    calc.setExpression({ id: 'a', latex: 'a=1', sliderBounds: { min: -3, max: 3, step: 0.1 } });
+    calc.setExpression({ id: 'p', latex: 'y = a x^2', color: Desmos.Colors.RED });
+  }
+
+  // Conic sections
+  const conicsEl = document.getElementById('desmos-conics');
+  if (conicsEl && !conicsEl.dataset.init) {
+    conicsEl.dataset.init = '1';
+    const c = Desmos.GraphingCalculator(conicsEl, { keypad: false });
+    c.setExpression({ id: 'e', latex: '\\frac{x^2}{9}+\\frac{y^2}{4}=1', color: '#c74440', label: 'Ellipse' });
+    c.setExpression({ id: 'h', latex: 'x^2-y^2=1',                         color: '#2d70b3', label: 'Hyperbola' });
+    c.setExpression({ id: 'p', latex: 'y=x^2',                              color: '#388c46', label: 'Parabola' });
+  }
+}
+
+// Desmos may load before or after this script
+if (typeof Desmos !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', initDesmosExamples);
+} else {
+  window.addEventListener('load', initDesmosExamples);
+}
+</script>
+</body>
+</html>

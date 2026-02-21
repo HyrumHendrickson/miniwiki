@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — MyWiki</title>
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+</head>
+<body>
+<main id="wiki-content">
+  <div class="wiki-breadcrumb">
+    <a href="../index.html">Home</a><span class="sep">›</span><span>About</span>
+  </div>
+  <h1>About MyWiki</h1>
+  <p>MyWiki is a personal static wiki hosted on GitHub Pages. It is built with plain HTML, CSS, and JavaScript — no server, database, or build step required.</p>
+
+  <h2>Technology</h2>
+  <ul>
+    <li><strong>Layout & Components:</strong> Custom CSS (<code>assets/css/wiki.css</code>)</li>
+    <li><strong>Interactivity:</strong> Vanilla JavaScript (<code>assets/js/wiki.js</code>)</li>
+    <li><strong>Mathematics:</strong> <a href="https://katex.org" target="_blank" rel="noopener">KaTeX</a></li>
+    <li><strong>Graphing:</strong> <a href="https://www.desmos.com/api" target="_blank" rel="noopener">Desmos API</a></li>
+    <li><strong>Hosting:</strong> GitHub Pages</li>
+  </ul>
+
+  <h2>License</h2>
+  <p>All content on this wiki is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> unless otherwise noted. The wiki engine code is MIT licensed.</p>
+
+  <h2>Contributing</h2>
+  <p>To add an article: copy <code>pages/article-template.html</code>, fill in your content, add it to the sidebar and search index in <code>index.html</code>, and submit a pull request.</p>
+</main>
+<script>
+window.WIKI_PAGE = { title: 'About', category: 'Meta' };
+window.WIKI_SIDEBAR = [{ label: 'Navigation', links: [{ text: '🏠 Home', href: '../index.html' }]}];
+</script>
+<script src="../assets/js/wiki.js"></script>
+</body>
+</html>

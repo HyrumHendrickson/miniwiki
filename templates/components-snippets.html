@@ -1,0 +1,260 @@
+<!--
+  ============================================================
+  WIKI COMPONENT SNIPPETS
+  Copy-paste these blocks into any article page.
+  ============================================================
+-->
+
+
+<!-- ── INFOBOX (right float, default) ──────────────────────
+Usage: Place before opening paragraph. Use .clearfix after. -->
+
+<div class="wiki-infobox">
+  <div class="wiki-infobox-title">Box Title</div>
+  <!-- Optional image:
+  <div class="wiki-infobox-image">
+    <img src="../assets/media/image.jpg" alt="Alt text">
+  </div>
+  <div class="wiki-infobox-caption">Figure caption</div>
+  -->
+  <table>
+    <tr><td>Label</td><td>Value</td></tr>
+    <tr><td>Label</td><td>Value</td></tr>
+  </table>
+</div>
+<div class="clearfix"></div>
+
+
+<!-- ── CALLOUT (note / info / warning / danger) ────────────
+Change class on .wiki-callout to: note | info | warning | danger -->
+
+<div class="wiki-callout note">
+  <div class="wiki-callout-title">📝 Note</div>
+  <p>Callout content goes here.</p>
+</div>
+
+
+<!-- ── TABLE ────────────────────────────────────────────────
+Always wrap in .wiki-table-wrap for mobile overflow. -->
+
+<div class="wiki-table-wrap">
+  <table class="wiki-table">
+    <thead>
+      <tr><th>Column A</th><th>Column B</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Cell</td><td>Cell</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ── TABS ─────────────────────────────────────────────────
+Buttons and panels are matched by order. -->
+
+<div class="wiki-tabs">
+  <div class="wiki-tab-nav">
+    <button class="wiki-tab-btn">Tab 1</button>
+    <button class="wiki-tab-btn">Tab 2</button>
+  </div>
+  <div class="wiki-tab-panel">Content for tab 1.</div>
+  <div class="wiki-tab-panel">Content for tab 2.</div>
+</div>
+
+
+<!-- ── COLLAPSIBLE ──────────────────────────────────────────
+Add class "open" to start expanded. -->
+
+<div class="wiki-collapsible">
+  <div class="wiki-collapsible-header">Section Title</div>
+  <div class="wiki-collapsible-body">
+    <p>Hidden content revealed on click.</p>
+  </div>
+</div>
+
+
+<!-- ── TIMELINE ─────────────────────────────────────────────
+Add as many .wiki-timeline-item divs as needed. -->
+
+<div class="wiki-timeline">
+  <div class="wiki-timeline-item">
+    <div class="wiki-timeline-date">Year</div>
+    <div class="wiki-timeline-title">Event Title</div>
+    <div class="wiki-timeline-body">Description of the event.</div>
+  </div>
+</div>
+
+
+<!-- ── COMPARISON TABLE ─────────────────────────────────────
+Use class "check", "cross", or "partial" on <td> cells. -->
+
+<div class="wiki-comparison">
+  <table>
+    <thead>
+      <tr><th>Feature</th><th>Option A</th><th>Option B</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Feature 1</td><td class="check">✓</td><td class="cross">✗</td></tr>
+      <tr><td>Feature 2</td><td class="partial">Partial</td><td class="check">✓</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ── FIGURE (floating right) ──────────────────────────────
+Use .wiki-figure.left for left float; omit both for centered. -->
+
+<figure class="wiki-figure right">
+  <img src="../assets/media/placeholder.svg" alt="Alt text" width="280">
+  <figcaption>Figure caption text.</figcaption>
+</figure>
+<div class="clearfix"></div>
+
+
+<!-- ── GALLERY ───────────────────────────────────────────────
+Change cols-3 to cols-2 or cols-4. Lightbox is auto-added. -->
+
+<div class="wiki-gallery cols-3">
+  <div class="wiki-gallery-item">
+    <img src="../assets/media/placeholder.svg" alt="Image 1">
+    <div class="wiki-gallery-item-cap">Caption 1</div>
+  </div>
+  <div class="wiki-gallery-item">
+    <img src="../assets/media/placeholder.svg" alt="Image 2">
+    <div class="wiki-gallery-item-cap">Caption 2</div>
+  </div>
+  <div class="wiki-gallery-item">
+    <img src="../assets/media/placeholder.svg" alt="Image 3">
+    <div class="wiki-gallery-item-cap">Caption 3</div>
+  </div>
+</div>
+
+
+<!-- ── CARD GRID ─────────────────────────────────────────────
+Change cols-3 to cols-2 for a two-column grid. -->
+
+<div class="wiki-card-grid cols-3">
+  <div class="wiki-card">
+    <div class="wiki-card-body">
+      <div class="wiki-card-title">Card Title</div>
+      <div class="wiki-card-desc">Brief description of the card content.</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── BLOCKQUOTE WITH CITATION ─────────────────────────────-->
+
+<blockquote>
+  Quote text here.
+  <cite>Author Name</cite>
+</blockquote>
+
+
+<!-- ── HATNOTE ───────────────────────────────────────────────
+Appears at top of article as a disambiguation or "see also" note. -->
+
+<p class="wiki-hatnote">For the broader concept, see <a href="#">Related Article</a>.</p>
+
+
+<!-- ── STUB NOTICE ───────────────────────────────────────────-->
+
+<div class="wiki-stub">
+  <div class="wiki-stub-icon">🔨</div>
+  <div><strong>This article is a stub.</strong> You can help by expanding it.</div>
+</div>
+
+
+<!-- ── REDIRECT NOTICE ───────────────────────────────────────-->
+
+<div class="wiki-redirect-notice">
+  ↩ Redirected from <a href="#">Original Title</a>.
+</div>
+
+
+<!-- ── INLINE CITATION ───────────────────────────────────────
+Link href to the id of the <li> in the references section. -->
+
+<p>Some claim.<a class="wiki-ref" href="#ref-1">[1]</a></p>
+
+
+<!-- ── REFERENCES SECTION ────────────────────────────────────-->
+
+<div class="wiki-references">
+  <h2>References</h2>
+  <ol>
+    <li id="ref-1">Author. (Year). <em>Title</em>. Publisher.</li>
+  </ol>
+</div>
+
+
+<!-- ── TAGS ─────────────────────────────────────────────────-->
+
+<div class="wiki-tags">
+  <span class="wiki-tags-label">Tags:</span>
+  <a class="wiki-tag" href="categories.html">Tag Name</a>
+</div>
+
+
+<!-- ── PAGE META ─────────────────────────────────────────────-->
+
+<div class="wiki-page-meta">
+  <span>Last edited: <time datetime="2024-01-01">January 1, 2024</time></span>
+  <span>Author: Name</span>
+  <span>Category: <a href="categories.html">Category</a></span>
+</div>
+
+
+<!-- ── DESMOS GRAPH (declarative) ────────────────────────────
+Expressions: JSON array of {"latex":"...", "color":"#hex"} -->
+
+<div class="wiki-desmos"
+     data-exprs='[{"latex":"y=x^2","color":"#c74440"}]'
+     data-opts='{"keypad":false}'
+     style="height:400px; border:1px solid var(--border); border-radius:3px;">
+</div>
+
+
+<!-- ── DESMOS GRAPH (programmatic) ───────────────────────────
+Use wikiDesmos() for more control or sliders. -->
+
+<div id="my-graph" style="height:400px; border:1px solid var(--border); border-radius:3px;"></div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const calc = wikiDesmos('my-graph', [
+    { latex: 'y = \\sin(x)', color: '#c74440' },
+    { latex: 'y = \\cos(x)', color: '#2d70b3' },
+  ], { keypad: false });
+  // You can now call calc.setExpression() etc.
+});
+</script>
+
+
+<!-- ── LATEX MATH ─────────────────────────────────────────────
+Inline: $formula$     Display: $$formula$$
+Requires KaTeX CDN links in <head>. -->
+
+<p>Inline math: $E = mc^2$ and display mode:</p>
+$$\int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}$$
+
+
+<!-- ── FLOATING TOC (auto-populated) ─────────────────────────
+Place near the top of content. wiki.js fills it automatically. -->
+
+<div class="wiki-toc floating"></div>
+
+
+<!-- ── DEFINITION LIST ───────────────────────────────────────-->
+
+<dl>
+  <dt>Term</dt>
+  <dd>Definition of the term.</dd>
+</dl>
+
+
+<!-- ── CODE BLOCK ────────────────────────────────────────────-->
+
+<pre><code>// Code here
+function example() {
+  return 42;
+}</code></pre>

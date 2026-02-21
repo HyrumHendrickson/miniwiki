@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quantum Mechanics — MyWiki</title>
+  <meta name="description" content="An overview of quantum mechanics: principles, equations, and history.">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://www.desmos.com/api/v1.8/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+</head>
+<body>
+
+<main id="wiki-content">
+
+  <div class="wiki-breadcrumb">
+    <a href="../index.html">Home</a><span class="sep">›</span>
+    <a href="categories.html">Physics</a><span class="sep">›</span>
+    <span>Quantum Mechanics</span>
+  </div>
+
+  <h1>Quantum Mechanics</h1>
+
+  <div class="wiki-toc floating"></div>
+
+  <div class="wiki-infobox">
+    <div class="wiki-infobox-title">Quantum Mechanics</div>
+    <table>
+      <tr><td>Field</td><td>Theoretical Physics</td></tr>
+      <tr><td>Founded</td><td>1900–1927</td></tr>
+      <tr><td>Key figures</td><td>Planck, Bohr, Heisenberg, Schrödinger, Dirac</td></tr>
+      <tr><td>Wave equation</td><td>$i\hbar\frac{\partial\psi}{\partial t} = \hat{H}\psi$</td></tr>
+      <tr><td>Applications</td><td>Semiconductors, lasers, MRI, cryptography</td></tr>
+    </table>
+  </div>
+
+  <p><strong>Quantum mechanics</strong> is a fundamental theory in physics that describes the physical properties of nature at the scale of atoms and subatomic particles. It is the foundation of all quantum physics, including quantum chemistry, quantum field theory, quantum technology, and quantum information science.</p>
+
+  <p>At very small scales, quantum mechanics differs significantly from classical physics. It introduces concepts such as wave-particle duality, quantization of energy, and the uncertainty principle, which have no analog in classical mechanics.</p>
+
+  <div class="clearfix"></div>
+
+  <h2>Historical Development</h2>
+
+  <p>Quantum mechanics emerged over the first three decades of the twentieth century through the work of many physicists confronting anomalies that classical physics could not explain.</p>
+
+  <div class="wiki-timeline">
+    <div class="wiki-timeline-item">
+      <div class="wiki-timeline-date">1900</div>
+      <div class="wiki-timeline-title">Planck's Quantum Hypothesis</div>
+      <div class="wiki-timeline-body">Max Planck resolves the ultraviolet catastrophe by proposing that electromagnetic energy is emitted in discrete quanta of size $E = h\nu$.</div>
+    </div>
+    <div class="wiki-timeline-item">
+      <div class="wiki-timeline-date">1905</div>
+      <div class="wiki-timeline-title">Einstein and the Photoelectric Effect</div>
+      <div class="wiki-timeline-body">Albert Einstein explains the photoelectric effect by treating light as discrete packets (photons), earning him the 1921 Nobel Prize.</div>
+    </div>
+    <div class="wiki-timeline-item">
+      <div class="wiki-timeline-date">1913</div>
+      <div class="wiki-timeline-title">Bohr Model of the Atom</div>
+      <div class="wiki-timeline-body">Niels Bohr proposes that electrons occupy discrete energy levels, explaining the hydrogen spectrum.</div>
+    </div>
+    <div class="wiki-timeline-item">
+      <div class="wiki-timeline-date">1925–1926</div>
+      <div class="wiki-timeline-title">Wave and Matrix Mechanics</div>
+      <div class="wiki-timeline-body">Heisenberg (matrix mechanics) and Schrödinger (wave mechanics) independently formalize the complete mathematical framework.</div>
+    </div>
+    <div class="wiki-timeline-item">
+      <div class="wiki-timeline-date">1927</div>
+      <div class="wiki-timeline-title">Uncertainty Principle &amp; Copenhagen Interpretation</div>
+      <div class="wiki-timeline-body">Heisenberg states the uncertainty principle; Bohr and Heisenberg formulate the Copenhagen interpretation at the Solvay Conference.</div>
+    </div>
+  </div>
+
+  <h2>Core Principles</h2>
+
+  <h3>Wave-Particle Duality</h3>
+
+  <p>All quantum objects exhibit properties of both waves and particles. The de Broglie wavelength of a particle with momentum $p$ is:</p>
+
+  $$\lambda = \frac{h}{p} = \frac{h}{mv}$$
+
+  <p>where $h$ is Planck's constant ($h \approx 6.626 \times 10^{-34}$ J·s).</p>
+
+  <h3>The Schrödinger Equation</h3>
+
+  <p>The time-dependent Schrödinger equation governs the evolution of a quantum state $\psi$:</p>
+
+  $$i\hbar \frac{\partial \psi(\mathbf{r},t)}{\partial t} = \hat{H}\,\psi(\mathbf{r},t)$$
+
+  <p>where $\hat{H}$ is the Hamiltonian operator. For a particle in a potential $V(\mathbf{r})$:</p>
+
+  $$\hat{H} = -\frac{\hbar^2}{2m}\nabla^2 + V(\mathbf{r})$$
+
+  <p>The time-independent Schrödinger equation for stationary states is:</p>
+
+  $$\hat{H}\,\psi = E\,\psi$$
+
+  <div class="wiki-callout note">
+    <div class="wiki-callout-title">📝 Wave Function Normalization</div>
+    <p>The wave function $\psi$ must satisfy $\int_{-\infty}^{\infty} |\psi|^2\,d^3r = 1$, since $|\psi(\mathbf{r},t)|^2$ gives the probability density of finding the particle at position $\mathbf{r}$.</p>
+  </div>
+
+  <h3>Heisenberg Uncertainty Principle</h3>
+
+  <p>Conjugate observables such as position and momentum cannot both be measured to arbitrary precision simultaneously:</p>
+
+  $$\Delta x \cdot \Delta p \geq \frac{\hbar}{2}$$
+
+  <p>Similarly, for energy and time:</p>
+
+  $$\Delta E \cdot \Delta t \geq \frac{\hbar}{2}$$
+
+  <p>This is not a statement about measurement precision, but an intrinsic feature of quantum systems.</p>
+
+  <h3>Superposition and Entanglement</h3>
+
+  <p>A quantum system can exist in a superposition of states. If $|\psi_1\rangle$ and $|\psi_2\rangle$ are valid states, so is $\alpha|\psi_1\rangle + \beta|\psi_2\rangle$ for any complex $\alpha, \beta$ with $|\alpha|^2 + |\beta|^2 = 1$.</p>
+
+  <p>Two particles can be <em>entangled</em> such that the quantum state of each cannot be described independently. A maximally entangled Bell state is:</p>
+
+  $$|\Phi^+\rangle = \frac{1}{\sqrt{2}}\bigl(|00\rangle + |11\rangle\bigr)$$
+
+  <h2>Particle in a Box</h2>
+
+  <p>One of the simplest exactly solvable quantum systems is the infinite square well (particle in a box). For a particle confined to $0 \leq x \leq L$, the energy levels are quantized:</p>
+
+  $$E_n = \frac{n^2\pi^2\hbar^2}{2mL^2}, \quad n = 1,2,3,\ldots$$
+
+  <p>The corresponding normalized wave functions are:</p>
+
+  $$\psi_n(x) = \sqrt{\frac{2}{L}}\sin\!\left(\frac{n\pi x}{L}\right)$$
+
+  <p>The first several wave functions, visualized interactively:</p>
+
+  <div id="desmos-particle-box" style="height:420px;border:1px solid var(--border);border-radius:3px;"></div>
+
+  <h2>Interpretations</h2>
+
+  <div class="wiki-tabs">
+    <div class="wiki-tab-nav">
+      <button class="wiki-tab-btn">Copenhagen</button>
+      <button class="wiki-tab-btn">Many-Worlds</button>
+      <button class="wiki-tab-btn">Pilot Wave</button>
+    </div>
+    <div class="wiki-tab-panel">
+      <p>The <strong>Copenhagen interpretation</strong> (Bohr, Heisenberg) holds that the wave function is a complete description, and physical properties do not have definite values prior to measurement. Upon measurement, the wave function "collapses" to an eigenstate.</p>
+    </div>
+    <div class="wiki-tab-panel">
+      <p>The <strong>many-worlds interpretation</strong> (Everett, 1957) posits that all possible outcomes of quantum measurements are realized in branching, non-communicating worlds. No wave function collapse occurs.</p>
+    </div>
+    <div class="wiki-tab-panel">
+      <p>The <strong>pilot wave (de Broglie–Bohm) theory</strong> is a deterministic hidden-variable theory. Particles have definite positions guided by a pilot wave satisfying the Schrödinger equation.</p>
+    </div>
+  </div>
+
+  <h2>Applications</h2>
+
+  <div class="wiki-card-grid cols-2">
+    <div class="wiki-card">
+      <div class="wiki-card-body">
+        <div class="wiki-card-title">💻 Semiconductor Electronics</div>
+        <div class="wiki-card-desc">Transistors, diodes, and integrated circuits exploit quantum tunneling and band theory. Modern civilization runs on quantum mechanics.</div>
+      </div>
+    </div>
+    <div class="wiki-card">
+      <div class="wiki-card-body">
+        <div class="wiki-card-title">💡 Lasers</div>
+        <div class="wiki-card-desc">Stimulated emission of radiation — the mechanism behind lasers — is a direct quantum effect explained by Einstein in 1917.</div>
+      </div>
+    </div>
+    <div class="wiki-card">
+      <div class="wiki-card-body">
+        <div class="wiki-card-title">🧲 MRI Imaging</div>
+        <div class="wiki-card-desc">Nuclear magnetic resonance exploits quantized nuclear spin states. MRI machines are direct applications of quantum mechanics to medicine.</div>
+      </div>
+    </div>
+    <div class="wiki-card">
+      <div class="wiki-card-body">
+        <div class="wiki-card-title">🔐 Quantum Cryptography</div>
+        <div class="wiki-card-desc">Quantum key distribution uses the no-cloning theorem and measurement disturbance to guarantee information-theoretically secure communication.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>See Also</h2>
+  <ul>
+    <li><a href="math-demo.html">Mathematics Demo</a> — LaTeX rendering examples</li>
+    <li><a href="desmos-demo.html">Desmos Demo</a> — Interactive graph embeds</li>
+    <li><a href="#">Quantum Field Theory</a></li>
+    <li><a href="#">Special Relativity</a></li>
+  </ul>
+
+  <div class="wiki-references">
+    <h2>References</h2>
+    <ol>
+      <li>Griffiths, D. J. (2018). <em>Introduction to Quantum Mechanics</em> (3rd ed.). Cambridge University Press.</li>
+      <li>Sakurai, J. J., &amp; Napolitano, J. (2020). <em>Modern Quantum Mechanics</em> (3rd ed.). Cambridge University Press.</li>
+      <li>Dirac, P. A. M. (1930). <em>The Principles of Quantum Mechanics</em>. Oxford University Press.</li>
+      <li>Heisenberg, W. (1927). "Über den anschaulichen Inhalt der quantentheoretischen Kinematik und Mechanik." <em>Zeitschrift für Physik</em>, 43(3–4), 172–198.</li>
+    </ol>
+  </div>
+
+  <div class="wiki-tags">
+    <span class="wiki-tags-label">Tags:</span>
+    <a class="wiki-tag" href="categories.html">Physics</a>
+    <a class="wiki-tag" href="categories.html">Quantum</a>
+    <a class="wiki-tag" href="categories.html">Mathematics</a>
+    <a class="wiki-tag" href="categories.html">Science</a>
+  </div>
+  <div class="wiki-page-meta">
+    <span>Last edited: <time>2024-01-01</time></span>
+    <span>Author: Wiki Author</span>
+    <span>Category: <a href="categories.html">Physics</a></span>
+  </div>
+
+</main>
+
+<script>
+window.WIKI_PAGE = { title: 'Quantum Mechanics', category: 'Physics' };
+window.WIKI_SIDEBAR = [
+  { label: 'Navigation', links: [
+    { text: '🏠 Home',         href: '../index.html' },
+    { text: '📚 Categories',   href: 'categories.html' },
+  ]},
+  { label: 'Physics', links: [
+    { text: 'Quantum Mechanics',href: 'science-example.html' },
+    { text: 'Math Demo',        href: 'math-demo.html' },
+    { text: 'Desmos Demo',      href: 'desmos-demo.html' },
+  ]},
+];
+</script>
+
+<script src="../assets/js/wiki.js"></script>
+
+<script>
+function initPhysicsGraphs() {
+  if (typeof Desmos === 'undefined') return;
+  const el = document.getElementById('desmos-particle-box');
+  if (!el || el.dataset.init) return;
+  el.dataset.init = '1';
+
+  const calc = Desmos.GraphingCalculator(el, { keypad: false, expressions: true });
+  calc.setMathBounds({ left: -0.2, right: 1.2, bottom: -1.5, top: 1.5 });
+  calc.setExpression({ id: 'n',  latex: 'n=1', sliderBounds: { min: 1, max: 5, step: 1 } });
+  calc.setExpression({ id: 'psi', latex: 'y = \\sqrt{2}\\sin(n\\pi x) \\{0 \\le x \\le 1\\}', color: '#c74440' });
+  calc.setExpression({ id: 'psi2', latex: 'y = 2\\sin^2(n\\pi x) \\{0 \\le x \\le 1\\}', color: '#2d70b3', hidden: true });
+}
+
+if (typeof Desmos !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', initPhysicsGraphs);
+} else {
+  window.addEventListener('load', initPhysicsGraphs);
+}
+</script>
+</body>
+</html>
