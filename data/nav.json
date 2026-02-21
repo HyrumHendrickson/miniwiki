@@ -1,0 +1,54 @@
+[
+  {
+    "label": "Navigation",
+    "links": [
+      { "text": "Home",           "url": "index.html" },
+      { "text": "All Categories", "url": "pages/categories.html" },
+      { "text": "Recent Changes", "url": "pages/recent.html" },
+      { "text": "About",          "url": "pages/about.html" }
+    ]
+  },
+  {
+    "label": "Mathematics",
+    "links": [
+      { "text": "Mathematics — All Articles", "url": "pages/math/index.html" },
+      { "text": "Trigonometry",               "url": "pages/math/trigonometry.html" },
+      { "text": "Calculus",                   "url": "pages/math/calculus.html" },
+      { "text": "Algebra",                    "url": "pages/math/algebra.html" }
+    ]
+  },
+  {
+    "label": "Classical History",
+    "links": [
+      { "text": "Classical History — All Articles", "url": "pages/history/classical/index.html" },
+      { "text": "Athenian Democracy",               "url": "pages/history/classical/athens-democracy.html" },
+      { "text": "The Roman Republic",               "url": "pages/history/classical/roman-republic.html" }
+    ]
+  },
+  {
+    "label": "American History",
+    "links": [
+      { "text": "American History — All Articles", "url": "pages/history/american/index.html" },
+      { "text": "The American Founding",           "url": "pages/history/american/american-founding.html" },
+      { "text": "The Civil War",                   "url": "pages/history/american/civil-war.html" }
+    ]
+  },
+  {
+    "label": "Philosophy",
+    "links": [
+      { "text": "Philosophy — All Articles", "url": "pages/philosophy/index.html" },
+      { "text": "Logic",                     "url": "pages/philosophy/logic.html" },
+      { "text": "Virtue Ethics",             "url": "pages/philosophy/virtue-ethics.html" },
+      { "text": "Natural Law",               "url": "pages/philosophy/natural-law.html" },
+      { "text": "Christian Humanism",        "url": "pages/philosophy/christian-humanism.html" }
+    ]
+  },
+  {
+    "label": "Theology",
+    "links": [
+      { "text": "Theology — All Articles", "url": "pages/theology/index.html" },
+      { "text": "Plan of Salvation",       "url": "pages/theology/plan-of-salvation.html" },
+      { "text": "The Restoration",         "url": "pages/theology/the-restoration.html" }
+    ]
+  }
+]
