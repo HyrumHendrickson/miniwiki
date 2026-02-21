@@ -62,7 +62,8 @@ function escapeHtml(str) {
 const Wiki = {
 
   /* ── Init ──────────────────────────────────────────────── */
-  init() {
+  async init() {
+    await this.loadSiteData();
     this.buildLayout();
     this.buildTOC();
     this.initTabs();
@@ -76,6 +77,39 @@ const Wiki = {
     this.initScrollSpy();
     this.initTheme();
     this.markExternalLinks();
+  },
+
+  /* ── Load site data from JSON files ────────────────────── */
+  async loadSiteData() {
+    const root = WIKI_CONFIG.rootUrl;
+
+    // Load search index from data/pages.json
+    try {
+      const resp = await fetch(root + 'data/pages.json');
+      if (resp.ok) {
+        WIKI_CONFIG.searchIndex = await resp.json();
+      }
+    } catch (_) { /* fall through to inline fallback */ }
+
+    // Fall back to inline data if JSON load failed
+    if (!WIKI_CONFIG.searchIndex || !WIKI_CONFIG.searchIndex.length) {
+      WIKI_CONFIG.searchIndex = window.WIKI_SEARCH_PAGES || [];
+    }
+
+    // Load sidebar navigation from data/nav.json (only when page has no override)
+    if (!window.WIKI_SIDEBAR) {
+      try {
+        const resp = await fetch(root + 'data/nav.json');
+        if (resp.ok) {
+          const sections = await resp.json();
+          // Convert root-relative urls to page-relative hrefs
+          WIKI_CONFIG.sidebarLinks = sections.map(sec => ({
+            label: sec.label,
+            links: sec.links.map(l => ({ text: l.text, href: root + l.url })),
+          }));
+        }
+      } catch (_) { /* leave sidebarLinks empty */ }
+    }
   },
 
   /* ── Build Layout Shell ────────────────────────────────── */
@@ -159,7 +193,7 @@ const Wiki = {
   },
 
   _sidebarHTML() {
-    // Pages can override WIKI_CONFIG.sidebarLinks
+    // Pages can override WIKI_CONFIG.sidebarLinks via window.WIKI_SIDEBAR
     const sections = window.WIKI_SIDEBAR || WIKI_CONFIG.sidebarLinks;
     if (!sections || sections.length === 0) return '<p style="color:var(--text-light);font-size:0.8rem;padding:0.5rem">No sidebar defined.</p>';
 
@@ -167,9 +201,11 @@ const Wiki = {
       <div class="sidebar-section">
         <div class="sidebar-section-title">${escapeHtml(sec.label)}</div>
         <ul class="sidebar-nav">
-          ${sec.links.map(l => `
-            <li><a href="${l.href}" ${l.href === window.location.pathname.split('/').pop() ? 'class="active"' : ''}>${escapeHtml(l.text)}</a></li>
-          `).join('')}
+          ${sec.links.map(l => {
+            // Support both l.href (inline page scripts) and l.url (root-relative from nav.json)
+            const href = l.href ?? (WIKI_CONFIG.rootUrl + l.url);
+            return `<li><a href="${href}">${escapeHtml(l.text)}</a></li>`;
+          }).join('')}
         </ul>
       </div>
     `).join('');
@@ -350,9 +386,11 @@ const Wiki = {
   },
 
   buildSearchIndex() {
-    // Pages define their search data via window.WIKI_SEARCH_PAGES
-    // Format: [{ title, url, desc, tags }]
-    WIKI_CONFIG.searchIndex = window.WIKI_SEARCH_PAGES || [];
+    // Populated by loadSiteData() from data/pages.json.
+    // Falls back to window.WIKI_SEARCH_PAGES if still empty.
+    if (!WIKI_CONFIG.searchIndex || !WIKI_CONFIG.searchIndex.length) {
+      WIKI_CONFIG.searchIndex = window.WIKI_SEARCH_PAGES || [];
+    }
   },
 
   _runSearch(query, resultsEl) {
@@ -371,7 +409,7 @@ const Wiki = {
     }
 
     resultsEl.innerHTML = matches.map(m => `
-      <div class="search-result-item" role="option" tabindex="0" data-url="${escapeHtml(m.url)}">
+      <div class="search-result-item" role="option" tabindex="0" data-url="${escapeHtml(WIKI_CONFIG.rootUrl + m.url)}">
         <div class="search-result-title">${escapeHtml(m.title)}</div>
         ${m.desc ? `<div class="search-result-desc">${escapeHtml(m.desc)}</div>` : ''}
       </div>`).join('');
@@ -571,8 +609,8 @@ function wikiInitAllDesmos() {
 /* ================================================================
    AUTO-INIT
    ================================================================ */
-document.addEventListener('DOMContentLoaded', () => {
-  Wiki.init();
+document.addEventListener('DOMContentLoaded', async () => {
+  await Wiki.init();
 
   // Init any Desmos blocks not caught in init (in case Desmos loaded late)
   if (typeof Desmos !== 'undefined') {

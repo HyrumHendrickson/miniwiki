@@ -30,6 +30,9 @@ wiki/
 │   │   └── wiki.js             ← All JavaScript (one file)
 │   └── media/
 │       └── placeholder.svg     ← Put images, videos, PDFs here
+├── data/
+│   ├── pages.json              ← Search index — add new pages here
+│   └── nav.json                ← Sidebar navigation — add new pages here
 ├── pages/                      ← All article pages
 │   ├── article-template.html   ← Copy this for new articles
 │   ├── math-demo.html          ← LaTeX examples
@@ -72,10 +75,20 @@ Then visit `http://localhost:8080`.
 
 ### 3. Add an article
 
-1. Copy `pages/article-template.html` to `pages/my-article.html`
-2. Replace the title, content, sidebar, and page meta
-3. Add the page to `window.WIKI_SEARCH_PAGES` in `index.html`
-4. Link it from the sidebar of related pages
+Adding a new page requires only three steps — no other files need to be changed:
+
+1. Copy `pages/article-template.html` to the appropriate path (e.g. `pages/math/my-article.html`)
+2. Add one entry to **`data/pages.json`** (makes it appear in search on every page):
+   ```json
+   { "title": "My Article", "url": "pages/math/my-article.html",
+     "desc": "Brief description.", "tags": ["math", "keyword"] }
+   ```
+3. Add one entry to the relevant section in **`data/nav.json`** (adds it to the sidebar):
+   ```json
+   { "text": "My Article", "url": "pages/math/my-article.html" }
+   ```
+
+That's it. Search and sidebar navigation update automatically site-wide.
 
 ### 4. Deploy to GitHub Pages
 
@@ -141,7 +154,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ## Sidebar Configuration
 
-Each page defines its own sidebar via `window.WIKI_SIDEBAR`:
+### Automatic (JSON-driven — recommended)
+
+The sidebar is loaded automatically from `data/nav.json` for any page that does not
+define `window.WIKI_SIDEBAR`. To add a new page to the sidebar, add an entry to the
+relevant section in `data/nav.json`:
+
+```json
+{ "text": "My Article", "url": "pages/category/my-article.html" }
+```
+
+All URLs in `nav.json` are **root-relative** (relative to the wiki root).
+
+### Per-page override
+
+Individual pages can still override the sidebar by defining `window.WIKI_SIDEBAR`
+before the `wiki.js` script tag. This takes priority over `nav.json`:
 
 ```javascript
 window.WIKI_SIDEBAR = [
@@ -165,19 +193,22 @@ window.WIKI_SIDEBAR = [
 
 ## Search Index
 
-Register pages for search in `index.html`:
+Pages are registered for search via `data/pages.json`. Add one object per page:
 
-```javascript
-window.WIKI_SEARCH_PAGES = [
-  {
-    title: 'My Article',
-    url:   'pages/my-article.html',
-    desc:  'Brief description shown in results.',
-    tags:  ['keyword', 'another-keyword']
-  },
-  // ... more pages
-];
+```json
+{
+  "title": "My Article",
+  "url":   "pages/my-article.html",
+  "desc":  "Brief description shown in results.",
+  "tags":  ["keyword", "another-keyword"]
+}
 ```
+
+All URLs are **root-relative**. The search index is loaded automatically on every page —
+no need to touch `index.html` when adding new content.
+
+> **Legacy**: `window.WIKI_SEARCH_PAGES` (defined in a page's `<script>` block) is still
+> supported as a fallback when `data/pages.json` cannot be fetched.
 
 ---
 

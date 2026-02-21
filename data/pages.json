@@ -1,0 +1,31 @@
+[
+  { "title": "Home",                           "url": "index.html",                                       "desc": "Mini Wiki homepage.",                                       "tags": ["home", "start"] },
+  { "title": "All Categories",                 "url": "pages/categories.html",                            "desc": "Browse all wiki categories.",                               "tags": ["categories", "browse"] },
+  { "title": "Recent Changes",                 "url": "pages/recent.html",                                "desc": "Recently updated articles.",                                "tags": ["recent", "changes"] },
+  { "title": "About",                          "url": "pages/about.html",                                 "desc": "About Mini Wiki.",                                          "tags": ["about"] },
+
+  { "title": "Trigonometry",                   "url": "pages/math/trigonometry.html",                     "desc": "Unit circle, trig functions, identities.",                  "tags": ["math", "trig", "sine", "cosine"] },
+  { "title": "Calculus",                       "url": "pages/math/calculus.html",                         "desc": "Limits, derivatives, integrals, series.",                   "tags": ["math", "calculus", "derivative", "integral"] },
+  { "title": "Algebra",                        "url": "pages/math/algebra.html",                          "desc": "Equations, polynomials, functions, structure.",              "tags": ["math", "algebra", "equations"] },
+  { "title": "Mathematics — All Articles",     "url": "pages/math/index.html",                            "desc": "All mathematics articles.",                                 "tags": ["math", "category"] },
+
+  { "title": "Athenian Democracy",             "url": "pages/history/classical/athens-democracy.html",   "desc": "Ancient Athenian democracy, Pericles, Socrates.",           "tags": ["greece", "athens", "democracy", "classical"] },
+  { "title": "The Roman Republic",             "url": "pages/history/classical/roman-republic.html",     "desc": "Roman republican government and virtue.",                   "tags": ["rome", "republic", "senate", "classical"] },
+  { "title": "Classical History — All Articles", "url": "pages/history/classical/index.html",            "desc": "All classical history articles.",                           "tags": ["greece", "rome", "classical", "category"] },
+
+  { "title": "The American Founding",          "url": "pages/history/american/american-founding.html",   "desc": "Constitution, Declaration, founders.",                      "tags": ["america", "founding", "constitution", "liberty"] },
+  { "title": "The Civil War",                  "url": "pages/history/american/civil-war.html",           "desc": "American Civil War, Lincoln, emancipation.",                "tags": ["america", "civil war", "lincoln"] },
+  { "title": "American History — All Articles", "url": "pages/history/american/index.html",              "desc": "All American history articles.",                            "tags": ["american history", "category"] },
+
+  { "title": "Logic",                          "url": "pages/philosophy/logic.html",                     "desc": "Valid inference, syllogism, propositional and predicate logic.", "tags": ["philosophy", "logic", "aristotle", "reason"] },
+  { "title": "Virtue Ethics",                  "url": "pages/philosophy/virtue-ethics.html",             "desc": "Aristotle, virtues, eudaimonia.",                            "tags": ["philosophy", "aristotle", "virtue", "ethics"] },
+  { "title": "Natural Law",                    "url": "pages/philosophy/natural-law.html",               "desc": "Natural law tradition, Aquinas, rights.",                   "tags": ["philosophy", "natural law", "aquinas"] },
+  { "title": "Christian Humanism",             "url": "pages/philosophy/christian-humanism.html",        "desc": "Renaissance faith and classical learning.",                 "tags": ["philosophy", "renaissance", "humanism"] },
+  { "title": "Philosophy — All Articles",      "url": "pages/philosophy/index.html",                     "desc": "All philosophy articles.",                                  "tags": ["philosophy", "category"] },
+
+  { "title": "Plan of Salvation",              "url": "pages/theology/plan-of-salvation.html",           "desc": "LDS doctrine of pre-mortal life and eternity.",             "tags": ["theology", "lds", "salvation"] },
+  { "title": "The Restoration",                "url": "pages/theology/the-restoration.html",             "desc": "Restoration of the gospel and priesthood.",                 "tags": ["theology", "lds", "restoration", "joseph smith"] },
+  { "title": "Theology — All Articles",        "url": "pages/theology/index.html",                       "desc": "All theology articles.",                                    "tags": ["theology", "category"] },
+
+  { "title": "Component Reference",            "url": "pages/components.html",                           "desc": "All wiki components demonstrated.",                         "tags": ["reference", "components"] }
+]
