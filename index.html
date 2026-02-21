@@ -3,215 +3,222 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MyWiki — A personal knowledge base</title>
-  <meta name="description" content="A personal wiki built with HTML, CSS, and JavaScript. Supports LaTeX, Desmos, and modular components.">
-
-  <!-- KaTeX for LaTeX rendering -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-
-  <!-- Desmos API -->
-  <script src="https://www.desmos.com/api/v1.8/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
-
-  <!-- Wiki styles -->
+  <title>Mini Wiki — A Personal Encyclopedia</title>
+  <meta name="description" content="A personal wiki devoted to mathematics, classical history, philosophy, theology, and the Western tradition.">
   <link rel="stylesheet" href="assets/css/wiki.css">
 </head>
 <body>
 
-<!-- wiki.js auto-injects header, sidebar, footer -->
-<!-- Just define content here -->
-
 <main id="wiki-content">
 
-  <!-- Page heading -->
-  <h1>Welcome to MyWiki</h1>
+  <h1>Welcome to Mini Wiki</h1>
 
-  <p class="wiki-hatnote">This is a self-hosted wiki built with plain HTML, CSS, and JavaScript. It renders LaTeX mathematics, supports interactive Desmos graphs, and includes a wide variety of modular components.</p>
-
-  <!-- Infobox example on the main page -->
   <div class="wiki-infobox">
-    <div class="wiki-infobox-title">Quick Facts</div>
+    <div class="wiki-infobox-title">Mini Wiki</div>
     <table>
-      <tr><td>Engine</td><td>Static HTML + JS</td></tr>
+      <tr><td>Type</td><td>Personal encyclopedia</td></tr>
+      <tr><td>Engine</td><td>Static HTML, CSS, JavaScript</td></tr>
       <tr><td>Hosting</td><td>GitHub Pages</td></tr>
-      <tr><td>Math</td><td>KaTeX (LaTeX)</td></tr>
-      <tr><td>Graphs</td><td>Desmos API</td></tr>
-      <tr><td>License</td><td>MIT</td></tr>
+      <tr><td>Mathematics</td><td>KaTeX (LaTeX rendering)</td></tr>
+      <tr><td>Graphing</td><td>Desmos API</td></tr>
+      <tr><td>Focus</td><td>Western civilization, liberal arts, Christian ethics, mathematics</td></tr>
     </table>
   </div>
 
-  <p>MyWiki is a fully static, single-origin wiki. Every article is a plain <code>.html</code> file. The shared <code>wiki.js</code> and <code>wiki.css</code> provide all the layout, components, and interactivity — no server or database required.</p>
+  <p>Mini Wiki is a personal encyclopedia devoted to the serious study of mathematics, classical history, philosophy, theology, and the broader inheritance of Western civilization. It is not intended to be a neutral compendium of all perspectives equally — it is written from within a tradition: one that regards reason and revelation as complementary, that honors the classical and Christian roots of Western thought, that takes seriously the American experiment in ordered liberty, and that draws on the restored gospel of Jesus Christ as taught by The Church of Jesus Christ of Latter-day Saints.</p>
 
-  <p>Browse the example pages below to see what's possible, or check the <strong>Getting Started</strong> guide to add your own articles.</p>
+  <p>Articles are written for the curious reader who wants more than a summary — who wants to understand, to trace ideas to their sources, and to see how the great disciplines of human learning illuminate one another.</p>
 
-  <h2>Feature Highlights</h2>
+  <div class="clearfix"></div>
+
+  <h2>Mathematics</h2>
+
+  <p>The mathematical articles on this site emphasize understanding over mere computation. Where possible, ideas are illustrated with interactive Desmos graphs and rendered with full LaTeX notation. The goal is to present mathematics as the ancient Greeks understood it: a discipline of pure reason, beautiful in itself, and indispensable to the natural philosopher.</p>
 
   <div class="wiki-card-grid cols-3">
     <div class="wiki-card">
       <div class="wiki-card-body">
-        <div class="wiki-card-title">📐 LaTeX Mathematics</div>
-        <div class="wiki-card-desc">Inline $e^{i\pi}+1=0$ and display-mode equations rendered with KaTeX. No server-side processing required.</div>
+        <div class="wiki-card-title"><a href="pages/math/trigonometry.html">Trigonometry</a></div>
+        <div class="wiki-card-desc">The geometry of angles and circles — from right-triangle ratios to the unit circle, identities, and the Fourier basis of all periodic phenomena.</div>
       </div>
     </div>
     <div class="wiki-card">
       <div class="wiki-card-body">
-        <div class="wiki-card-title">📈 Desmos Graphs</div>
-        <div class="wiki-card-desc">Embed live, interactive Desmos calculators directly in any article with a single HTML element.</div>
+        <div class="wiki-card-title"><a href="pages/math/calculus.html">Calculus</a></div>
+        <div class="wiki-card-desc">The mathematics of change and accumulation — limits, derivatives, integration, the Fundamental Theorem, and series.</div>
       </div>
     </div>
     <div class="wiki-card">
       <div class="wiki-card-body">
-        <div class="wiki-card-title">🧩 Modular Components</div>
-        <div class="wiki-card-desc">Infoboxes, callouts, tabs, collapsibles, timelines, galleries, comparison tables, and more — all in one CSS file.</div>
-      </div>
-    </div>
-    <div class="wiki-card">
-      <div class="wiki-card-body">
-        <div class="wiki-card-title">🔍 Client-Side Search</div>
-        <div class="wiki-card-desc">A fast, fully browser-based search system. Register pages in the search index with a small script block.</div>
-      </div>
-    </div>
-    <div class="wiki-card">
-      <div class="wiki-card-body">
-        <div class="wiki-card-title">📱 Responsive Layout</div>
-        <div class="wiki-card-desc">Three-column layout (sidebar + content + TOC) that gracefully collapses on tablets and phones.</div>
-      </div>
-    </div>
-    <div class="wiki-card">
-      <div class="wiki-card-body">
-        <div class="wiki-card-title">🖨️ Print Friendly</div>
-        <div class="wiki-card-desc">A dedicated print stylesheet hides navigation and formats content cleanly for printing or PDF export.</div>
+        <div class="wiki-card-title"><a href="pages/math/algebra.html">Algebra</a></div>
+        <div class="wiki-card-desc">The language of structure and relationship — equations, polynomials, functions, and the abstract systems that unify them.</div>
       </div>
     </div>
   </div>
 
-  <h2>Example Pages</h2>
+  <h2>Classical History</h2>
 
-  <div class="wiki-table-wrap">
-    <table class="wiki-table">
-      <thead>
-        <tr>
-          <th>Page</th>
-          <th>Demonstrates</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><a href="pages/math-demo.html">Mathematics Demo</a></td>
-          <td>LaTeX equations (inline &amp; display), KaTeX usage</td>
-        </tr>
-        <tr>
-          <td><a href="pages/desmos-demo.html">Desmos Demo</a></td>
-          <td>Interactive graphing calculator embeds</td>
-        </tr>
-        <tr>
-          <td><a href="pages/components.html">Component Reference</a></td>
-          <td>All available wiki components in one page</td>
-        </tr>
-        <tr>
-          <td><a href="pages/article-template.html">Article Template</a></td>
-          <td>A blank article with infobox and TOC — ready to copy</td>
-        </tr>
-        <tr>
-          <td><a href="pages/science-example.html">Science Article</a></td>
-          <td>A realistic science article using most components</td>
-        </tr>
-        <tr>
-          <td><a href="pages/history-example.html">History Article</a></td>
-          <td>Timeline, citations, comparison table</td>
-        </tr>
-      </tbody>
-    </table>
+  <p>Western civilization traces its political and philosophical inheritance directly to Greece and Rome. Athens bequeathed democracy, philosophy, and drama; Rome gave us law, the republic, and an imperial peace that transmitted Greek learning to the Christian world. These articles treat that legacy as a living possession, not a museum exhibit.</p>
+
+  <div class="wiki-card-grid cols-2">
+    <div class="wiki-card">
+      <div class="wiki-card-body">
+        <div class="wiki-card-title"><a href="pages/history/classical/athens-democracy.html">Athenian Democracy</a></div>
+        <div class="wiki-card-desc">The world's first experiment in self-government — its institutions, its philosophers, its contradictions, and its enduring influence on modern politics.</div>
+      </div>
+    </div>
+    <div class="wiki-card">
+      <div class="wiki-card-body">
+        <div class="wiki-card-title"><a href="pages/history/classical/roman-republic.html">The Roman Republic</a></div>
+        <div class="wiki-card-desc">Five centuries of republican government, senatorial virtue, and constitutional innovation that directly shaped the American founders.</div>
+      </div>
+    </div>
   </div>
 
-  <h2>Getting Started</h2>
+  <h2>American History</h2>
 
-  <p>To add a new article, copy <code>pages/article-template.html</code>, fill in your content, and link to it from the sidebar. Register it in the search index by adding an entry to <code>window.WIKI_SEARCH_PAGES</code> in <code>assets/js/wiki.js</code>.</p>
+  <p>The United States represents the most sustained attempt in human history to build a government on the principles of natural law, consent of the governed, and individual liberty secured by constitutional order. These articles treat the American founding not as mythology but as a serious political achievement — one worth understanding, defending, and transmitting.</p>
 
-  <div class="wiki-callout info">
-    <div class="wiki-callout-title">ℹ️ Hosting on GitHub Pages</div>
-    <p>Push the entire <code>wiki/</code> folder to a GitHub repository and enable GitHub Pages in the repo settings. Your wiki will be live at <code>https://yourusername.github.io/repo-name/</code>.</p>
+  <div class="wiki-card-grid cols-2">
+    <div class="wiki-card">
+      <div class="wiki-card-body">
+        <div class="wiki-card-title"><a href="pages/history/american/american-founding.html">The American Founding</a></div>
+        <div class="wiki-card-desc">The intellectual origins, revolutionary struggle, and constitutional architecture of the United States of America.</div>
+      </div>
+    </div>
+    <div class="wiki-card">
+      <div class="wiki-card-body">
+        <div class="wiki-card-title"><a href="pages/history/american/civil-war.html">The Civil War</a></div>
+        <div class="wiki-card-desc">The great crisis of the republic — its causes, its conduct, and its resolution in an expanded understanding of American liberty.</div>
+      </div>
+    </div>
   </div>
 
-  <h3>Directory Structure</h3>
-  <pre><code>wiki/
-├── index.html              ← Homepage
-├── assets/
-│   ├── css/
-│   │   └── wiki.css        ← All styles
-│   ├── js/
-│   │   └── wiki.js         ← All JavaScript
-│   └── media/              ← Images, videos, files
-├── pages/                  ← All article pages
-│   ├── article-template.html
-│   ├── math-demo.html
-│   ├── desmos-demo.html
-│   ├── components.html
-│   ├── science-example.html
-│   └── history-example.html
-└── templates/              ← Reusable HTML snippets</code></pre>
+  <h2>Philosophy</h2>
 
-  <!-- Tags -->
+  <p>Philosophy, properly understood, is not merely academic — it is the love of wisdom, the disciplined use of reason in pursuit of truth. These articles draw primarily on the classical and Christian philosophical tradition: Aristotle, Aquinas, the natural law theorists, and their modern inheritors.</p>
+
+  <div class="wiki-card-grid cols-3">
+    <div class="wiki-card">
+      <div class="wiki-card-body">
+        <div class="wiki-card-title"><a href="pages/philosophy/virtue-ethics.html">Virtue Ethics</a></div>
+        <div class="wiki-card-desc">Aristotle's account of the good life — the virtues, practical wisdom, the mean, and the role of habit in forming character.</div>
+      </div>
+    </div>
+    <div class="wiki-card">
+      <div class="wiki-card-body">
+        <div class="wiki-card-title"><a href="pages/philosophy/natural-law.html">Natural Law</a></div>
+        <div class="wiki-card-desc">The tradition holding that moral and political norms are grounded in the rational nature of the human person and knowable by reason.</div>
+      </div>
+    </div>
+    <div class="wiki-card">
+      <div class="wiki-card-body">
+        <div class="wiki-card-title"><a href="pages/philosophy/christian-humanism.html">Christian Humanism</a></div>
+        <div class="wiki-card-desc">The synthesis of classical learning and Christian faith that drove the Renaissance and shaped Western education for five centuries.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Theology</h2>
+
+  <p>These articles approach doctrine seriously and from within belief. They draw primarily on the theology of The Church of Jesus Christ of Latter-day Saints — presenting restored-gospel doctrine as a coherent and intellectually serious account of the nature of God, man, and eternity.</p>
+
+  <div class="wiki-card-grid cols-2">
+    <div class="wiki-card">
+      <div class="wiki-card-body">
+        <div class="wiki-card-title"><a href="pages/theology/plan-of-salvation.html">The Plan of Salvation</a></div>
+        <div class="wiki-card-desc">The Latter-day Saint account of the pre-mortal life, the purpose of mortality, the Atonement, and the eternal destiny of the human soul.</div>
+      </div>
+    </div>
+    <div class="wiki-card">
+      <div class="wiki-card-body">
+        <div class="wiki-card-title"><a href="pages/theology/the-restoration.html">The Restoration</a></div>
+        <div class="wiki-card-desc">The historical and doctrinal account of the restoration of the gospel, the priesthood, and the Church in the nineteenth century.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wiki-callout note">
+    <div class="wiki-callout-title">A Note on Perspective</div>
+    <p>This wiki does not pretend to the false neutrality claimed by institutional encyclopedias. Articles are written from within a tradition that honors the Western inheritance, takes classical and Christian philosophy seriously as intellectual achievements, regards the American constitutional order as a genuine political good, and presents Latter-day Saint doctrine from a position of faith. Readers who disagree with any of these commitments are welcome — honest engagement with a clearly stated position is more useful than studied vagueness.</p>
+  </div>
+
   <div class="wiki-tags">
     <span class="wiki-tags-label">Categories:</span>
-    <a class="wiki-tag" href="pages/categories.html">Documentation</a>
-    <a class="wiki-tag" href="pages/categories.html">Meta</a>
-    <a class="wiki-tag" href="pages/categories.html">Getting Started</a>
-  </div>
-
-  <!-- Page meta -->
-  <div class="wiki-page-meta">
-    <span>Last edited: <time datetime="2024-01-01">January 1, 2024</time></span>
-    <span>Category: Meta</span>
+    <a class="wiki-tag" href="pages/categories.html">Mathematics</a>
+    <a class="wiki-tag" href="pages/categories.html">Philosophy</a>
+    <a class="wiki-tag" href="pages/categories.html">Theology</a>
+    <a class="wiki-tag" href="pages/categories.html">History</a>
+    <a class="wiki-tag" href="pages/categories.html">Western Civilization</a>
   </div>
 
 </main>
 
-<!-- Sidebar definition -->
 <script>
-window.WIKI_PAGE = {
-  title: 'Welcome',
-  category: 'Meta',
-};
+window.WIKI_PAGE = { title: 'Welcome', category: 'Meta' };
 
 window.WIKI_SIDEBAR = [
   {
     label: 'Navigation',
     links: [
-      { text: '🏠 Home',              href: '../index.html' },
-      { text: '📚 All Articles',      href: 'pages/categories.html' },
-      { text: '🕐 Recent Changes',    href: 'pages/recent.html' },
-      { text: 'ℹ️ About',             href: 'pages/about.html' },
+      { text: 'Home',              href: 'index.html' },
+      { text: 'All Categories',    href: 'pages/categories.html' },
+      { text: 'Recent Changes',    href: 'pages/recent.html' },
+      { text: 'About',             href: 'pages/about.html' },
     ]
   },
   {
-    label: 'Examples',
+    label: 'Mathematics',
     links: [
-      { text: 'Math Demo',            href: 'pages/math-demo.html' },
-      { text: 'Desmos Demo',          href: 'pages/desmos-demo.html' },
-      { text: 'Component Reference',  href: 'pages/components.html' },
-      { text: 'Science Article',      href: 'pages/science-example.html' },
-      { text: 'History Article',      href: 'pages/history-example.html' },
+      { text: 'Mathematics Articles', href: 'pages/math/index.html' },
     ]
   },
   {
-    label: 'Templates',
+    label: 'Classical History',
     links: [
-      { text: 'Article Template',     href: 'pages/article-template.html' },
+      { text: 'Classical History Articles', href: 'pages/history/classical/index.html' },
     ]
-  }
+  },
+  {
+    label: 'American History',
+    links: [
+      { text: 'American History Articles', href: 'pages/history/american/index.html' },
+    ]
+  },
+  {
+    label: 'Philosophy',
+    links: [
+      { text: 'Philosophy Articles', href: 'pages/philosophy/index.html' },
+    ]
+  },
+  {
+    label: 'Theology',
+    links: [
+      { text: 'Theology Articles', href: 'pages/theology/index.html' },
+    ]
+  },
 ];
 
-// Search index — add all pages here
 window.WIKI_SEARCH_PAGES = [
-  { title: 'Welcome',            url: 'index.html',                    desc: 'MyWiki homepage and getting started guide.', tags: ['home','start','intro'] },
-  { title: 'Math Demo',          url: 'pages/math-demo.html',          desc: 'LaTeX math rendering examples with KaTeX.',   tags: ['math','latex','katex','equations'] },
-  { title: 'Desmos Demo',        url: 'pages/desmos-demo.html',        desc: 'Interactive Desmos graph embeds.',            tags: ['desmos','graph','calculator','math'] },
-  { title: 'Component Reference',url: 'pages/components.html',         desc: 'All wiki components demonstrated.',           tags: ['components','reference','infobox','tabs'] },
-  { title: 'Article Template',   url: 'pages/article-template.html',   desc: 'Blank article template for new pages.',       tags: ['template','new page','blank'] },
-  { title: 'Science Article',    url: 'pages/science-example.html',    desc: 'Example science article with equations.',     tags: ['science','example','physics'] },
-  { title: 'History Article',    url: 'pages/history-example.html',    desc: 'Example history article with timeline.',      tags: ['history','example','timeline'] },
+  { title: 'Home',                  url: 'index.html',                                        desc: 'Mini Wiki homepage.', tags: ['home','start'] },
+  { title: 'Trigonometry',          url: 'pages/math/trigonometry.html',                      desc: 'Unit circle, trig functions, identities.', tags: ['math','trig','sine','cosine'] },
+  { title: 'Calculus',              url: 'pages/math/calculus.html',                          desc: 'Limits, derivatives, integrals, series.', tags: ['math','calculus','derivative','integral'] },
+  { title: 'Algebra',               url: 'pages/math/algebra.html',                           desc: 'Equations, polynomials, functions, structure.', tags: ['math','algebra','equations'] },
+  { title: 'Athenian Democracy',    url: 'pages/history/classical/athens-democracy.html',     desc: 'Ancient Athenian democracy, Pericles, Socrates.', tags: ['greece','athens','democracy','classical'] },
+  { title: 'The Roman Republic',    url: 'pages/history/classical/roman-republic.html',       desc: 'Roman republican government and virtue.', tags: ['rome','republic','senate','classical'] },
+  { title: 'The American Founding', url: 'pages/history/american/american-founding.html',     desc: 'Constitution, Declaration, founders.', tags: ['america','founding','constitution','liberty'] },
+  { title: 'The Civil War',         url: 'pages/history/american/civil-war.html',             desc: 'American Civil War, Lincoln, emancipation.', tags: ['america','civil war','lincoln'] },
+  { title: 'Virtue Ethics',         url: 'pages/philosophy/virtue-ethics.html',               desc: 'Aristotle, virtues, eudaimonia.', tags: ['philosophy','aristotle','virtue','ethics'] },
+  { title: 'Natural Law',           url: 'pages/philosophy/natural-law.html',                 desc: 'Natural law tradition, Aquinas, rights.', tags: ['philosophy','natural law','aquinas'] },
+  { title: 'Christian Humanism',    url: 'pages/philosophy/christian-humanism.html',          desc: 'Renaissance faith and classical learning.', tags: ['philosophy','renaissance','humanism'] },
+  { title: 'Plan of Salvation',     url: 'pages/theology/plan-of-salvation.html',             desc: 'LDS doctrine of pre-mortal life and eternity.', tags: ['theology','lds','salvation'] },
+  { title: 'The Restoration',       url: 'pages/theology/the-restoration.html',               desc: 'Restoration of the gospel and priesthood.', tags: ['theology','lds','restoration','joseph smith'] },
+  { title: 'Mathematics — All Articles',    url: 'pages/math/index.html',                desc: 'All mathematics articles.', tags: ['math','category'] },
+  { title: 'Philosophy — All Articles',    url: 'pages/philosophy/index.html',          desc: 'All philosophy articles.', tags: ['philosophy','category'] },
+  { title: 'Theology — All Articles',      url: 'pages/theology/index.html',            desc: 'All theology articles.', tags: ['theology','category'] },
+  { title: 'American History — All Articles', url: 'pages/history/american/index.html', desc: 'All American history articles.', tags: ['american history','category'] },
+  { title: 'Classical History — All Articles', url: 'pages/history/classical/index.html', desc: 'All classical history articles.', tags: ['greece','rome','classical','category'] },
+  { title: 'Component Reference',   url: 'pages/components.html',                             desc: 'All wiki components demonstrated.', tags: ['reference','components'] },
 ];
 </script>
 

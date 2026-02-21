@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getting Started — Dev — Mini Wiki</title>
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+</head>
+<body>
+
+<div class="dev-banner">
+  <strong>Dev Mode</strong>
+  <span class="dev-banner-sep">|</span>
+  <a href="index.html">Dev Index</a>
+  <span class="dev-banner-sep">|</span>
+  <a href="../index.html">Return to Site</a>
+</div>
+
+<main id="wiki-content">
+  <div class="wiki-breadcrumb">
+    <a href="index.html">Dev</a><span class="sep">›</span><span>Getting Started</span>
+  </div>
+  <h1>Getting Started</h1>
+
+  <div class="wiki-toc floating"></div>
+
+  <p>This guide covers the full setup, local development workflow, and GitHub Pages deployment for Mini Wiki.</p>
+
+  <h2>Prerequisites</h2>
+  <p>Mini Wiki has no build dependencies. You need only a text editor and a browser. For local development with full functionality (search, Desmos), a local HTTP server is recommended:</p>
+  <pre><code># Python 3 (built-in)
+python -m http.server 8080
+
+# Node.js (via npx, no install required)
+npx serve .</code></pre>
+  <p>Then open <code>http://localhost:8080</code> in your browser.</p>
+
+  <h2>Directory Structure</h2>
+  <pre><code>wiki/
+├── index.html                   ← Homepage and search index
+├── README.md
+├── assets/
+│   ├── css/
+│   │   └── wiki.css             ← All styles (single file)
+│   ├── js/
+│   │   └── wiki.js              ← All JavaScript (single file)
+│   └── media/                   ← Images, PDFs, videos
+├── dev/                         ← Developer documentation (this folder)
+│   ├── index.html
+│   ├── getting-started.html
+│   └── ...
+├── pages/                       ← All public article pages
+│   ├── article-template.html    ← Copy this for new articles
+│   ├── math/                    ← Mathematics articles
+│   ├── philosophy/              ← Philosophy &amp; theology articles
+│   ├── history/
+│   │   ├── american/
+│   │   └── classical/
+│   └── theology/
+└── templates/
+    └── components-snippets.html ← Copy-paste HTML snippets</code></pre>
+
+  <h2>Adding a New Article</h2>
+  <p>Follow these steps for every new page:</p>
+
+  <div class="wiki-collapsible open">
+    <div class="wiki-collapsible-header">Step 1 — Copy the template</div>
+    <div class="wiki-collapsible-body">
+      <p>Copy <code>pages/article-template.html</code> to the appropriate subfolder:</p>
+      <pre><code>cp pages/article-template.html pages/math/my-topic.html</code></pre>
+    </div>
+  </div>
+
+  <div class="wiki-collapsible open">
+    <div class="wiki-collapsible-header">Step 2 — Fill in the content</div>
+    <div class="wiki-collapsible-body">
+      <p>Edit the new file. Update:</p>
+      <ul>
+        <li>The <code>&lt;title&gt;</code> tag</li>
+        <li>The <code>&lt;h1&gt;</code> heading</li>
+        <li>The breadcrumb trail</li>
+        <li>The <code>window.WIKI_ROOT = '../';
+window.WIKI_PAGE</code> object (title, category, tags)</li>
+        <li>The <code>window.WIKI_SIDEBAR</code> object</li>
+        <li>All article content</li>
+      </ul>
+      <p>Adjust the relative paths for CSS and JS: <code>../../assets/css/wiki.css</code> for pages in subdirectories.</p>
+    </div>
+  </div>
+
+  <div class="wiki-collapsible open">
+    <div class="wiki-collapsible-header">Step 3 — Register in the search index</div>
+    <div class="wiki-collapsible-body">
+      <p>Open <code>index.html</code> and add an entry to <code>window.WIKI_SEARCH_PAGES</code>:</p>
+      <pre><code>{ title: 'My Topic',
+  url:   'pages/math/my-topic.html',
+  desc:  'A short description for the search results.',
+  tags:  ['math', 'keyword'] },</code></pre>
+    </div>
+  </div>
+
+  <div class="wiki-collapsible open">
+    <div class="wiki-collapsible-header">Step 4 — Link it from the sidebar</div>
+    <div class="wiki-collapsible-body">
+      <p>Add the page to <code>window.WIKI_SIDEBAR</code> in related articles so users can discover it through navigation.</p>
+    </div>
+  </div>
+
+  <h2>Deploying to GitHub Pages</h2>
+  <ol>
+    <li>Create a public GitHub repository.</li>
+    <li>Push the contents of the <code>wiki/</code> folder to the repository root (or a subdirectory).</li>
+    <li>Go to <strong>Settings &rarr; Pages</strong>.</li>
+    <li>Set <strong>Source</strong> to <em>Deploy from a branch</em>, select <strong>main</strong> and <strong>/ (root)</strong>.</li>
+    <li>Click Save. The site will be live at <code>https://yourusername.github.io/repository-name/</code> within a few minutes.</li>
+  </ol>
+
+  <div class="wiki-callout note">
+    <div class="wiki-callout-title">Subdirectory Deploy</div>
+    <p>If deploying to a subdirectory (e.g. <code>/wiki/</code>), update <code>WIKI_CONFIG.rootUrl</code> in <code>wiki.js</code> from <code>'./'</code> to <code>'/wiki/'</code> so all header navigation links resolve correctly.</p>
+  </div>
+
+  <h2>Relative Path Rules</h2>
+  <div class="wiki-table-wrap">
+    <table class="wiki-table">
+      <thead><tr><th>Page Location</th><th>CSS/JS Path</th><th>Media Path</th></tr></thead>
+      <tbody>
+        <tr><td><code>index.html</code></td><td><code>assets/css/wiki.css</code></td><td><code>assets/media/img.jpg</code></td></tr>
+        <tr><td><code>pages/topic.html</code></td><td><code>../assets/css/wiki.css</code></td><td><code>../assets/media/img.jpg</code></td></tr>
+        <tr><td><code>pages/math/topic.html</code></td><td><code>../../assets/css/wiki.css</code></td><td><code>../../assets/media/img.jpg</code></td></tr>
+        <tr><td><code>dev/page.html</code></td><td><code>../assets/css/wiki.css</code></td><td><code>../assets/media/img.jpg</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<script>
+window.WIKI_PAGE = { title: 'Getting Started', category: 'Dev' };
+window.WIKI_SIDEBAR = [
+  { label: 'Dev Reference', links: [
+    { text: 'Dev Index',        href: 'index.html' },
+    { text: 'Getting Started',  href: 'getting-started.html' },
+    { text: 'Authoring',        href: 'authoring.html' },
+    { text: 'wiki.js API',      href: 'wiki-js-api.html' },
+    { text: 'CSS Variables',    href: 'css-variables.html' },
+  ]},
+  { label: 'Components', links: [
+    { text: 'Infobox',          href: 'comp-infobox.html' },
+    { text: 'Callouts',         href: 'comp-callouts.html' },
+    { text: 'Tables',           href: 'comp-tables.html' },
+    { text: 'Tabs',             href: 'comp-tabs.html' },
+    { text: 'Collapsible',      href: 'comp-collapsible.html' },
+    { text: 'Timeline',         href: 'comp-timeline.html' },
+    { text: 'Gallery',          href: 'comp-gallery.html' },
+    { text: 'Mathematics',      href: 'comp-math.html' },
+    { text: 'Desmos',           href: 'comp-desmos.html' },
+    { text: 'Miscellaneous',    href: 'comp-misc.html' },
+  ]},
+];
+</script>
+<script src="../assets/js/wiki.js"></script>
+</body>
+</html>

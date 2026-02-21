@@ -3,47 +3,132 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All Categories — MyWiki</title>
+  <title>All Categories — Mini Wiki</title>
+  <meta name="description" content="Browse all articles by category.">
   <link rel="stylesheet" href="../assets/css/wiki.css">
 </head>
 <body>
 <main id="wiki-content">
+
   <div class="wiki-breadcrumb">
     <a href="../index.html">Home</a><span class="sep">›</span><span>All Categories</span>
   </div>
+
   <h1>All Categories</h1>
-  <p>Browse articles by category. Add your own categories and pages by editing this file and the sidebar definitions in each page.</p>
 
-  <h2>Reference</h2>
-  <ul>
-    <li><a href="components.html">Component Reference</a> — All wiki components demonstrated</li>
-    <li><a href="math-demo.html">Mathematics Demo</a> — LaTeX and KaTeX examples</li>
-    <li><a href="desmos-demo.html">Desmos Demo</a> — Interactive graph embeds</li>
-    <li><a href="article-template.html">Article Template</a> — Blank article for new pages</li>
-  </ul>
+  <p>All articles organized by subject. This wiki is devoted to mathematics, the Western classical tradition, American history, philosophy, and Latter-day Saint theology. Articles are written from within these traditions, not as a neutral observer of them.</p>
 
-  <h2>Physics</h2>
-  <ul>
-    <li><a href="science-example.html">Quantum Mechanics</a> — Principles, equations, history</li>
-  </ul>
+  <h2>Mathematics</h2>
 
-  <h2>History</h2>
-  <ul>
-    <li><a href="history-example.html">The Renaissance</a> — European cultural and scientific rebirth</li>
-  </ul>
+  <p>Mathematical articles emphasize conceptual understanding, use LaTeX for notation, and include interactive Desmos graphs wherever they clarify geometric or analytical ideas.</p>
 
-  <div class="wiki-callout info">
-    <div class="wiki-callout-title">ℹ️ Adding Categories</div>
-    <p>Add a new category by creating a section here and linking your new <code>pages/*.html</code> files. Add the same page to <code>window.WIKI_SEARCH_PAGES</code> in <code>index.html</code> to make it searchable.</p>
+  <div class="wiki-table-wrap">
+    <table class="wiki-table">
+      <thead><tr><th>Article</th><th>Topics covered</th></tr></thead>
+      <tbody>
+        <tr><td><a href="math/trigonometry.html">Trigonometry</a></td><td>Right triangles, the unit circle, sine and cosine, identities, the general sinusoid, applications</td></tr>
+        <tr><td><a href="math/calculus.html">Calculus</a></td><td>Limits, derivatives, differentiation rules, integrals, the Fundamental Theorem, series</td></tr>
+        <tr><td><a href="math/algebra.html">Algebra</a></td><td>Equations, polynomials, factoring, the quadratic formula, functions, logarithms</td></tr>
+      </tbody>
+    </table>
   </div>
+
+  <h2>Classical History — Greece and Rome</h2>
+
+  <p>The political, philosophical, and cultural inheritance of the ancient world that gave Western civilization its formative character.</p>
+
+  <div class="wiki-table-wrap">
+    <table class="wiki-table">
+      <thead><tr><th>Article</th><th>Topics covered</th></tr></thead>
+      <tbody>
+        <tr><td><a href="history/classical/athens-democracy.html">Athenian Democracy</a></td><td>Cleisthenes, Pericles, the assembly, jury courts, Socrates, legacy</td></tr>
+        <tr><td><a href="history/classical/roman-republic.html">The Roman Republic</a></td><td>Constitution, SPQR, the Senate, consulship, virtus, Cicero, fall</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>American History</h2>
+
+  <p>Articles treating the American experiment in ordered liberty as a genuine political achievement rooted in natural law, constitutional design, and providential history.</p>
+
+  <div class="wiki-table-wrap">
+    <table class="wiki-table">
+      <thead><tr><th>Article</th><th>Topics covered</th></tr></thead>
+      <tbody>
+        <tr><td><a href="history/american/american-founding.html">The American Founding</a></td><td>Declaration of Independence, Constitutional Convention, Federalist Papers, Washington, exceptionalism</td></tr>
+        <tr><td><a href="history/american/civil-war.html">The Civil War</a></td><td>Causes, Lincoln, emancipation, military campaigns, Reconstruction, legacy</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Philosophy</h2>
+
+  <p>Articles drawing primarily on the classical and Christian philosophical tradition, with attention to its relevance for contemporary life and politics.</p>
+
+  <div class="wiki-table-wrap">
+    <table class="wiki-table">
+      <thead><tr><th>Article</th><th>Topics covered</th></tr></thead>
+      <tbody>
+        <tr><td><a href="philosophy/virtue-ethics.html">Virtue Ethics</a></td><td>Eudaimonia, the four cardinal virtues, the doctrine of the mean, habit, MacIntyre</td></tr>
+        <tr><td><a href="philosophy/natural-law.html">Natural Law</a></td><td>Stoic origins, Aquinas, rights, the American founding, conscience</td></tr>
+        <tr><td><a href="philosophy/christian-humanism.html">Christian Humanism</a></td><td>The Renaissance synthesis, Erasmus, More, education, the liberal arts</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Theology — Latter-day Saint Doctrine</h2>
+
+  <p>Articles presenting restored-gospel doctrine from within belief, as a coherent and intellectually serious account of God, man, and eternity.</p>
+
+  <div class="wiki-table-wrap">
+    <table class="wiki-table">
+      <thead><tr><th>Article</th><th>Topics covered</th></tr></thead>
+      <tbody>
+        <tr><td><a href="theology/plan-of-salvation.html">The Plan of Salvation</a></td><td>Pre-mortal life, the Fall, the Atonement, the spirit world, degrees of glory</td></tr>
+        <tr><td><a href="theology/the-restoration.html">The Restoration</a></td><td>Apostasy, Joseph Smith, First Vision, priesthood keys, the Church, scripture</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Reference and Documentation</h2>
+
+  <div class="wiki-table-wrap">
+    <table class="wiki-table">
+      <thead><tr><th>Article</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td><a href="article-template.html">Article Template</a></td><td>A blank article with all standard sections and components — copy this for new pages</td></tr>
+        <tr><td><a href="components.html">Component Reference</a></td><td>Every wiki component rendered live: infoboxes, callouts, tables, tabs, timelines, galleries, and more</td></tr>
+        <tr><td><a href="../dev/index.html">Developer Reference</a></td><td>Engine documentation, CSS variables, wiki.js API, authoring guide</td></tr>
+      </tbody>
+    </table>
+  </div>
+
 </main>
 
 <script>
+window.WIKI_ROOT = '../';
 window.WIKI_PAGE = { title: 'All Categories', category: 'Meta' };
 window.WIKI_SIDEBAR = [
   { label: 'Navigation', links: [
-    { text: '🏠 Home',        href: '../index.html' },
-    { text: '📚 Categories',  href: 'categories.html' },
+    { text: 'Home',              href: '../index.html' },
+    { text: 'All Categories',   href: 'categories.html' },
+    { text: 'Recent Changes',   href: 'recent.html' },
+    { text: 'About',            href: 'about.html' },
+  ]},
+  { label: 'Mathematics', links: [
+    { text: 'Mathematics Articles', href: 'math/index.html' },
+  ]},
+  { label: 'Classical History', links: [
+    { text: 'Classical History Articles', href: 'history/classical/index.html' },
+  ]},
+  { label: 'American History', links: [
+    { text: 'American History Articles', href: 'history/american/index.html' },
+  ]},
+  { label: 'Philosophy', links: [
+    { text: 'Philosophy Articles', href: 'philosophy/index.html' },
+  ]},
+  { label: 'Theology', links: [
+    { text: 'Theology Articles', href: 'theology/index.html' },
   ]},
 ];
 </script>

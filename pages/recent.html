@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recent Changes — MyWiki</title>
+  <title>Recent Changes — Mini Wiki</title>
   <link rel="stylesheet" href="../assets/css/wiki.css">
 </head>
 <body>
@@ -48,8 +48,31 @@
   </div>
 </main>
 <script>
+window.WIKI_ROOT = '../';
 window.WIKI_PAGE = { title: 'Recent Changes', category: 'Meta' };
-window.WIKI_SIDEBAR = [{ label: 'Navigation', links: [{ text: '🏠 Home', href: '../index.html' }]}];
+window.WIKI_SIDEBAR = [
+  { label: 'Navigation', links: [
+    { text: 'Home',              href: '../index.html' },
+    { text: 'All Categories',   href: 'categories.html' },
+    { text: 'Recent Changes',   href: 'recent.html' },
+    { text: 'About',            href: 'about.html' },
+  ]},
+  { label: 'Mathematics', links: [
+    { text: 'Mathematics Articles', href: 'math/index.html' },
+  ]},
+  { label: 'Classical History', links: [
+    { text: 'Classical History Articles', href: 'history/classical/index.html' },
+  ]},
+  { label: 'American History', links: [
+    { text: 'American History Articles', href: 'history/american/index.html' },
+  ]},
+  { label: 'Philosophy', links: [
+    { text: 'Philosophy Articles', href: 'philosophy/index.html' },
+  ]},
+  { label: 'Theology', links: [
+    { text: 'Theology Articles', href: 'theology/index.html' },
+  ]},
+];
 </script>
 <script src="../assets/js/wiki.js"></script>
 </body>

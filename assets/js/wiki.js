@@ -11,9 +11,9 @@
    Edit this object to customize your wiki's global settings.
    ================================================================ */
 const WIKI_CONFIG = {
-  title:        'MyWiki',
+  title:        'Mini Wiki',
   tagline:      'A personal knowledge base',
-  rootUrl:      './',           // Relative root (change for subdirectory deploys)
+  rootUrl:      window.WIKI_ROOT || './',  // Override per-page: window.WIKI_ROOT = '../../'
   pagesDir:     'pages/',
   indexPage:    'index.html',
   defaultTheme: 'light',        // 'light' | 'dark' (dark theme: future extension)
@@ -131,14 +131,14 @@ const Wiki = {
   _headerHTML() {
     return `
       <div class="header-inner">
-        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation">&#9776;</button>
         <a class="site-title" href="${WIKI_CONFIG.rootUrl}${WIKI_CONFIG.indexPage}">
           ${escapeHtml(WIKI_CONFIG.title)}<span>.</span>
         </a>
         <div class="header-search">
           <div class="wiki-search-bar">
-            <input type="search" id="header-search-input" placeholder="Search articles…" autocomplete="off" aria-label="Search">
-            <button id="header-search-btn" aria-label="Submit search">⌕</button>
+            <input type="search" id="header-search-input" placeholder="Search articles&hellip;" autocomplete="off" aria-label="Search">
+            <button id="header-search-btn" aria-label="Submit search">&#9906;</button>
           </div>
         </div>
         <nav aria-label="Header navigation">
@@ -146,6 +146,7 @@ const Wiki = {
           <a href="${WIKI_CONFIG.rootUrl}pages/categories.html">Categories</a>
           <a href="${WIKI_CONFIG.rootUrl}pages/recent.html">Recent</a>
           <a href="${WIKI_CONFIG.rootUrl}pages/about.html">About</a>
+          <a href="${WIKI_CONFIG.rootUrl}dev/index.html" class="dev-mode-btn" title="Developer documentation and component reference">Dev</a>
         </nav>
       </div>`;
   },
@@ -318,7 +319,7 @@ const Wiki = {
       <div class="search-box" role="dialog" aria-label="Search">
         <div class="search-box-input">
           <input type="search" id="search-overlay-input" placeholder="Search articles…" autocomplete="off" autofocus>
-          <button class="search-box-close" id="search-close-btn" aria-label="Close search">✕</button>
+          <button class="search-box-close" id="search-close-btn" aria-label="Close search"></button>
         </div>
         <div class="search-results" id="search-results" role="listbox"></div>
       </div>`;
@@ -494,7 +495,7 @@ const Wiki = {
       a.setAttribute('target', '_blank');
       a.setAttribute('rel', 'noopener noreferrer');
       if (!a.querySelector('.ext-icon')) {
-        a.insertAdjacentHTML('beforeend', ' <sup style="font-size:0.65em;opacity:0.6">↗</sup>');
+        a.insertAdjacentHTML('beforeend', ' <sup style="font-size:0.65em;opacity:0.6"></sup>');
       }
     });
   },
@@ -533,8 +534,8 @@ function wikiDesmos(containerId, expressions = [], options = {}) {
     // Fallback: show a link to Desmos
     const latex = expressions.map(e => typeof e === 'string' ? e : e.latex).join(', ');
     container.innerHTML = `<div style="padding:1rem;color:var(--text-muted);font-size:0.9rem">
-      📈 <strong>Desmos graph:</strong> ${escapeHtml(latex)}<br>
-      <a href="https://www.desmos.com/calculator" target="_blank" rel="noopener">Open in Desmos ↗</a>
+       <strong>Desmos graph:</strong> ${escapeHtml(latex)}<br>
+      <a href="https://www.desmos.com/calculator" target="_blank" rel="noopener">Open in Desmos </a>
     </div>`;
   }
 }

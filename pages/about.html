@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — MyWiki</title>
+  <title>About — Mini Wiki</title>
   <link rel="stylesheet" href="../assets/css/wiki.css">
 </head>
 <body>
@@ -11,8 +11,8 @@
   <div class="wiki-breadcrumb">
     <a href="../index.html">Home</a><span class="sep">›</span><span>About</span>
   </div>
-  <h1>About MyWiki</h1>
-  <p>MyWiki is a personal static wiki hosted on GitHub Pages. It is built with plain HTML, CSS, and JavaScript — no server, database, or build step required.</p>
+  <h1>About Mini Wiki</h1>
+  <p>Mini Wiki is a personal static wiki hosted on GitHub Pages. It is built with plain HTML, CSS, and JavaScript — no server, database, or build step required.</p>
 
   <h2>Technology</h2>
   <ul>
@@ -30,8 +30,31 @@
   <p>To add an article: copy <code>pages/article-template.html</code>, fill in your content, add it to the sidebar and search index in <code>index.html</code>, and submit a pull request.</p>
 </main>
 <script>
+window.WIKI_ROOT = '../';
 window.WIKI_PAGE = { title: 'About', category: 'Meta' };
-window.WIKI_SIDEBAR = [{ label: 'Navigation', links: [{ text: '🏠 Home', href: '../index.html' }]}];
+window.WIKI_SIDEBAR = [
+  { label: 'Navigation', links: [
+    { text: 'Home',              href: '../index.html' },
+    { text: 'All Categories',   href: 'categories.html' },
+    { text: 'Recent Changes',   href: 'recent.html' },
+    { text: 'About',            href: 'about.html' },
+  ]},
+  { label: 'Mathematics', links: [
+    { text: 'Mathematics Articles', href: 'math/index.html' },
+  ]},
+  { label: 'Classical History', links: [
+    { text: 'Classical History Articles', href: 'history/classical/index.html' },
+  ]},
+  { label: 'American History', links: [
+    { text: 'American History Articles', href: 'history/american/index.html' },
+  ]},
+  { label: 'Philosophy', links: [
+    { text: 'Philosophy Articles', href: 'philosophy/index.html' },
+  ]},
+  { label: 'Theology', links: [
+    { text: 'Theology Articles', href: 'theology/index.html' },
+  ]},
+];
 </script>
 <script src="../assets/js/wiki.js"></script>
 </body>

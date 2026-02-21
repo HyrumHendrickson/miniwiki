@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desmos Demo — MyWiki</title>
-  <meta name="description" content="Interactive Desmos graphing calculator embeds in MyWiki.">
+  <title>Desmos Demo — Mini Wiki</title>
+  <meta name="description" content="Interactive Desmos graphing calculator embeds in Mini Wiki.">
 
   <!-- KaTeX for any inline math -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () =&gt; {
   </div>
 
   <div class="wiki-callout info">
-    <div class="wiki-callout-title">ℹ️ API Key</div>
+    <div class="wiki-callout-title">API Key</div>
     <p>The demo API key (<code>dcb31709b452b1cf9dc26972add0fda6</code>) is Desmos's public demo key and is suitable for non-commercial personal wikis. For a production wiki, register for a key at <a href="https://www.desmos.com/api" target="_blank" rel="noopener">desmos.com/api</a>.</p>
   </div>
 
@@ -161,12 +161,29 @@ document.addEventListener('DOMContentLoaded', () =&gt; {
 </main>
 
 <script>
+window.WIKI_ROOT = '../';
 window.WIKI_PAGE = { title: 'Desmos Demo', category: 'Reference' };
 window.WIKI_SIDEBAR = [
   { label: 'Navigation', links: [
-    { text: '🏠 Home',         href: '../index.html' },
-    { text: 'Math Demo',       href: 'math-demo.html' },
-    { text: 'Components',      href: 'components.html' },
+    { text: 'Home',              href: '../index.html' },
+    { text: 'All Categories',   href: 'categories.html' },
+    { text: 'Recent Changes',   href: 'recent.html' },
+    { text: 'About',            href: 'about.html' },
+  ]},
+  { label: 'Mathematics', links: [
+    { text: 'Mathematics Articles', href: 'math/index.html' },
+  ]},
+  { label: 'Classical History', links: [
+    { text: 'Classical History Articles', href: 'history/classical/index.html' },
+  ]},
+  { label: 'American History', links: [
+    { text: 'American History Articles', href: 'history/american/index.html' },
+  ]},
+  { label: 'Philosophy', links: [
+    { text: 'Philosophy Articles', href: 'philosophy/index.html' },
+  ]},
+  { label: 'Theology', links: [
+    { text: 'Theology Articles', href: 'theology/index.html' },
   ]},
 ];
 </script>

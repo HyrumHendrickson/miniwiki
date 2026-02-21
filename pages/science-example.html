@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quantum Mechanics — MyWiki</title>
+  <title>Quantum Mechanics — Mini Wiki</title>
   <meta name="description" content="An overview of quantum mechanics: principles, equations, and history.">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
@@ -101,7 +101,7 @@
   $$\hat{H}\,\psi = E\,\psi$$
 
   <div class="wiki-callout note">
-    <div class="wiki-callout-title">📝 Wave Function Normalization</div>
+    <div class="wiki-callout-title">Wave Function Normalization</div>
     <p>The wave function $\psi$ must satisfy $\int_{-\infty}^{\infty} |\psi|^2\,d^3r = 1$, since $|\psi(\mathbf{r},t)|^2$ gives the probability density of finding the particle at position $\mathbf{r}$.</p>
   </div>
 
@@ -163,25 +163,25 @@
   <div class="wiki-card-grid cols-2">
     <div class="wiki-card">
       <div class="wiki-card-body">
-        <div class="wiki-card-title">💻 Semiconductor Electronics</div>
+        <div class="wiki-card-title"> Semiconductor Electronics</div>
         <div class="wiki-card-desc">Transistors, diodes, and integrated circuits exploit quantum tunneling and band theory. Modern civilization runs on quantum mechanics.</div>
       </div>
     </div>
     <div class="wiki-card">
       <div class="wiki-card-body">
-        <div class="wiki-card-title">💡 Lasers</div>
+        <div class="wiki-card-title"> Lasers</div>
         <div class="wiki-card-desc">Stimulated emission of radiation — the mechanism behind lasers — is a direct quantum effect explained by Einstein in 1917.</div>
       </div>
     </div>
     <div class="wiki-card">
       <div class="wiki-card-body">
-        <div class="wiki-card-title">🧲 MRI Imaging</div>
+        <div class="wiki-card-title"> MRI Imaging</div>
         <div class="wiki-card-desc">Nuclear magnetic resonance exploits quantized nuclear spin states. MRI machines are direct applications of quantum mechanics to medicine.</div>
       </div>
     </div>
     <div class="wiki-card">
       <div class="wiki-card-body">
-        <div class="wiki-card-title">🔐 Quantum Cryptography</div>
+        <div class="wiki-card-title"> Quantum Cryptography</div>
         <div class="wiki-card-desc">Quantum key distribution uses the no-cloning theorem and measurement disturbance to guarantee information-theoretically secure communication.</div>
       </div>
     </div>
@@ -221,16 +221,29 @@
 </main>
 
 <script>
+window.WIKI_ROOT = '../';
 window.WIKI_PAGE = { title: 'Quantum Mechanics', category: 'Physics' };
 window.WIKI_SIDEBAR = [
   { label: 'Navigation', links: [
-    { text: '🏠 Home',         href: '../index.html' },
-    { text: '📚 Categories',   href: 'categories.html' },
+    { text: 'Home',              href: '../index.html' },
+    { text: 'All Categories',   href: 'categories.html' },
+    { text: 'Recent Changes',   href: 'recent.html' },
+    { text: 'About',            href: 'about.html' },
   ]},
-  { label: 'Physics', links: [
-    { text: 'Quantum Mechanics',href: 'science-example.html' },
-    { text: 'Math Demo',        href: 'math-demo.html' },
-    { text: 'Desmos Demo',      href: 'desmos-demo.html' },
+  { label: 'Mathematics', links: [
+    { text: 'Mathematics Articles', href: 'math/index.html' },
+  ]},
+  { label: 'Classical History', links: [
+    { text: 'Classical History Articles', href: 'history/classical/index.html' },
+  ]},
+  { label: 'American History', links: [
+    { text: 'American History Articles', href: 'history/american/index.html' },
+  ]},
+  { label: 'Philosophy', links: [
+    { text: 'Philosophy Articles', href: 'philosophy/index.html' },
+  ]},
+  { label: 'Theology', links: [
+    { text: 'Theology Articles', href: 'theology/index.html' },
   ]},
 ];
 </script>

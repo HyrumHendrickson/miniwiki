@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wiki.js API — Dev — Mini Wiki</title>
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+</head>
+<body>
+<div class="dev-banner">
+  <strong>Dev Mode</strong> <span class="dev-banner-sep">|</span>
+  <a href="index.html">Dev Index</a> <span class="dev-banner-sep">|</span>
+  <a href="../index.html">Return to Site</a>
+</div>
+<main id="wiki-content">
+  <div class="wiki-breadcrumb"><a href="index.html">Dev</a><span class="sep">›</span><span>wiki.js API</span></div>
+  <h1>wiki.js API Reference</h1>
+  <div class="wiki-toc floating"></div>
+
+  <h2>WIKI_CONFIG</h2>
+  <p>Global configuration object at the top of <code>wiki.js</code>. Edit to customize site-wide settings.</p>
+  <div class="wiki-table-wrap"><table class="wiki-table">
+    <thead><tr><th>Property</th><th>Default</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td><code>title</code></td><td><code>'Mini Wiki'</code></td><td>Site name shown in header and page titles.</td></tr>
+      <tr><td><code>tagline</code></td><td><code>'A personal knowledge base'</code></td><td>Footer tagline.</td></tr>
+      <tr><td><code>rootUrl</code></td><td><code>'./'</code></td><td>Root URL prefix for header navigation links. Change for subdirectory deployments.</td></tr>
+      <tr><td><code>pagesDir</code></td><td><code>'pages/'</code></td><td>Default pages directory (informational).</td></tr>
+      <tr><td><code>indexPage</code></td><td><code>'index.html'</code></td><td>Filename of the homepage.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Wiki Object</h2>
+  <p>The <code>Wiki</code> object is the primary API. It is initialized automatically via <code>Wiki.init()</code> on <code>DOMContentLoaded</code>.</p>
+  <div class="wiki-table-wrap"><table class="wiki-table">
+    <thead><tr><th>Method</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td><code>Wiki.init()</code></td><td>Runs all initialization routines. Called automatically — do not call manually.</td></tr>
+      <tr><td><code>Wiki.buildLayout()</code></td><td>Injects the header, sidebar, and footer if not already present.</td></tr>
+      <tr><td><code>Wiki.buildTOC()</code></td><td>Scans headings in <code>#wiki-content</code> and populates <code>.wiki-toc.floating</code> and the right sidebar.</td></tr>
+      <tr><td><code>Wiki.initTabs()</code></td><td>Activates all <code>.wiki-tabs</code> components.</td></tr>
+      <tr><td><code>Wiki.initCollapsibles()</code></td><td>Activates all <code>.wiki-collapsible</code> components.</td></tr>
+      <tr><td><code>Wiki.initSearch()</code></td><td>Builds the search overlay and wires up the header search bar.</td></tr>
+      <tr><td><code>Wiki.renderMath()</code></td><td>Calls KaTeX <code>renderMathInElement</code> on <code>document.body</code>.</td></tr>
+      <tr><td><code>Wiki.initDesmosEmbeds()</code></td><td>Instantiates all declarative <code>.wiki-desmos[data-exprs]</code> elements.</td></tr>
+      <tr><td><code>Wiki.initGalleryLightbox()</code></td><td>Adds click-to-lightbox behavior to gallery and figure images.</td></tr>
+      <tr><td><code>Wiki.initScrollSpy()</code></td><td>Highlights the active TOC sidebar link as the user scrolls.</td></tr>
+      <tr><td><code>Wiki.toggleTheme()</code></td><td>Toggles light/dark theme and saves to <code>localStorage</code>.</td></tr>
+      <tr><td><code>Wiki.markExternalLinks()</code></td><td>Adds <code>target="_blank"</code> and an arrow indicator to external links.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Global Functions</h2>
+
+  <h3>wikiDesmos(containerId, expressions, options)</h3>
+  <p>Programmatically initializes a Desmos graphing calculator.</p>
+  <pre><code>const calc = wikiDesmos('my-div', [
+  { latex: 'y = \\sin(x)', color: '#c74440' },
+  { latex: 'y = \\cos(x)', color: '#2d70b3' },
+], { keypad: false });
+
+// Returns the Desmos calculator instance, or undefined if Desmos is unavailable.
+calc.setExpression({ id: 'a', latex: 'a=1', sliderBounds: { min:-3, max:3 } });</code></pre>
+  <div class="wiki-table-wrap"><table class="wiki-table">
+    <thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td><code>containerId</code></td><td>string</td><td>ID of the HTML element to mount the calculator into.</td></tr>
+      <tr><td><code>expressions</code></td><td>Array</td><td>Array of <code>{ latex, color }</code> objects or raw latex strings.</td></tr>
+      <tr><td><code>options</code></td><td>Object</td><td>Desmos calculator options object (keypad, lockViewport, etc.).</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>wikiInitAllDesmos()</h3>
+  <p>Instantiates all declarative <code>.wiki-desmos[data-exprs]</code> elements on the page. Called automatically — exposed for manual re-triggering if needed.</p>
+
+  <h2>Page-Level Variables</h2>
+  <div class="wiki-table-wrap"><table class="wiki-table">
+    <thead><tr><th>Variable</th><th>Type</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td><code>window.WIKI_ROOT = '../';
+window.WIKI_PAGE</code></td><td>Object</td><td>Page metadata: <code>title</code>, <code>category</code>, <code>tags</code>, <code>lastEdited</code>, <code>author</code>.</td></tr>
+      <tr><td><code>window.WIKI_SIDEBAR</code></td><td>Array</td><td>Sidebar section definitions. Each item: <code>{ label, links: [{text, href}] }</code>.</td></tr>
+      <tr><td><code>window.WIKI_SEARCH_PAGES</code></td><td>Array</td><td>Search index entries. Each item: <code>{ title, url, desc, tags }</code>. Defined in <code>index.html</code>.</td></tr>
+    </tbody>
+  </table></div>
+</main>
+<script>
+window.WIKI_PAGE = { title: 'wiki.js API', category: 'Dev' };
+window.WIKI_SIDEBAR = [
+  { label: 'Dev Reference', links: [
+    { text: 'Dev Index',       href: 'index.html' },
+    { text: 'Getting Started', href: 'getting-started.html' },
+    { text: 'Authoring',       href: 'authoring.html' },
+    { text: 'wiki.js API',     href: 'wiki-js-api.html' },
+    { text: 'CSS Variables',   href: 'css-variables.html' },
+  ]},
+  { label: 'Components', links: [
+    { text: 'Infobox',         href: 'comp-infobox.html' },
+    { text: 'Callouts',        href: 'comp-callouts.html' },
+    { text: 'Tables',          href: 'comp-tables.html' },
+    { text: 'Tabs',            href: 'comp-tabs.html' },
+    { text: 'Collapsible',     href: 'comp-collapsible.html' },
+    { text: 'Timeline',        href: 'comp-timeline.html' },
+    { text: 'Gallery',         href: 'comp-gallery.html' },
+    { text: 'Mathematics',     href: 'comp-math.html' },
+    { text: 'Desmos',          href: 'comp-desmos.html' },
+    { text: 'Miscellaneous',   href: 'comp-misc.html' },
+  ]},
+];
+</script>
+<script src="../assets/js/wiki.js"></script>
+</body>
+</html>

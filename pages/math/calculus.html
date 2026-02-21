@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculus — Mini Wiki</title>
+  <meta name="description" content="An introduction to differential and integral calculus: limits, derivatives, integrals, and the fundamental theorem.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://www.desmos.com/api/v1.8/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+  <link rel="stylesheet" href="../../assets/css/wiki.css">
+</head>
+<body>
+<main id="wiki-content">
+
+  <div class="wiki-breadcrumb">
+    <a href="../../index.html">Home</a><span class="sep">›</span>
+    <a href="../categories.html">Mathematics</a><span class="sep">›</span>
+    <span>Calculus</span>
+  </div>
+
+  <h1>Calculus</h1>
+
+  <div class="wiki-toc floating"></div>
+
+  <div class="wiki-infobox">
+    <div class="wiki-infobox-title">Calculus</div>
+    <table>
+      <tr><td>Branch</td><td>Mathematics</td></tr>
+      <tr><td>Subfields</td><td>Differential, Integral, Multivariable</td></tr>
+      <tr><td>Founders</td><td>Newton, Leibniz (17th century)</td></tr>
+      <tr><td>Key theorem</td><td>Fundamental Theorem of Calculus</td></tr>
+      <tr><td>Applications</td><td>Physics, engineering, economics, biology</td></tr>
+    </table>
+  </div>
+
+  <p><strong>Calculus</strong> is the mathematical study of continuous change. Developed independently in the late seventeenth century by Isaac Newton and Gottfried Wilhelm Leibniz — one of the great intellectual achievements in the history of Western civilization — calculus furnishes the language in which the laws of nature are written. Its two central operations, differentiation and integration, are related by the Fundamental Theorem of Calculus, one of the most profound results in all of mathematics.</p>
+
+  <p>Newton developed his "method of fluxions" to solve problems in mechanics and gravitation. Leibniz approached the same problems through a more geometric lens and introduced the notation $dy/dx$ and $\int$, which remain standard today. The dispute over priority between the two men and their respective national camps was bitter and long-lasting, but the ideas themselves proved so fertile that mathematics has never been the same.</p>
+
+  <div class="clearfix"></div>
+
+  <h2>Limits</h2>
+
+  <p>The concept of a limit is the rigorous foundation on which all of calculus rests. The limit of a function $f(x)$ as $x$ approaches $a$ is the value that $f(x)$ approaches as $x$ gets arbitrarily close to $a$ (but is not required to equal $a$):</p>
+
+  $$\lim_{x \to a} f(x) = L$$
+
+  <p>The formal ($\varepsilon$-$\delta$) definition: For every $\varepsilon > 0$, there exists a $\delta > 0$ such that $0 < |x - a| < \delta$ implies $|f(x) - L| < \varepsilon$.</p>
+
+  <div class="wiki-callout note">
+    <div class="wiki-callout-title">Key Limit Laws</div>
+    <p>If $\lim_{x\to a} f(x)$ and $\lim_{x\to a} g(x)$ both exist, then: the limit of a sum is the sum of the limits, the limit of a product is the product of the limits, and the limit of a quotient is the quotient of the limits (provided the denominator's limit is nonzero).</p>
+  </div>
+
+  <h3>Important Limits</h3>
+
+  $$\lim_{x \to 0} \frac{\sin x}{x} = 1 \qquad \lim_{x \to 0} \frac{e^x - 1}{x} = 1 \qquad \lim_{x \to \infty}\left(1 + \frac{1}{x}\right)^x = e$$
+
+  <h2>Differential Calculus</h2>
+
+  <p>The derivative of a function $f$ at a point $x$ is defined as the limit of the difference quotient:</p>
+
+  $$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$$
+
+  <p>Geometrically, the derivative at a point is the slope of the tangent line to the graph of $f$ at that point. Physically, if $f(t)$ represents position, then $f'(t)$ is instantaneous velocity and $f''(t)$ is acceleration.</p>
+
+  <p>The graph below shows a function and the tangent line at a movable point. Observe how the slope of the tangent — and therefore the derivative — changes across the curve.</p>
+
+  <div id="desmos-derivative" style="height:420px;border:1px solid var(--border);border-radius:3px;"></div>
+
+  <h3>Differentiation Rules</h3>
+
+  <div class="wiki-table-wrap"><table class="wiki-table">
+    <thead><tr><th>Rule</th><th>Formula</th></tr></thead>
+    <tbody>
+      <tr><td>Power Rule</td><td>$\dfrac{d}{dx}[x^n] = nx^{n-1}$</td></tr>
+      <tr><td>Product Rule</td><td>$\dfrac{d}{dx}[fg] = f'g + fg'$</td></tr>
+      <tr><td>Quotient Rule</td><td>$\dfrac{d}{dx}\!\left[\dfrac{f}{g}\right] = \dfrac{f'g - fg'}{g^2}$</td></tr>
+      <tr><td>Chain Rule</td><td>$\dfrac{d}{dx}[f(g(x))] = f'(g(x))\cdot g'(x)$</td></tr>
+      <tr><td>Exponential</td><td>$\dfrac{d}{dx}[e^x] = e^x$</td></tr>
+      <tr><td>Logarithm</td><td>$\dfrac{d}{dx}[\ln x] = \dfrac{1}{x}$</td></tr>
+      <tr><td>Sine</td><td>$\dfrac{d}{dx}[\sin x] = \cos x$</td></tr>
+      <tr><td>Cosine</td><td>$\dfrac{d}{dx}[\cos x] = -\sin x$</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Applications of Derivatives</h3>
+
+  <p>The derivative is the principal tool for optimization — finding maxima and minima. At a local extremum, $f'(x) = 0$ (or $f'$ is undefined); these are called critical points. The second derivative test: if $f'(c) = 0$ and $f''(c) > 0$, then $f(c)$ is a local minimum; if $f''(c) < 0$, it is a local maximum.</p>
+
+  <h2>Integral Calculus</h2>
+
+  <p>The definite integral of $f$ from $a$ to $b$ is defined as the limit of Riemann sums:</p>
+
+  $$\int_a^b f(x)\,dx = \lim_{n\to\infty} \sum_{i=1}^{n} f(x_i^*)\,\Delta x$$
+
+  <p>Geometrically, this represents the signed area between the graph of $f$ and the $x$-axis over the interval $[a, b]$. The Riemann sum approximation — dividing the region into thin rectangles — is visualized below:</p>
+
+  <div id="desmos-riemann" style="height:440px;border:1px solid var(--border);border-radius:3px;"></div>
+
+  <h3>Integration Techniques</h3>
+
+  <div class="wiki-collapsible open">
+    <div class="wiki-collapsible-header">Substitution (u-substitution)</div>
+    <div class="wiki-collapsible-body">
+      <p>When the integrand contains a composite function, let $u = g(x)$, $du = g'(x)\,dx$:</p>
+      $$\int f(g(x))\,g'(x)\,dx = \int f(u)\,du$$
+      <p>Example: $\int 2x\cos(x^2)\,dx = \int \cos(u)\,du = \sin(u) + C = \sin(x^2) + C$</p>
+    </div>
+  </div>
+
+  <div class="wiki-collapsible">
+    <div class="wiki-collapsible-header">Integration by Parts</div>
+    <div class="wiki-collapsible-body">
+      <p>The integral analog of the product rule:</p>
+      $$\int u\,dv = uv - \int v\,du$$
+      <p>Choose $u$ and $dv$ using the LIATE priority: Logarithms, Inverse trig, Algebraic, Trigonometric, Exponential.</p>
+      <p>Example: $\int x e^x\,dx = xe^x - \int e^x\,dx = xe^x - e^x + C = (x-1)e^x + C$</p>
+    </div>
+  </div>
+
+  <div class="wiki-collapsible">
+    <div class="wiki-collapsible-header">Partial Fractions</div>
+    <div class="wiki-collapsible-body">
+      <p>To integrate a rational function $P(x)/Q(x)$, decompose it into simpler fractions whose integrals are known. For example:</p>
+      $$\frac{1}{x^2-1} = \frac{1}{(x-1)(x+1)} = \frac{1/2}{x-1} - \frac{1/2}{x+1}$$
+      $$\int \frac{1}{x^2-1}\,dx = \frac{1}{2}\ln|x-1| - \frac{1}{2}\ln|x+1| + C = \frac{1}{2}\ln\!\left|\frac{x-1}{x+1}\right| + C$$
+    </div>
+  </div>
+
+  <h2>The Fundamental Theorem of Calculus</h2>
+
+  <p>The Fundamental Theorem of Calculus reveals that differentiation and integration are inverse operations — the two great ideas of calculus, which appeared to be separate, are in fact two faces of a single coin. It has two parts:</p>
+
+  <p><strong>Part I:</strong> If $F(x) = \int_a^x f(t)\,dt$, then $F'(x) = f(x)$ wherever $f$ is continuous. That is, differentiation undoes integration.</p>
+
+  <p><strong>Part II:</strong> If $F$ is any antiderivative of $f$ (meaning $F' = f$), then:</p>
+
+  $$\int_a^b f(x)\,dx = F(b) - F(a)$$
+
+  <p>This result — that the definite integral can be computed by evaluating an antiderivative at the endpoints — transforms an otherwise intractable limiting process into a practical calculation. It is one of the most powerful computational tools in mathematics.</p>
+
+  <h2>Common Integrals</h2>
+
+  $$\int x^n\,dx = \frac{x^{n+1}}{n+1} + C \quad (n \neq -1)$$
+  $$\int \frac{1}{x}\,dx = \ln|x| + C$$
+  $$\int e^x\,dx = e^x + C$$
+  $$\int \sin x\,dx = -\cos x + C$$
+  $$\int \cos x\,dx = \sin x + C$$
+  $$\int \frac{1}{1+x^2}\,dx = \arctan x + C$$
+
+  <h2>Improper Integrals</h2>
+
+  <p>When the interval of integration is infinite, or when the integrand has a singularity, we use improper integrals, defined as limits:</p>
+
+  $$\int_1^{\infty} \frac{1}{x^2}\,dx = \lim_{b\to\infty} \int_1^b \frac{1}{x^2}\,dx = \lim_{b\to\infty}\left[-\frac{1}{x}\right]_1^b = 0 - (-1) = 1$$
+
+  <p>An improper integral either converges (the limit is finite) or diverges. The integral $\int_1^\infty 1/x\,dx$ is a famous example of a divergent improper integral, connected to the harmonic series.</p>
+
+  <div class="wiki-references">
+    <h2>References</h2>
+    <ol>
+      <li>Stewart, J. (2015). <em>Calculus: Early Transcendentals</em> (8th ed.). Cengage Learning.</li>
+      <li>Spivak, M. (2008). <em>Calculus</em> (4th ed.). Publish or Perish.</li>
+      <li>Apostol, T. M. (1967). <em>Calculus</em> (2nd ed.). John Wiley &amp; Sons.</li>
+    </ol>
+  </div>
+
+  <div class="wiki-tags">
+    <span class="wiki-tags-label">Tags:</span>
+    <a class="wiki-tag" href="../categories.html">Mathematics</a>
+    <a class="wiki-tag" href="../categories.html">Calculus</a>
+    <a class="wiki-tag" href="../categories.html">Analysis</a>
+  </div>
+  <div class="wiki-page-meta">
+    <span>Last edited: <time>2024-01-01</time></span>
+    <span>Category: Mathematics</span>
+  </div>
+
+</main>
+
+<script>
+window.WIKI_ROOT = '../../';
+window.WIKI_PAGE = { title: 'Calculus', category: 'Mathematics' };
+window.WIKI_SIDEBAR = [
+  { label: 'Navigation', links: [
+    { text: 'Home',              href: '../../index.html' },
+    { text: 'All Categories',   href: '../categories.html' },
+  ]},
+  { label: 'Mathematics', links: [
+    { text: 'Mathematics (all articles)', href: 'index.html' },
+    { text: 'Trigonometry',       href: 'trigonometry.html' },
+    { text: 'Calculus',           href: 'calculus.html' },
+    { text: 'Algebra',            href: 'algebra.html' },
+  ]},
+  { label: 'Other Categories', links: [
+    { text: 'Philosophy',         href: '../philosophy/index.html' },
+    { text: 'Theology',           href: '../theology/index.html' },
+    { text: 'American History',   href: '../history/american/index.html' },
+    { text: 'Classical History',  href: '../history/classical/index.html' },
+  ]},
+];
+</script>
+
+<script src="../../assets/js/wiki.js"></script>
+
+<script>
+function initCalculusGraphs() {
+  if (typeof Desmos === 'undefined') return;
+
+  // Derivative / tangent line
+  const dEl = document.getElementById('desmos-derivative');
+  if (dEl && !dEl.dataset.init) {
+    dEl.dataset.init = '1';
+    const dc = Desmos.GraphingCalculator(dEl, { keypad: false });
+    dc.setExpression({ id: 'f', latex: 'f(x)=x^3-3x+1', color: '#2d70b3' });
+    dc.setExpression({ id: 'a', latex: 'a=0', sliderBounds: { min: -2, max: 2, step: 0.05 } });
+    dc.setExpression({ id: 'pt', latex: '(a, f(a))', color: '#8b2635', showLabel: true, label: 'P' });
+    dc.setExpression({ id: 'tan', latex: "y = f'(a)(x-a)+f(a)", color: '#c74440', label: 'tangent' });
+    dc.setExpression({ id: 'fd', latex: "f'(x) = 3x^2 - 3", color: '#388c46', hidden: false });
+  }
+
+  // Riemann sums
+  const rEl = document.getElementById('desmos-riemann');
+  if (rEl && !rEl.dataset.init) {
+    rEl.dataset.init = '1';
+    const rc = Desmos.GraphingCalculator(rEl, { keypad: false });
+    rc.setExpression({ id: 'f', latex: 'f(x)=0.5x^2+1', color: '#2d70b3' });
+    rc.setExpression({ id: 'n', latex: 'n=4', sliderBounds: { min: 1, max: 40, step: 1 } });
+    rc.setExpression({ id: 'a', latex: 'a=0' });
+    rc.setExpression({ id: 'b', latex: 'b=4' });
+    rc.setExpression({ id: 'dx', latex: '\\Delta x=(b-a)/n' });
+    // Left Riemann sum rectangles
+    rc.setExpression({ id: 'sum', latex: 'R=\\sum_{k=0}^{n-1}f(a+k\\Delta x)\\cdot\\Delta x', color: '#c74440' });
+    rc.setExpression({ id: 'integral', latex: '\\int_{a}^{b}f(x)dx', color: '#388c46' });
+    // Shade area
+    rc.setExpression({ id: 'shade', latex: '0\\le y\\le f(x)\\{a\\le x\\le b\\}', color: '#2d70b3' });
+  }
+}
+
+if (typeof Desmos !== 'undefined') { document.addEventListener('DOMContentLoaded', initCalculusGraphs); }
+else { window.addEventListener('load', initCalculusGraphs); }
+</script>
+</body>
+</html>

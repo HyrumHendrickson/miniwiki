@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Renaissance — MyWiki</title>
+  <title>The Renaissance — Mini Wiki</title>
   <meta name="description" content="A history article demonstrating timelines, comparison tables, citations, and hatnotes.">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
@@ -180,10 +180,10 @@
         <tr><td>Authority</td><td>Church and Scripture</td><td>Reason and classical texts</td></tr>
         <tr><td>Art style</td><td>Byzantine, flat, symbolic</td><td>Perspective, naturalism, anatomy</td></tr>
         <tr><td>Literature</td><td>Primarily Latin, religious</td><td>Vernacular, secular, individualist</td></tr>
-        <tr><td>Scientific method</td><td class="cross">✗ Largely absent</td><td class="partial">▲ Emerging empiricism</td></tr>
-        <tr><td>Printing press</td><td class="cross">✗ Not available</td><td class="check">✓ Central to spread of ideas</td></tr>
-        <tr><td>Classical antiquity</td><td class="partial">Partial knowledge</td><td class="check">✓ Active revival</td></tr>
-        <tr><td>Individual expression</td><td class="cross">✗ Subordinate to community</td><td class="check">✓ Celebrated</td></tr>
+        <tr><td>Scientific method</td><td class="cross">&#10007; Largely absent</td><td class="partial">▲ Emerging empiricism</td></tr>
+        <tr><td>Printing press</td><td class="cross">&#10007; Not available</td><td class="check">&#10003; Central to spread of ideas</td></tr>
+        <tr><td>Classical antiquity</td><td class="partial">Partial knowledge</td><td class="check">&#10003; Active revival</td></tr>
+        <tr><td>Individual expression</td><td class="cross">&#10007; Subordinate to community</td><td class="check">&#10003; Celebrated</td></tr>
       </tbody>
     </table>
   </div>
@@ -198,7 +198,7 @@
   <p>The Renaissance transformed European civilization in ways that are still felt today. It gave rise to the Scientific Revolution, the Protestant Reformation, and the Age of Exploration. Its emphasis on individual reason and human dignity planted seeds that would eventually flower in the Enlightenment and the liberal political tradition.<a class="wiki-ref" href="#ref-2">[2]</a></p>
 
   <div class="wiki-callout warning">
-    <div class="wiki-callout-title">⚠️ Historiographical Note</div>
+    <div class="wiki-callout-title">Historiographical Note</div>
     <p>The concept of the "Renaissance" as a distinct historical period was itself a Renaissance-era invention, popularized by 19th-century historians including Jules Michelet and Jacob Burckhardt. Modern historians often debate its periodization and the degree to which it represents a genuine break with the medieval past.<a class="wiki-ref" href="#ref-3">[3]</a></p>
   </div>
 
@@ -236,18 +236,29 @@
 </main>
 
 <script>
+window.WIKI_ROOT = '../';
 window.WIKI_PAGE = { title: 'The Renaissance', category: 'History' };
 window.WIKI_SIDEBAR = [
   { label: 'Navigation', links: [
-    { text: '🏠 Home',        href: '../index.html' },
-    { text: '📚 Categories',  href: 'categories.html' },
+    { text: 'Home',              href: '../index.html' },
+    { text: 'All Categories',   href: 'categories.html' },
+    { text: 'Recent Changes',   href: 'recent.html' },
+    { text: 'About',            href: 'about.html' },
   ]},
-  { label: 'History Articles', links: [
-    { text: 'The Renaissance',href: 'history-example.html' },
+  { label: 'Mathematics', links: [
+    { text: 'Mathematics Articles', href: 'math/index.html' },
   ]},
-  { label: 'See Also', links: [
-    { text: 'Science Article', href: 'science-example.html' },
-    { text: 'Component Ref',   href: 'components.html' },
+  { label: 'Classical History', links: [
+    { text: 'Classical History Articles', href: 'history/classical/index.html' },
+  ]},
+  { label: 'American History', links: [
+    { text: 'American History Articles', href: 'history/american/index.html' },
+  ]},
+  { label: 'Philosophy', links: [
+    { text: 'Philosophy Articles', href: 'philosophy/index.html' },
+  ]},
+  { label: 'Theology', links: [
+    { text: 'Theology Articles', href: 'theology/index.html' },
   ]},
 ];
 </script>

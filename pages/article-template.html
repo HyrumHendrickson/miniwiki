@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Article Title — MyWiki</title>
+  <title>Article Title — Mini Wiki</title>
   <meta name="description" content="Short description of this article for SEO and search.">
 
   <!-- KaTeX (remove if this page has no math) -->
@@ -76,7 +76,7 @@
 
   <!-- Example callout -->
   <div class="wiki-callout note">
-    <div class="wiki-callout-title">📝 Note</div>
+    <div class="wiki-callout-title">Note</div>
     <p>This is a note callout. Use it to highlight important supplementary information.</p>
   </div>
 
@@ -191,6 +191,7 @@
 
 <!-- ── Page configuration ── -->
 <script>
+window.WIKI_ROOT = '../';
 window.WIKI_PAGE = {
   title:     'Article Title',
   category:  'Category Name',
@@ -200,20 +201,27 @@ window.WIKI_PAGE = {
 };
 
 window.WIKI_SIDEBAR = [
-  {
-    label: 'Navigation',
-    links: [
-      { text: '🏠 Home',              href: '../index.html' },
-      { text: '📚 All Articles',      href: 'categories.html' },
-    ]
-  },
-  {
-    label: 'In This Category',
-    links: [
-      { text: 'This Article',         href: 'article-template.html' },
-      { text: 'Another Article',      href: '#' },
-    ]
-  },
+  { label: 'Navigation', links: [
+    { text: 'Home',              href: '../index.html' },
+    { text: 'All Categories',   href: 'categories.html' },
+    { text: 'Recent Changes',   href: 'recent.html' },
+    { text: 'About',            href: 'about.html' },
+  ]},
+  { label: 'Mathematics', links: [
+    { text: 'Mathematics Articles', href: 'math/index.html' },
+  ]},
+  { label: 'Classical History', links: [
+    { text: 'Classical History Articles', href: 'history/classical/index.html' },
+  ]},
+  { label: 'American History', links: [
+    { text: 'American History Articles', href: 'history/american/index.html' },
+  ]},
+  { label: 'Philosophy', links: [
+    { text: 'Philosophy Articles', href: 'philosophy/index.html' },
+  ]},
+  { label: 'Theology', links: [
+    { text: 'Theology Articles', href: 'theology/index.html' },
+  ]},
 ];
 
 // Required: add this page to the search index on index.html too.

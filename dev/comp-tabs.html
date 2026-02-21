@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabs — Dev — Mini Wiki</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://www.desmos.com/api/v1.8/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+</head>
+<body>
+<div class="dev-banner">
+  <strong>Dev Mode</strong> <span class="dev-banner-sep">|</span>
+  <a href="index.html">Dev Index</a> <span class="dev-banner-sep">|</span>
+  <a href="../index.html">Return to Site</a>
+</div>
+<main id="wiki-content">
+  <div class="wiki-breadcrumb"><a href="index.html">Dev</a><span class="sep">›</span><span>Tabs</span></div>
+  <h1>Tabs</h1>
+  <p>See <a href="../pages/components.html">All Components Demo</a> for a live demonstration. Refer to <code>templates/components-snippets.html</code> for ready-to-copy HTML. Full documentation for this component will be expanded as the wiki grows.</p>
+</main>
+<script>
+window.WIKI_ROOT = '../';
+window.WIKI_PAGE = { title: 'Tabs', category: 'Dev' };
+window.WIKI_SIDEBAR = [
+  { label: 'Dev Reference', links: [
+    { text: 'Dev Index',       href: 'index.html' },
+    { text: 'Getting Started', href: 'getting-started.html' },
+    { text: 'Authoring',       href: 'authoring.html' },
+    { text: 'wiki.js API',     href: 'wiki-js-api.html' },
+    { text: 'CSS Variables',   href: 'css-variables.html' },
+  ]},
+  { label: 'Components', links: [
+    { text: 'Infobox',         href: 'comp-infobox.html' },
+    { text: 'Callouts',        href: 'comp-callouts.html' },
+    { text: 'Tables',          href: 'comp-tables.html' },
+    { text: 'Tabs',            href: 'comp-tabs.html' },
+    { text: 'Collapsible',     href: 'comp-collapsible.html' },
+    { text: 'Timeline',        href: 'comp-timeline.html' },
+    { text: 'Gallery',         href: 'comp-gallery.html' },
+    { text: 'Mathematics',     href: 'comp-math.html' },
+    { text: 'Desmos',          href: 'comp-desmos.html' },
+    { text: 'Miscellaneous',   href: 'comp-misc.html' },
+  ]},
+];
+</script>
+<script src="../assets/js/wiki.js"></script>
+</body>
+</html>

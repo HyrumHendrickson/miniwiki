@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer Reference — Mini Wiki</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+</head>
+<body>
+
+<div class="dev-banner">
+  <strong>Dev Mode</strong>
+  <span class="dev-banner-sep">|</span>
+  <span>Developer documentation and component reference for Mini Wiki</span>
+  <span class="dev-banner-sep">|</span>
+  <a href="../index.html">Return to site</a>
+</div>
+
+<div class="dev-index">
+  <h1>Developer Reference</h1>
+  <p style="color:var(--text-muted);font-size:0.92rem;">This section documents the Mini Wiki engine, components, and authoring guidelines. These pages are not part of the public wiki and are intended for site administrators and contributors.</p>
+
+  <div class="dev-section">
+    <div class="dev-section-title">Core Documentation</div>
+    <div class="dev-card-grid">
+      <div class="dev-card">
+        <div class="dev-badge">guide</div>
+        <div class="dev-card-title"><a href="getting-started.html">Getting Started</a></div>
+        <div class="dev-card-desc">Directory structure, local development, and GitHub Pages deployment.</div>
+      </div>
+      <div class="dev-card">
+        <div class="dev-badge">guide</div>
+        <div class="dev-card-title"><a href="authoring.html">Authoring Articles</a></div>
+        <div class="dev-card-desc">How to create new pages, configure sidebars, and register search entries.</div>
+      </div>
+      <div class="dev-card">
+        <div class="dev-badge">reference</div>
+        <div class="dev-card-title"><a href="wiki-js-api.html">wiki.js API</a></div>
+        <div class="dev-card-desc">All public functions, configuration options, and the Wiki object.</div>
+      </div>
+      <div class="dev-card">
+        <div class="dev-badge">reference</div>
+        <div class="dev-card-title"><a href="css-variables.html">CSS Variables</a></div>
+        <div class="dev-card-desc">All design tokens, color palette, typography, and spacing variables.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dev-section">
+    <div class="dev-section-title">Component Reference</div>
+    <div class="dev-card-grid">
+      <div class="dev-card">
+        <div class="dev-badge">component</div>
+        <div class="dev-card-title"><a href="comp-infobox.html">Infobox</a></div>
+        <div class="dev-card-desc">Right- and left-floating information panels with optional images.</div>
+      </div>
+      <div class="dev-card">
+        <div class="dev-badge">component</div>
+        <div class="dev-card-title"><a href="comp-callouts.html">Callout Boxes</a></div>
+        <div class="dev-card-desc">Note, info, warning, and danger callout variants.</div>
+      </div>
+      <div class="dev-card">
+        <div class="dev-badge">component</div>
+        <div class="dev-card-title"><a href="comp-tables.html">Tables</a></div>
+        <div class="dev-card-desc">Standard tables and comparison tables with check/cross cells.</div>
+      </div>
+      <div class="dev-card">
+        <div class="dev-badge">component</div>
+        <div class="dev-card-title"><a href="comp-tabs.html">Tabs</a></div>
+        <div class="dev-card-desc">Tabbed content panels — any number of tabs.</div>
+      </div>
+      <div class="dev-card">
+        <div class="dev-badge">component</div>
+        <div class="dev-card-title"><a href="comp-collapsible.html">Collapsible</a></div>
+        <div class="dev-card-desc">Expandable sections for supplementary or detailed content.</div>
+      </div>
+      <div class="dev-card">
+        <div class="dev-badge">component</div>
+        <div class="dev-card-title"><a href="comp-timeline.html">Timeline</a></div>
+        <div class="dev-card-desc">Vertical chronological event sequences.</div>
+      </div>
+      <div class="dev-card">
+        <div class="dev-badge">component</div>
+        <div class="dev-card-title"><a href="comp-gallery.html">Gallery</a></div>
+        <div class="dev-card-desc">Responsive image grids with automatic lightbox.</div>
+      </div>
+      <div class="dev-card">
+        <div class="dev-badge">component</div>
+        <div class="dev-card-title"><a href="comp-math.html">Mathematics (LaTeX)</a></div>
+        <div class="dev-card-desc">KaTeX integration, inline and display mode, supported commands.</div>
+      </div>
+      <div class="dev-card">
+        <div class="dev-badge">component</div>
+        <div class="dev-card-title"><a href="comp-desmos.html">Desmos Graphs</a></div>
+        <div class="dev-card-desc">Declarative and programmatic Desmos calculator embeds.</div>
+      </div>
+      <div class="dev-card">
+        <div class="dev-badge">component</div>
+        <div class="dev-card-title"><a href="comp-misc.html">Miscellaneous</a></div>
+        <div class="dev-card-desc">Hatnotes, stubs, redirect notices, citations, tags, breadcrumbs, card grids, figures.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dev-section">
+    <div class="dev-section-title">Live Demos</div>
+    <div class="dev-card-grid">
+      <div class="dev-card">
+        <div class="dev-badge">demo</div>
+        <div class="dev-card-title"><a href="../pages/components.html">All Components</a></div>
+        <div class="dev-card-desc">Every component rendered live on one page.</div>
+      </div>
+      <div class="dev-card">
+        <div class="dev-badge">demo</div>
+        <div class="dev-card-title"><a href="../pages/math-demo.html">Math Demo</a></div>
+        <div class="dev-card-desc">KaTeX rendering examples.</div>
+      </div>
+      <div class="dev-card">
+        <div class="dev-badge">demo</div>
+        <div class="dev-card-title"><a href="../pages/desmos-demo.html">Desmos Demo</a></div>
+        <div class="dev-card-desc">All three Desmos embed methods demonstrated.</div>
+      </div>
+      <div class="dev-card">
+        <div class="dev-badge">template</div>
+        <div class="dev-card-title"><a href="../pages/article-template.html">Article Template</a></div>
+        <div class="dev-card-desc">The canonical blank article — copy this for every new page.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer id="wiki-footer" style="margin-top:3rem;">
+  <p>Mini Wiki Developer Reference &mdash; Not part of the public site.</p>
+</footer>
+
+<script src="../assets/js/wiki.js"></script>
+<script>
+// Override layout for dev pages — no sidebar, simple header
+window.WIKI_ROOT = '../';
+window.WIKI_PAGE = { title: 'Developer Reference' };
+</script>
+</body>
+</html>

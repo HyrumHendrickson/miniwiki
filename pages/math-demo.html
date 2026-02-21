@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mathematics Demo — MyWiki</title>
-  <meta name="description" content="Demonstration of LaTeX math rendering using KaTeX in MyWiki.">
+  <title>Mathematics Demo — Mini Wiki</title>
+  <meta name="description" content="Demonstration of LaTeX math rendering using KaTeX in Mini Wiki.">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -171,7 +171,7 @@ $$\int_0^1 x^2\,dx = \frac{1}{3}$$
 \[ \sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6} \]</code></pre>
 
   <div class="wiki-callout note">
-    <div class="wiki-callout-title">📝 KaTeX vs. MathJax</div>
+    <div class="wiki-callout-title">KaTeX vs. MathJax</div>
     <p>This wiki uses KaTeX for its fast client-side rendering speed. KaTeX supports the vast majority of LaTeX math commands. For the small number of unsupported commands, see the <a href="https://katex.org/docs/support_table.html" target="_blank" rel="noopener">KaTeX support table</a>.</p>
   </div>
 
@@ -191,16 +191,29 @@ $$\int_0^1 x^2\,dx = \frac{1}{3}$$
 </main>
 
 <script>
+window.WIKI_ROOT = '../';
 window.WIKI_PAGE = { title: 'Mathematics Demo', category: 'Reference' };
 window.WIKI_SIDEBAR = [
   { label: 'Navigation', links: [
-    { text: '🏠 Home',            href: '../index.html' },
-    { text: 'Component Reference',href: 'components.html' },
-    { text: 'Desmos Demo',        href: 'desmos-demo.html' },
+    { text: 'Home',              href: '../index.html' },
+    { text: 'All Categories',   href: 'categories.html' },
+    { text: 'Recent Changes',   href: 'recent.html' },
+    { text: 'About',            href: 'about.html' },
   ]},
-  { label: 'Math Topics', links: [
-    { text: 'Math Demo',          href: 'math-demo.html' },
-    { text: 'Science Article',    href: 'science-example.html' },
+  { label: 'Mathematics', links: [
+    { text: 'Mathematics Articles', href: 'math/index.html' },
+  ]},
+  { label: 'Classical History', links: [
+    { text: 'Classical History Articles', href: 'history/classical/index.html' },
+  ]},
+  { label: 'American History', links: [
+    { text: 'American History Articles', href: 'history/american/index.html' },
+  ]},
+  { label: 'Philosophy', links: [
+    { text: 'Philosophy Articles', href: 'philosophy/index.html' },
+  ]},
+  { label: 'Theology', links: [
+    { text: 'Theology Articles', href: 'theology/index.html' },
   ]},
 ];
 </script>

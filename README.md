@@ -1,4 +1,4 @@
-# MyWiki
+# Mini Wiki
 
 A personal static wiki built with plain HTML, CSS, and JavaScript.  
 No server, no database, no build step — just files.  
@@ -150,8 +150,8 @@ window.WIKI_SIDEBAR = [
   {
     label: 'Navigation',
     links: [
-      { text: '🏠 Home',       href: '../index.html' },
-      { text: '📚 Categories', href: 'categories.html' },
+      { text: ' Home',       href: '../index.html' },
+      { text: ' Categories', href: 'categories.html' },
     ]
   },
   {

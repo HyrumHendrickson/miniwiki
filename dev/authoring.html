@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authoring Articles — Dev — Mini Wiki</title>
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+</head>
+<body>
+<div class="dev-banner">
+  <strong>Dev Mode</strong>
+  <span class="dev-banner-sep">|</span>
+  <a href="index.html">Dev Index</a>
+  <span class="dev-banner-sep">|</span>
+  <a href="../index.html">Return to Site</a>
+</div>
+<main id="wiki-content">
+  <div class="wiki-breadcrumb">
+    <a href="index.html">Dev</a><span class="sep">›</span><span>Authoring Articles</span>
+  </div>
+  <h1>Authoring Articles</h1>
+  <div class="wiki-toc floating"></div>
+
+  <p>This guide covers the conventions and configuration required to author well-formed articles in Mini Wiki.</p>
+
+  <h2>The WIKI_PAGE Object</h2>
+  <p>Every page should include a <code>window.WIKI_ROOT = '../';
+window.WIKI_PAGE</code> script block before the wiki.js script tag. This object provides metadata used by the engine for titles, categories, and future tooling.</p>
+  <pre><code>window.WIKI_PAGE = {
+  title:     'Article Title',       // Used in &lt;title&gt; tag
+  category:  'Category Name',       // Displayed in page meta
+  tags:      ['keyword', 'topic'],  // For search and filtering
+  lastEdited: '2024-06-01',         // ISO date string
+  author:    'Author Name',
+};</code></pre>
+
+  <h2>The WIKI_SIDEBAR Object</h2>
+  <p>Each page defines its own sidebar navigation. This allows contextually relevant navigation for every article.</p>
+  <pre><code>window.WIKI_SIDEBAR = [
+  {
+    label: 'Navigation',
+    links: [
+      { text: 'Home',           href: '../../index.html' },
+      { text: 'All Categories', href: '../categories.html' },
+    ]
+  },
+  {
+    label: 'This Section',
+    links: [
+      { text: 'This Article',   href: 'this-article.html' },
+      { text: 'Related Page',   href: 'related.html' },
+    ]
+  }
+];</code></pre>
+  <p>Note that <code>href</code> values are relative to the location of the current page, not the site root.</p>
+
+  <h2>The Search Index</h2>
+  <p>The search index lives in <code>index.html</code> as <code>window.WIKI_SEARCH_PAGES</code>. Every published article should have an entry:</p>
+  <pre><code>window.WIKI_SEARCH_PAGES = [
+  {
+    title: 'Article Title',
+    url:   'pages/section/article.html',  // Relative to index.html
+    desc:  'One sentence description.',
+    tags:  ['keyword', 'topic', 'section']
+  },
+  // ...
+];</code></pre>
+
+  <h2>Breadcrumb Convention</h2>
+  <p>Every article should begin with a breadcrumb trail:</p>
+  <pre><code>&lt;div class="wiki-breadcrumb"&gt;
+  &lt;a href="../../index.html"&gt;Home&lt;/a&gt;
+  &lt;span class="sep"&gt;&amp;rsaquo;&lt;/span&gt;
+  &lt;a href="../categories.html"&gt;Category&lt;/a&gt;
+  &lt;span class="sep"&gt;&amp;rsaquo;&lt;/span&gt;
+  &lt;span&gt;Article Title&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+
+  <h2>Floating TOC</h2>
+  <p>Place this empty div near the top of the content area. The engine will auto-populate it from all <code>h2</code>, <code>h3</code>, and <code>h4</code> headings on the page.</p>
+  <pre><code>&lt;div class="wiki-toc floating"&gt;&lt;/div&gt;</code></pre>
+  <p>The TOC only renders if the page has three or more headings. It is collapsible and will also populate the right sidebar column.</p>
+
+  <h2>Writing Style</h2>
+  <p>Mini Wiki articles follow an encyclopedic tone with a clear editorial perspective favoring Western civilization, classical learning, the liberal arts, and Christian ethics. Specific conventions:</p>
+  <ul>
+    <li>Write in third person; avoid first-person narration.</li>
+    <li>Use the present tense for statements of fact; past tense for historical events.</li>
+    <li>Bold the subject of the article on its first mention in the introduction.</li>
+    <li>Use hatnotes for disambiguation and "see also" references at the top of articles.</li>
+    <li>Cite sources using inline citation links to a references section at the bottom.</li>
+    <li>Avoid informal language, slang, and speculative claims without citation.</li>
+  </ul>
+
+  <h2>Page Meta Block</h2>
+  <p>Include a page meta block at the end of each article, before the closing <code>&lt;/main&gt;</code> tag:</p>
+  <pre><code>&lt;div class="wiki-page-meta"&gt;
+  &lt;span&gt;Last edited: &lt;time datetime="2024-01-01"&gt;January 1, 2024&lt;/time&gt;&lt;/span&gt;
+  &lt;span&gt;Author: Name&lt;/span&gt;
+  &lt;span&gt;Category: &lt;a href="categories.html"&gt;Category&lt;/a&gt;&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+</main>
+<script>
+window.WIKI_PAGE = { title: 'Authoring Articles', category: 'Dev' };
+window.WIKI_SIDEBAR = [
+  { label: 'Dev Reference', links: [
+    { text: 'Dev Index',        href: 'index.html' },
+    { text: 'Getting Started',  href: 'getting-started.html' },
+    { text: 'Authoring',        href: 'authoring.html' },
+    { text: 'wiki.js API',      href: 'wiki-js-api.html' },
+    { text: 'CSS Variables',    href: 'css-variables.html' },
+  ]},
+  { label: 'Components', links: [
+    { text: 'Infobox',          href: 'comp-infobox.html' },
+    { text: 'Callouts',         href: 'comp-callouts.html' },
+    { text: 'Tables',           href: 'comp-tables.html' },
+    { text: 'Tabs',             href: 'comp-tabs.html' },
+    { text: 'Collapsible',      href: 'comp-collapsible.html' },
+    { text: 'Timeline',         href: 'comp-timeline.html' },
+    { text: 'Gallery',          href: 'comp-gallery.html' },
+    { text: 'Mathematics',      href: 'comp-math.html' },
+    { text: 'Desmos',           href: 'comp-desmos.html' },
+    { text: 'Miscellaneous',    href: 'comp-misc.html' },
+  ]},
+];
+</script>
+<script src="../assets/js/wiki.js"></script>
+</body>
+</html>

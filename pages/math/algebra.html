@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algebra — Mini Wiki</title>
+  <meta name="description" content="From elementary algebra to abstract structures: variables, equations, polynomials, and the foundations of modern algebra.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://www.desmos.com/api/v1.8/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+  <link rel="stylesheet" href="../../assets/css/wiki.css">
+</head>
+<body>
+<main id="wiki-content">
+
+  <div class="wiki-breadcrumb">
+    <a href="../../index.html">Home</a><span class="sep">›</span>
+    <a href="../categories.html">Mathematics</a><span class="sep">›</span>
+    <span>Algebra</span>
+  </div>
+
+  <h1>Algebra</h1>
+
+  <div class="wiki-toc floating"></div>
+
+  <div class="wiki-infobox">
+    <div class="wiki-infobox-title">Algebra</div>
+    <table>
+      <tr><td>Branch</td><td>Mathematics</td></tr>
+      <tr><td>Subfields</td><td>Elementary, Linear, Abstract</td></tr>
+      <tr><td>Named from</td><td>Arabic <em>al-jabr</em></td></tr>
+      <tr><td>Classical source</td><td>al-Khwarizmi (9th century)</td></tr>
+      <tr><td>Foundational to</td><td>All of mathematics</td></tr>
+    </table>
+  </div>
+
+  <p><strong>Algebra</strong> is the branch of mathematics dealing with symbols and the rules for manipulating those symbols to represent numbers, quantities, and their relationships. The word derives from the Arabic <em>al-jabr</em> ("reunion of broken parts"), drawn from the title of the ninth-century treatise by the mathematician al-Khwarizmi, whose name in turn gave us the word "algorithm." Algebra begins with the elementary manipulation of equations and extends, through linear and abstract algebra, to some of the deepest structures in all of mathematics.</p>
+
+  <p>In the Western tradition, algebra developed through the contributions of Greek, Islamic, and Renaissance European mathematicians. It was the Italian algebraists of the sixteenth century — Tartaglia, Cardano, and Ferrari — who first solved the cubic and quartic equations, opening a line of inquiry that would ultimately lead to Galois theory and the modern concept of a group.</p>
+
+  <div class="clearfix"></div>
+
+  <h2>Elementary Algebra</h2>
+
+  <p>Elementary algebra introduces the use of variables — symbols representing unspecified or unknown numbers — and develops methods for solving equations.</p>
+
+  <h3>The Quadratic Equation</h3>
+
+  <p>A quadratic equation has the form $ax^2 + bx + c = 0$ with $a \neq 0$. Its solutions are given by the quadratic formula:</p>
+
+  $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+  <p>The expression $\Delta = b^2 - 4ac$ is called the <em>discriminant</em>. If $\Delta > 0$, there are two distinct real roots; if $\Delta = 0$, one repeated real root; if $\Delta < 0$, two complex conjugate roots.</p>
+
+  <p>The graph of $ax^2 + bx + c$ is a parabola. The roots are the $x$-intercepts. Use the sliders below to explore how the coefficients affect the shape and root count:</p>
+
+  <div id="desmos-quadratic" style="height:420px;border:1px solid var(--border);border-radius:3px;"></div>
+
+  <h3>Polynomial Equations</h3>
+
+  <p>A polynomial of degree $n$ is an expression of the form:</p>
+
+  $$p(x) = a_n x^n + a_{n-1}x^{n-1} + \cdots + a_1 x + a_0, \quad a_n \neq 0$$
+
+  <p>By the Fundamental Theorem of Algebra, every non-constant polynomial with complex coefficients has at least one complex root, and therefore exactly $n$ roots (counted with multiplicity) in the complex numbers. This theorem was first proved by Gauss in his 1799 doctoral dissertation.</p>
+
+  <h3>Factoring</h3>
+
+  <p>Key factoring identities:</p>
+
+  $$a^2 - b^2 = (a-b)(a+b) \quad\text{(difference of squares)}$$
+  $$a^3 \pm b^3 = (a \pm b)(a^2 \mp ab + b^2) \quad\text{(sum/difference of cubes)}$$
+  $$(a+b)^2 = a^2 + 2ab + b^2 \quad (a-b)^2 = a^2 - 2ab + b^2$$
+
+  <h2>Linear Algebra</h2>
+
+  <p>Linear algebra studies vector spaces and linear maps between them. It is the workhorse of applied mathematics, underlying everything from machine learning to quantum mechanics.</p>
+
+  <h3>Systems of Linear Equations</h3>
+
+  <p>A system of $m$ equations in $n$ unknowns has the matrix form $A\mathbf{x} = \mathbf{b}$. The solution set is determined by the relationship between the rank of $A$ and the rank of the augmented matrix $[A|\mathbf{b}]$.</p>
+
+  <p>For example, a system of two equations in two unknowns corresponds geometrically to two lines in the plane:</p>
+
+  <div id="desmos-linear-system" style="height:380px;border:1px solid var(--border);border-radius:3px;"></div>
+
+  <h3>Matrices and Determinants</h3>
+
+  <p>For a $2 \times 2$ matrix $A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$, the determinant is:</p>
+
+  $$\det(A) = ad - bc$$
+
+  <p>The matrix $A$ is invertible if and only if $\det(A) \neq 0$, in which case:</p>
+
+  $$A^{-1} = \frac{1}{ad-bc}\begin{pmatrix} d & -b \\ -c & a \end{pmatrix}$$
+
+  <h3>Eigenvalues and Eigenvectors</h3>
+
+  <p>A nonzero vector $\mathbf{v}$ is an eigenvector of a matrix $A$ with eigenvalue $\lambda$ if:</p>
+
+  $$A\mathbf{v} = \lambda\mathbf{v}$$
+
+  <p>Eigenvalues are found by solving the characteristic equation $\det(A - \lambda I) = 0$. Eigenvalue decomposition underlies principal component analysis, quantum mechanics, and the Google PageRank algorithm.</p>
+
+  <h2>Abstract Algebra</h2>
+
+  <p>Abstract algebra studies algebraic structures — sets equipped with operations satisfying specified axioms — in their most general form.</p>
+
+  <div class="wiki-tabs">
+    <div class="wiki-tab-nav">
+      <button class="wiki-tab-btn">Groups</button>
+      <button class="wiki-tab-btn">Rings</button>
+      <button class="wiki-tab-btn">Fields</button>
+    </div>
+    <div class="wiki-tab-panel">
+      <p>A <strong>group</strong> $(G, \cdot)$ is a set $G$ with a binary operation satisfying four axioms: closure, associativity, the existence of an identity element, and the existence of inverses. Groups are the mathematical formalization of symmetry.</p>
+      <p>The group of integers under addition $(\mathbb{Z}, +)$ and the group of rotations of a regular polygon are canonical examples. Galois showed that the solvability of polynomial equations by radicals corresponds to a property (solvability) of associated groups — a revolutionary insight that unified algebra and geometry.</p>
+    </div>
+    <div class="wiki-tab-panel">
+      <p>A <strong>ring</strong> $(R, +, \cdot)$ has two operations: addition (forming an abelian group) and multiplication (associative, with an identity, distributing over addition). The integers $\mathbb{Z}$ form a commutative ring; $n \times n$ matrices form a non-commutative ring.</p>
+    </div>
+    <div class="wiki-tab-panel">
+      <p>A <strong>field</strong> is a commutative ring in which every nonzero element has a multiplicative inverse. The rationals $\mathbb{Q}$, reals $\mathbb{R}$, and complex numbers $\mathbb{C}$ are all fields. Finite fields (such as $\mathbb{Z}/p\mathbb{Z}$ for prime $p$) are foundational to cryptography and coding theory.</p>
+    </div>
+  </div>
+
+  <h2>The Binomial Theorem</h2>
+
+  <p>For any non-negative integer $n$:</p>
+
+  $$(a+b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k$$
+
+  <p>where $\binom{n}{k} = \frac{n!}{k!(n-k)!}$ is the binomial coefficient. The coefficients form Pascal's triangle, and the theorem has applications in probability, combinatorics, and number theory.</p>
+
+  <h2>Logarithms and Exponentials</h2>
+
+  <p>The exponential function $y = a^x$ and the logarithm $y = \log_a x$ are mutual inverses: $\log_a(a^x) = x$ and $a^{\log_a x} = x$.</p>
+
+  <p>Key logarithm laws:</p>
+
+  $$\log_a(mn) = \log_a m + \log_a n$$
+  $$\log_a\!\left(\frac{m}{n}\right) = \log_a m - \log_a n$$
+  $$\log_a(m^p) = p\log_a m$$
+  $$\log_b x = \frac{\ln x}{\ln b} \quad\text{(change of base)}$$
+
+  <div id="desmos-exponentials" style="height:380px;border:1px solid var(--border);border-radius:3px;"></div>
+
+  <div class="wiki-references">
+    <h2>References</h2>
+    <ol>
+      <li>Artin, M. (2010). <em>Algebra</em> (2nd ed.). Pearson.</li>
+      <li>Herstein, I. N. (1975). <em>Topics in Algebra</em> (2nd ed.). Wiley.</li>
+      <li>Rosen, K. H. (2018). <em>Elementary Number Theory</em> (7th ed.). Pearson.</li>
+    </ol>
+  </div>
+
+  <div class="wiki-tags">
+    <span class="wiki-tags-label">Tags:</span>
+    <a class="wiki-tag" href="../categories.html">Mathematics</a>
+    <a class="wiki-tag" href="../categories.html">Algebra</a>
+    <a class="wiki-tag" href="../categories.html">Linear Algebra</a>
+  </div>
+  <div class="wiki-page-meta">
+    <span>Last edited: <time>2024-01-01</time></span>
+    <span>Category: Mathematics</span>
+  </div>
+
+</main>
+
+<script>
+window.WIKI_ROOT = '../../';
+window.WIKI_PAGE = { title: 'Algebra', category: 'Mathematics' };
+window.WIKI_SIDEBAR = [
+  { label: 'Navigation', links: [
+    { text: 'Home',              href: '../../index.html' },
+    { text: 'All Categories',   href: '../categories.html' },
+  ]},
+  { label: 'Mathematics', links: [
+    { text: 'Mathematics (all articles)', href: 'index.html' },
+    { text: 'Trigonometry',       href: 'trigonometry.html' },
+    { text: 'Calculus',           href: 'calculus.html' },
+    { text: 'Algebra',            href: 'algebra.html' },
+  ]},
+  { label: 'Other Categories', links: [
+    { text: 'Philosophy',         href: '../philosophy/index.html' },
+    { text: 'Theology',           href: '../theology/index.html' },
+    { text: 'American History',   href: '../history/american/index.html' },
+    { text: 'Classical History',  href: '../history/classical/index.html' },
+  ]},
+];
+</script>
+
+<script src="../../assets/js/wiki.js"></script>
+
+<script>
+function initAlgebraGraphs() {
+  if (typeof Desmos === 'undefined') return;
+
+  // Quadratic
+  const qEl = document.getElementById('desmos-quadratic');
+  if (qEl && !qEl.dataset.init) {
+    qEl.dataset.init = '1';
+    const qc = Desmos.GraphingCalculator(qEl, { keypad: false });
+    qc.setExpression({ id: 'a', latex: 'a=1', sliderBounds: { min: -3, max: 3, step: 0.1 } });
+    qc.setExpression({ id: 'b', latex: 'b=0', sliderBounds: { min: -6, max: 6, step: 0.1 } });
+    qc.setExpression({ id: 'c', latex: 'c=-2', sliderBounds: { min: -6, max: 6, step: 0.1 } });
+    qc.setExpression({ id: 'f', latex: 'y=ax^2+bx+c', color: '#8b2635' });
+    qc.setExpression({ id: 'disc', latex: '\\Delta=b^2-4ac', color: '#2d70b3' });
+  }
+
+  // Linear system
+  const lEl = document.getElementById('desmos-linear-system');
+  if (lEl && !lEl.dataset.init) {
+    lEl.dataset.init = '1';
+    const lc = Desmos.GraphingCalculator(lEl, { keypad: false });
+    lc.setExpression({ id: 'l1', latex: '2x+y=4', color: '#2d70b3', label: '2x+y=4', showLabel: true });
+    lc.setExpression({ id: 'l2', latex: 'x-y=1',  color: '#c74440', label: 'x-y=1',  showLabel: true });
+    lc.setExpression({ id: 'sol', latex: '(5/3, 2/3)', color: '#388c46', showLabel: true, label: 'Solution' });
+  }
+
+  // Exponentials
+  const eEl = document.getElementById('desmos-exponentials');
+  if (eEl && !eEl.dataset.init) {
+    eEl.dataset.init = '1';
+    const ec = Desmos.GraphingCalculator(eEl, { keypad: false });
+    ec.setExpression({ id: 'e1', latex: 'y=e^x',    color: '#c74440', label: 'eˣ',    showLabel: true });
+    ec.setExpression({ id: 'e2', latex: 'y=2^x',    color: '#2d70b3', label: '2ˣ',    showLabel: true });
+    ec.setExpression({ id: 'l1', latex: 'y=\\ln(x)',color: '#388c46', label: 'ln(x)', showLabel: true });
+    ec.setExpression({ id: 'l2', latex: 'y=\\log_{2}(x)', color: '#6741d9', label: 'log₂(x)', showLabel: true });
+    ec.setExpression({ id: 'ref', latex: 'y=x', color: '#b5ae9f', lineStyle: Desmos.Styles.DASHED });
+  }
+}
+
+if (typeof Desmos !== 'undefined') { document.addEventListener('DOMContentLoaded', initAlgebraGraphs); }
+else { window.addEventListener('load', initAlgebraGraphs); }
+</script>
+</body>
+</html>

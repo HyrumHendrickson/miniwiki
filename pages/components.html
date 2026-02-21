@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Component Reference — MyWiki</title>
+  <title>Component Reference — Mini Wiki</title>
   <meta name="description" content="All modular wiki components demonstrated in one place.">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
@@ -24,7 +24,7 @@
 
   <div class="wiki-toc floating"></div>
 
-  <p>This page demonstrates every modular component available in MyWiki. All components are driven purely by CSS classes and a small amount of JavaScript in <code>wiki.js</code>.</p>
+  <p>This page demonstrates every modular component available in Mini Wiki. All components are driven purely by CSS classes and a small amount of JavaScript in <code>wiki.js</code>.</p>
 
   <!-- ══════════════════════════════════════════════════════════ -->
   <h2>Infoboxes</h2>
@@ -51,22 +51,22 @@
   <p>Callouts highlight important information. Four types are available:</p>
 
   <div class="wiki-callout note">
-    <div class="wiki-callout-title">📝 Note</div>
+    <div class="wiki-callout-title">Note</div>
     <p>Class: <code>.wiki-callout.note</code> — For general notes, tips, or supplementary information. Green accent.</p>
   </div>
 
   <div class="wiki-callout info">
-    <div class="wiki-callout-title">ℹ️ Info</div>
+    <div class="wiki-callout-title">Info</div>
     <p>Class: <code>.wiki-callout.info</code> — For informational context. Blue accent.</p>
   </div>
 
   <div class="wiki-callout warning">
-    <div class="wiki-callout-title">⚠️ Warning</div>
+    <div class="wiki-callout-title">Warning</div>
     <p>Class: <code>.wiki-callout.warning</code> — For warnings or important caveats. Yellow accent.</p>
   </div>
 
   <div class="wiki-callout danger">
-    <div class="wiki-callout-title">🚨 Danger</div>
+    <div class="wiki-callout-title">Danger</div>
     <p>Class: <code>.wiki-callout.danger</code> — For critical warnings. Red accent.</p>
   </div>
 
@@ -221,10 +221,10 @@ console.log(fibonacci(10)); // 55</code></pre>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Feature One</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
-        <tr><td>Feature Two</td><td class="cross">✗</td><td class="check">✓</td><td class="check">✓</td></tr>
-        <tr><td>Feature Three</td><td class="cross">✗</td><td class="cross">✗</td><td class="check">✓</td></tr>
-        <tr><td>Feature Four</td><td class="partial">Partial</td><td class="check">✓</td><td class="check">✓</td></tr>
+        <tr><td>Feature One</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        <tr><td>Feature Two</td><td class="cross">&#10007;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        <tr><td>Feature Three</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="check">&#10003;</td></tr>
+        <tr><td>Feature Four</td><td class="partial">Partial</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
       </tbody>
     </table>
   </div>
@@ -294,10 +294,10 @@ console.log(fibonacci(10)); // 55</code></pre>
   <h2>Stub Notice</h2>
 
   <div class="wiki-stub">
-    <div class="wiki-stub-icon">🔨</div>
+    
     <div>
       <strong>This article is a stub.</strong>
-      You can help MyWiki by expanding it.
+      You can help Mini Wiki by expanding it.
     </div>
   </div>
 
@@ -305,7 +305,7 @@ console.log(fibonacci(10)); // 55</code></pre>
   <h2>Redirect Notice</h2>
 
   <div class="wiki-redirect-notice">
-    ↩ Redirected from <a href="#">Original Article Name</a>.
+    Redirected Redirected from <a href="#">Original Article Name</a>.
   </div>
 
   <!-- ══════════════════════════════════════════════════════════ -->
@@ -350,14 +350,29 @@ console.log(fibonacci(10)); // 55</code></pre>
 </main>
 
 <script>
+window.WIKI_ROOT = '../';
 window.WIKI_PAGE = { title: 'Component Reference', category: 'Reference' };
 window.WIKI_SIDEBAR = [
-  { label: 'Reference', links: [
-    { text: '🏠 Home',         href: '../index.html' },
-    { text: 'Math Demo',       href: 'math-demo.html' },
-    { text: 'Desmos Demo',     href: 'desmos-demo.html' },
-    { text: 'Components',      href: 'components.html' },
-    { text: 'Article Template',href: 'article-template.html' },
+  { label: 'Navigation', links: [
+    { text: 'Home',              href: '../index.html' },
+    { text: 'All Categories',   href: 'categories.html' },
+    { text: 'Recent Changes',   href: 'recent.html' },
+    { text: 'About',            href: 'about.html' },
+  ]},
+  { label: 'Mathematics', links: [
+    { text: 'Mathematics Articles', href: 'math/index.html' },
+  ]},
+  { label: 'Classical History', links: [
+    { text: 'Classical History Articles', href: 'history/classical/index.html' },
+  ]},
+  { label: 'American History', links: [
+    { text: 'American History Articles', href: 'history/american/index.html' },
+  ]},
+  { label: 'Philosophy', links: [
+    { text: 'Philosophy Articles', href: 'philosophy/index.html' },
+  ]},
+  { label: 'Theology', links: [
+    { text: 'Theology Articles', href: 'theology/index.html' },
   ]},
 ];
 </script>

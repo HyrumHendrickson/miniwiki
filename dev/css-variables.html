@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Variables — Dev — Mini Wiki</title>
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+</head>
+<body>
+<div class="dev-banner">
+  <strong>Dev Mode</strong> <span class="dev-banner-sep">|</span>
+  <a href="index.html">Dev Index</a> <span class="dev-banner-sep">|</span>
+  <a href="../index.html">Return to Site</a>
+</div>
+<main id="wiki-content">
+  <div class="wiki-breadcrumb"><a href="index.html">Dev</a><span class="sep">›</span><span>CSS Variables</span></div>
+  <h1>CSS Variables</h1>
+  <p>All design tokens are defined as CSS custom properties on <code>:root</code> in <code>wiki.css</code>. Override any variable on a per-page basis or globally.</p>
+
+  <h2>Color Palette</h2>
+  <div class="wiki-table-wrap"><table class="wiki-table">
+    <thead><tr><th>Variable</th><th>Default</th><th>Usage</th></tr></thead>
+    <tbody>
+      <tr><td><code>--bg</code></td><td><code>#faf9f6</code></td><td>Main page background</td></tr>
+      <tr><td><code>--bg-alt</code></td><td><code>#f3f1ec</code></td><td>Alternate surfaces (infoboxes, callouts)</td></tr>
+      <tr><td><code>--bg-inset</code></td><td><code>#eceae3</code></td><td>Deeply inset elements</td></tr>
+      <tr><td><code>--border</code></td><td><code>#d4cfc4</code></td><td>Standard border color</td></tr>
+      <tr><td><code>--border-dark</code></td><td><code>#b5ae9f</code></td><td>Stronger borders (table headers, TOC)</td></tr>
+      <tr><td><code>--text</code></td><td><code>#1a1917</code></td><td>Primary text</td></tr>
+      <tr><td><code>--text-muted</code></td><td><code>#6b6660</code></td><td>Secondary text, labels</td></tr>
+      <tr><td><code>--text-light</code></td><td><code>#9c9690</code></td><td>Tertiary text, metadata</td></tr>
+      <tr><td><code>--accent</code></td><td><code>#8b2635</code></td><td>Primary accent (links in header, timeline dots)</td></tr>
+      <tr><td><code>--link</code></td><td><code>#1a4c8f</code></td><td>Hyperlink color</td></tr>
+      <tr><td><code>--link-visited</code></td><td><code>#5a3275</code></td><td>Visited link color</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Typography</h2>
+  <div class="wiki-table-wrap"><table class="wiki-table">
+    <thead><tr><th>Variable</th><th>Default</th><th>Usage</th></tr></thead>
+    <tbody>
+      <tr><td><code>--font-serif</code></td><td>Source Serif 4, Georgia</td><td>Body text</td></tr>
+      <tr><td><code>--font-display</code></td><td>Playfair Display, Georgia</td><td>Headings, infobox titles</td></tr>
+      <tr><td><code>--font-mono</code></td><td>JetBrains Mono, Courier New</td><td>Code, technical text</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Layout</h2>
+  <div class="wiki-table-wrap"><table class="wiki-table">
+    <thead><tr><th>Variable</th><th>Default</th><th>Usage</th></tr></thead>
+    <tbody>
+      <tr><td><code>--sidebar-w</code></td><td><code>260px</code></td><td>Left sidebar width</td></tr>
+      <tr><td><code>--content-max</code></td><td><code>860px</code></td><td>Maximum content column width</td></tr>
+      <tr><td><code>--radius</code></td><td><code>3px</code></td><td>Border radius for cards, code blocks, etc.</td></tr>
+      <tr><td><code>--transition</code></td><td><code>0.18s ease</code></td><td>Default transition for hover states</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Theming Example</h2>
+  <p>To override the accent color site-wide, add this to the top of a custom CSS file loaded after <code>wiki.css</code>:</p>
+  <pre><code>:root {
+  --accent:       #1a4c8f;  /* blue instead of crimson */
+  --accent-hover: #0f2d5a;
+  --accent-bg:    #edf4fc;
+}</code></pre>
+</main>
+<script>
+window.WIKI_ROOT = '../';
+window.WIKI_PAGE = { title: 'CSS Variables', category: 'Dev' };
+window.WIKI_SIDEBAR = [
+  { label: 'Dev Reference', links: [
+    { text: 'Dev Index',       href: 'index.html' },
+    { text: 'Getting Started', href: 'getting-started.html' },
+    { text: 'Authoring',       href: 'authoring.html' },
+    { text: 'wiki.js API',     href: 'wiki-js-api.html' },
+    { text: 'CSS Variables',   href: 'css-variables.html' },
+  ]},
+  { label: 'Components', links: [
+    { text: 'Infobox',         href: 'comp-infobox.html' },
+    { text: 'Callouts',        href: 'comp-callouts.html' },
+  ]},
+];
+</script>
+<script src="../assets/js/wiki.js"></script>
+</body>
+</html>

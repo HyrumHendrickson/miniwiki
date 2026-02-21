@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trigonometry — Mini Wiki</title>
+  <meta name="description" content="A thorough introduction to trigonometry: the unit circle, functions, identities, and applications.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://www.desmos.com/api/v1.8/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+  <link rel="stylesheet" href="../../assets/css/wiki.css">
+</head>
+<body>
+<main id="wiki-content">
+
+  <div class="wiki-breadcrumb">
+    <a href="../../index.html">Home</a><span class="sep">›</span>
+    <a href="../categories.html">Mathematics</a><span class="sep">›</span>
+    <span>Trigonometry</span>
+  </div>
+
+  <h1>Trigonometry</h1>
+
+  <div class="wiki-toc floating"></div>
+
+  <div class="wiki-infobox">
+    <div class="wiki-infobox-title">Trigonometry</div>
+    <table>
+      <tr><td>Branch</td><td>Mathematics</td></tr>
+      <tr><td>Subfield</td><td>Geometry, Analysis</td></tr>
+      <tr><td>Key objects</td><td>Angles, triangles, circles</td></tr>
+      <tr><td>Foundational to</td><td>Calculus, physics, engineering</td></tr>
+      <tr><td>Classical origin</td><td>Greek and Hellenistic astronomy</td></tr>
+    </table>
+  </div>
+
+  <p><strong>Trigonometry</strong> is the branch of mathematics concerned with the relationships between the angles and side lengths of triangles, and with the functions that arise from those relationships. Its name derives from the Greek <em>trigonon</em> (triangle) and <em>metron</em> (measure). Emerging from the practical demands of astronomy and navigation in the ancient world, trigonometry has grown into one of the most indispensable tools in all of mathematics and the physical sciences.</p>
+
+  <p>The six trigonometric functions — sine, cosine, tangent, cosecant, secant, and cotangent — extend naturally from the geometry of the right triangle to the full sweep of the real numbers and the complex plane, providing a language capable of describing all periodic and oscillatory phenomena.</p>
+
+  <div class="clearfix"></div>
+
+  <h2>The Right Triangle</h2>
+
+  <p>In a right triangle with an acute angle $\theta$, the three sides are designated as the <em>opposite</em> (the side across from $\theta$), the <em>adjacent</em> (the side next to $\theta$ that is not the hypotenuse), and the <em>hypotenuse</em> (the side opposite the right angle, always the longest). The three primary trigonometric ratios are:</p>
+
+  $$\sin\theta = \frac{\text{opposite}}{\text{hypotenuse}}, \quad \cos\theta = \frac{\text{adjacent}}{\text{hypotenuse}}, \quad \tan\theta = \frac{\text{opposite}}{\text{adjacent}}$$
+
+  <p>The three reciprocal functions follow directly:</p>
+
+  $$\csc\theta = \frac{1}{\sin\theta}, \quad \sec\theta = \frac{1}{\cos\theta}, \quad \cot\theta = \frac{1}{\tan\theta}$$
+
+  <p>A useful mnemonic for the primary ratios is <strong>SOH-CAH-TOA</strong>: Sine = Opposite over Hypotenuse; Cosine = Adjacent over Hypotenuse; Tangent = Opposite over Adjacent.</p>
+
+  <h2>The Unit Circle</h2>
+
+  <p>The unit circle — a circle of radius 1 centered at the origin of the Cartesian plane — provides the most elegant and powerful definition of the trigonometric functions, extending them to all real numbers and to angles beyond the acute range of the right triangle definition.</p>
+
+  <p>For any angle $\theta$ measured counterclockwise from the positive $x$-axis, the point on the unit circle at that angle has coordinates $(\cos\theta, \sin\theta)$. Since the radius is 1, the Pythagorean theorem immediately yields the most fundamental identity in trigonometry:</p>
+
+  $$\sin^2\theta + \cos^2\theta = 1$$
+
+  <p>The graph below shows the unit circle with a movable angle. Drag the slider to explore how the sine and cosine values correspond to the $y$ and $x$ coordinates of the point on the circle.</p>
+
+  <div id="desmos-unit-circle" style="height:460px;border:1px solid var(--border);border-radius:3px;"></div>
+
+  <h3>Key Angle Values</h3>
+
+  <div class="wiki-table-wrap">
+    <table class="wiki-table">
+      <thead><tr><th>Degrees</th><th>Radians</th><th>$\sin\theta$</th><th>$\cos\theta$</th><th>$\tan\theta$</th></tr></thead>
+      <tbody>
+        <tr><td>0&deg;</td><td>$0$</td><td>$0$</td><td>$1$</td><td>$0$</td></tr>
+        <tr><td>30&deg;</td><td>$\pi/6$</td><td>$1/2$</td><td>$\sqrt{3}/2$</td><td>$1/\sqrt{3}$</td></tr>
+        <tr><td>45&deg;</td><td>$\pi/4$</td><td>$\sqrt{2}/2$</td><td>$\sqrt{2}/2$</td><td>$1$</td></tr>
+        <tr><td>60&deg;</td><td>$\pi/3$</td><td>$\sqrt{3}/2$</td><td>$1/2$</td><td>$\sqrt{3}$</td></tr>
+        <tr><td>90&deg;</td><td>$\pi/2$</td><td>$1$</td><td>$0$</td><td>undefined</td></tr>
+        <tr><td>180&deg;</td><td>$\pi$</td><td>$0$</td><td>$-1$</td><td>$0$</td></tr>
+        <tr><td>270&deg;</td><td>$3\pi/2$</td><td>$-1$</td><td>$0$</td><td>undefined</td></tr>
+        <tr><td>360&deg;</td><td>$2\pi$</td><td>$0$</td><td>$1$</td><td>$0$</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>The Trigonometric Functions</h2>
+
+  <p>Graphed over the real numbers, sine and cosine are smooth, periodic waves with period $2\pi$. The graph of $\sin x$ passes through the origin; the graph of $\cos x$ has its maximum at the origin. Both oscillate between $-1$ and $1$.</p>
+
+  <div id="desmos-trig-waves" style="height:400px;border:1px solid var(--border);border-radius:3px;"></div>
+
+  <h3>Transformations</h3>
+
+  <p>The general sinusoidal function $y = A\sin(Bx + C) + D$ has the following parameters:</p>
+
+  <ul>
+    <li>$A$: <strong>Amplitude</strong> — the peak displacement from the midline, equal to $|A|$.</li>
+    <li>$B$: <strong>Frequency factor</strong> — the period becomes $2\pi / |B|$.</li>
+    <li>$C$: <strong>Phase shift</strong> — the horizontal translation, equal to $-C/B$.</li>
+    <li>$D$: <strong>Vertical shift</strong> — the midline of the wave.</li>
+  </ul>
+
+  <p>Use the sliders in the graph below to explore each parameter:</p>
+
+  <div id="desmos-sinusoid" style="height:440px;border:1px solid var(--border);border-radius:3px;"></div>
+
+  <h2>Fundamental Identities</h2>
+
+  <h3>Pythagorean Identities</h3>
+
+  $$\sin^2\theta + \cos^2\theta = 1$$
+  $$1 + \tan^2\theta = \sec^2\theta$$
+  $$1 + \cot^2\theta = \csc^2\theta$$
+
+  <h3>Angle Sum and Difference</h3>
+
+  $$\sin(\alpha \pm \beta) = \sin\alpha\cos\beta \pm \cos\alpha\sin\beta$$
+  $$\cos(\alpha \pm \beta) = \cos\alpha\cos\beta \mp \sin\alpha\sin\beta$$
+  $$\tan(\alpha \pm \beta) = \frac{\tan\alpha \pm \tan\beta}{1 \mp \tan\alpha\tan\beta}$$
+
+  <h3>Double Angle Formulas</h3>
+
+  $$\sin(2\theta) = 2\sin\theta\cos\theta$$
+  $$\cos(2\theta) = \cos^2\theta - \sin^2\theta = 2\cos^2\theta - 1 = 1 - 2\sin^2\theta$$
+  $$\tan(2\theta) = \frac{2\tan\theta}{1 - \tan^2\theta}$$
+
+  <h3>Half Angle Formulas</h3>
+
+  $$\sin\!\left(\frac{\theta}{2}\right) = \pm\sqrt{\frac{1-\cos\theta}{2}}, \quad \cos\!\left(\frac{\theta}{2}\right) = \pm\sqrt{\frac{1+\cos\theta}{2}}$$
+
+  <h2>The Law of Sines and Cosines</h2>
+
+  <p>For a general (non-right) triangle with sides $a$, $b$, $c$ opposite angles $A$, $B$, $C$ respectively:</p>
+
+  <p><strong>Law of Sines:</strong></p>
+  $$\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} = 2R$$
+
+  <p>where $R$ is the circumradius of the triangle.</p>
+
+  <p><strong>Law of Cosines:</strong></p>
+  $$c^2 = a^2 + b^2 - 2ab\cos C$$
+
+  <p>The law of cosines generalizes the Pythagorean theorem: when $C = 90°$, $\cos C = 0$ and the formula reduces to $c^2 = a^2 + b^2$.</p>
+
+  <h2>Inverse Trigonometric Functions</h2>
+
+  <p>The inverse functions $\arcsin$, $\arccos$, and $\arctan$ (also written $\sin^{-1}$, $\cos^{-1}$, $\tan^{-1}$) return the angle whose trigonometric value is a given number. Their domains are restricted to ensure they are proper functions:</p>
+
+  <div class="wiki-table-wrap"><table class="wiki-table">
+    <thead><tr><th>Function</th><th>Domain</th><th>Range</th></tr></thead>
+    <tbody>
+      <tr><td>$\arcsin x$</td><td>$[-1, 1]$</td><td>$[-\pi/2, \pi/2]$</td></tr>
+      <tr><td>$\arccos x$</td><td>$[-1, 1]$</td><td>$[0, \pi]$</td></tr>
+      <tr><td>$\arctan x$</td><td>$(-\infty, \infty)$</td><td>$(-\pi/2, \pi/2)$</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Euler's Formula</h2>
+
+  <p>One of the most beautiful and consequential results in mathematics connects trigonometry to the complex exponential via Euler's formula:</p>
+
+  $$e^{i\theta} = \cos\theta + i\sin\theta$$
+
+  <p>Setting $\theta = \pi$ yields the celebrated identity $e^{i\pi} + 1 = 0$, which unites the five most fundamental constants of mathematics. The formula also provides the fastest proofs of the angle-addition identities and reveals the deep unity between exponential and oscillatory behavior.</p>
+
+  <h2>Applications</h2>
+
+  <p>Trigonometry is foundational to an extraordinary range of disciplines:</p>
+
+  <div class="wiki-tabs">
+    <div class="wiki-tab-nav">
+      <button class="wiki-tab-btn">Physics</button>
+      <button class="wiki-tab-btn">Engineering</button>
+      <button class="wiki-tab-btn">Music</button>
+      <button class="wiki-tab-btn">Navigation</button>
+    </div>
+    <div class="wiki-tab-panel">
+      <p>Virtually all of classical mechanics relies on trigonometry. Projectile motion, simple harmonic oscillation, wave propagation, circular motion, and the decomposition of forces into components all require the sine and cosine functions. Maxwell's equations for electromagnetism are, at their heart, equations governing sinusoidal waves.</p>
+    </div>
+    <div class="wiki-tab-panel">
+      <p>Electrical engineers use Fourier analysis — which decomposes any signal into sums of sines and cosines — to design circuits, compress audio, and analyze waveforms. Structural engineers use trigonometry to resolve forces and calculate moments in beams and trusses.</p>
+    </div>
+    <div class="wiki-tab-panel">
+      <p>Musical sound is fundamentally sinusoidal. A pure tone is a sine wave; a richer sound is a sum of many harmonics (integer multiples of a fundamental frequency). Fourier's theorem guarantees that any periodic waveform can be expressed as such a sum, which is why trigonometry underlies all of digital audio processing.</p>
+    </div>
+    <div class="wiki-tab-panel">
+      <p>Celestial navigation — the classical art of finding one's position at sea using the stars — is entirely a trigonometric enterprise. Spherical trigonometry, the extension of planar trigonometry to the surface of a sphere, was developed precisely for this purpose and remains in use in GPS calculations today.</p>
+    </div>
+  </div>
+
+  <div class="wiki-references">
+    <h2>References</h2>
+    <ol>
+      <li>Stewart, J. (2015). <em>Precalculus: Mathematics for Calculus</em> (7th ed.). Cengage Learning.</li>
+      <li>Maor, E. (1998). <em>Trigonometric Delights</em>. Princeton University Press.</li>
+      <li>Toomer, G. J. (1998). <em>Ptolemy's Almagest</em>. Princeton University Press.</li>
+    </ol>
+  </div>
+
+  <div class="wiki-tags">
+    <span class="wiki-tags-label">Tags:</span>
+    <a class="wiki-tag" href="../categories.html">Mathematics</a>
+    <a class="wiki-tag" href="../categories.html">Trigonometry</a>
+    <a class="wiki-tag" href="../categories.html">Geometry</a>
+  </div>
+  <div class="wiki-page-meta">
+    <span>Last edited: <time>2024-01-01</time></span>
+    <span>Category: Mathematics</span>
+  </div>
+
+</main>
+
+<script>
+window.WIKI_ROOT = '../../';
+window.WIKI_PAGE = { title: 'Trigonometry', category: 'Mathematics', tags: ['math','trig','geometry'] };
+window.WIKI_SIDEBAR = [
+  { label: 'Navigation', links: [
+    { text: 'Home',              href: '../../index.html' },
+    { text: 'All Categories',   href: '../categories.html' },
+  ]},
+  { label: 'Mathematics', links: [
+    { text: 'Mathematics (all articles)', href: 'index.html' },
+    { text: 'Trigonometry',       href: 'trigonometry.html' },
+    { text: 'Calculus',           href: 'calculus.html' },
+    { text: 'Algebra',            href: 'algebra.html' },
+  ]},
+  { label: 'Other Categories', links: [
+    { text: 'Philosophy',         href: '../philosophy/index.html' },
+    { text: 'Theology',           href: '../theology/index.html' },
+    { text: 'American History',   href: '../history/american/index.html' },
+    { text: 'Classical History',  href: '../history/classical/index.html' },
+  ]},
+];
+</script>
+
+<script src="../../assets/js/wiki.js"></script>
+
+<script>
+function initTrigGraphs() {
+  if (typeof Desmos === 'undefined') return;
+
+  // Unit circle
+  const ucEl = document.getElementById('desmos-unit-circle');
+  if (ucEl && !ucEl.dataset.init) {
+    ucEl.dataset.init = '1';
+    const uc = Desmos.GraphingCalculator(ucEl, { keypad: false, expressions: true });
+    uc.setMathBounds({ left: -1.8, right: 1.8, bottom: -1.4, top: 1.4 });
+    uc.setExpression({ id: 'circle', latex: 'x^2+y^2=1', color: '#b5ae9f' });
+    uc.setExpression({ id: 't', latex: 't=1', sliderBounds: { min: 0, max: '2\\pi', step: 0.01 } });
+    uc.setExpression({ id: 'pt', latex: '(\\cos t, \\sin t)', color: '#8b2635', pointStyle: Desmos.Styles.POINT, showLabel: true, label: '(cos t, sin t)' });
+    uc.setExpression({ id: 'xline', latex: 'y=0\\{0\\le x\\le\\cos t\\}', color: '#2d70b3', lineStyle: Desmos.Styles.DASHED });
+    uc.setExpression({ id: 'yline', latex: 'x=\\cos t\\{0\\le y\\le\\sin t\\}', color: '#c74440', lineStyle: Desmos.Styles.DASHED });
+    uc.setExpression({ id: 'ray', latex: 'y=(\\tan t)x\\{0\\le x\\le\\cos t\\}', color: '#388c46' });
+  }
+
+  // Trig waves
+  const twEl = document.getElementById('desmos-trig-waves');
+  if (twEl && !twEl.dataset.init) {
+    twEl.dataset.init = '1';
+    const tw = Desmos.GraphingCalculator(twEl, { keypad: false });
+    tw.setExpression({ id: 's', latex: 'y=\\sin(x)', color: '#c74440', label: 'sin(x)', showLabel: true });
+    tw.setExpression({ id: 'c', latex: 'y=\\cos(x)', color: '#2d70b3', label: 'cos(x)', showLabel: true });
+    tw.setExpression({ id: 't', latex: 'y=\\tan(x)', color: '#388c46', label: 'tan(x)', showLabel: true });
+  }
+
+  // Sinusoid with sliders
+  const ssEl = document.getElementById('desmos-sinusoid');
+  if (ssEl && !ssEl.dataset.init) {
+    ssEl.dataset.init = '1';
+    const ss = Desmos.GraphingCalculator(ssEl, { keypad: false });
+    ss.setExpression({ id: 'A', latex: 'A=1', sliderBounds: { min: -3, max: 3, step: 0.1 } });
+    ss.setExpression({ id: 'B', latex: 'B=1', sliderBounds: { min: 0.1, max: 4, step: 0.1 } });
+    ss.setExpression({ id: 'C', latex: 'C=0', sliderBounds: { min: -6.28, max: 6.28, step: 0.1 } });
+    ss.setExpression({ id: 'D', latex: 'D=0', sliderBounds: { min: -3, max: 3, step: 0.1 } });
+    ss.setExpression({ id: 'f', latex: 'y=A\\sin(Bx+C)+D', color: '#8b2635' });
+  }
+}
+
+if (typeof Desmos !== 'undefined') { document.addEventListener('DOMContentLoaded', initTrigGraphs); }
+else { window.addEventListener('load', initTrigGraphs); }
+</script>
+</body>
+</html>

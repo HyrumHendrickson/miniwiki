@@ -378,10 +378,15 @@ em { font-style: italic; }
   font-weight: 700;
   font-family: var(--font-display);
   margin-bottom: 0.3rem;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
 }
+.wiki-callout.warning .wiki-callout-title { color: #8a7000; }
+.wiki-callout.info    .wiki-callout-title { color: #2a5a9f; }
+.wiki-callout.note    .wiki-callout-title { color: #2d7a34; }
+.wiki-callout.danger  .wiki-callout-title { color: #9e2a2a; }
 .wiki-callout p:last-child { margin-bottom: 0; }
 
 /* ─── Images & Figures ──────────────────────────────────── */
@@ -678,7 +683,7 @@ dd { padding-left: 1.5rem; color: var(--text-muted); }
   align-items: center;
   gap: 0.4rem;
 }
-.wiki-desmos-header::before { content: '📈'; font-size: 0.9rem; }
+.wiki-desmos-header::before { content: ''; }
 .wiki-desmos iframe { display: block; width: 100%; border: none; }
 
 /* ─── Math (LaTeX) ──────────────────────────────────────── */
@@ -736,7 +741,15 @@ dd { padding-left: 1.5rem; color: var(--text-muted); }
   align-items: flex-start;
   gap: 0.6rem;
 }
-.wiki-stub-icon { font-size: 1.2rem; }
+.wiki-stub-icon {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8a7000;
+  padding-top: 0.1rem;
+  white-space: nowrap;
+}
 
 /* ─── Hatnote ───────────────────────────────────────────── */
 .wiki-hatnote {
@@ -867,3 +880,95 @@ hr {
   a::after { content: ' (' attr(href) ')'; font-size: 0.75em; color: #555; }
   .wiki-infobox { float: right; }
 }
+
+/* ─── Dev Mode ──────────────────────────────────────────── */
+.dev-mode-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #bbb;
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  padding: 0.25rem 0.65rem;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: all var(--transition);
+}
+.dev-mode-btn:hover { background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.5); border-bottom: none; }
+.dev-mode-btn::before { content: ''; }
+.dev-mode-btn::after  { content: ''; }
+
+.dev-banner {
+  background: #1a1a2e;
+  color: #a0aec0;
+  border-bottom: 2px solid #4a5568;
+  padding: 0.5rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.dev-banner strong { color: #68d391; }
+.dev-banner a { color: #90cdf4; border-color: transparent; font-size: 0.78rem; }
+.dev-banner a:hover { color: #fff; border-color: transparent; }
+.dev-banner-sep { color: #4a5568; }
+
+.dev-index {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+.dev-index h1 {
+  font-family: var(--font-display);
+  border-bottom: 2px solid var(--border-dark);
+  padding-bottom: 0.3em;
+}
+.dev-section { margin-bottom: 2rem; }
+.dev-section-title {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.8rem;
+}
+.dev-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.8rem;
+}
+.dev-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.8rem 1rem;
+  background: var(--bg-alt);
+  transition: box-shadow var(--transition);
+}
+.dev-card:hover { box-shadow: var(--shadow-md); }
+.dev-card-title { font-weight: 700; font-size: 0.92rem; margin-bottom: 0.2rem; }
+.dev-card-title a { color: var(--text); border: none; }
+.dev-card-title a:hover { color: var(--accent); border: none; }
+.dev-card-desc { font-size: 0.8rem; color: var(--text-muted); }
+.dev-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  background: var(--bg-inset);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 0 0.35rem;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+/* ─── Site-wide professional polish ─────────────────────── */
+/* Remove any emoji-style list bullets if present */
+.wiki-stub-icon { font-style: normal; }
