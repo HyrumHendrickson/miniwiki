@@ -50,5 +50,49 @@
       { "text": "Plan of Salvation",       "url": "pages/theology/plan-of-salvation.html" },
       { "text": "The Restoration",         "url": "pages/theology/the-restoration.html" }
     ]
+  },
+  {
+    "label": "Natural Sciences",
+    "links": [
+      { "text": "Natural Sciences — All Articles", "url": "pages/natural-sciences/index.html" },
+      { "text": "Physics",                         "url": "pages/natural-sciences/physics.html" },
+      { "text": "Chemistry",                       "url": "pages/natural-sciences/chemistry.html" },
+      { "text": "Astronomy",                       "url": "pages/natural-sciences/astronomy.html" },
+      { "text": "Geology",                         "url": "pages/natural-sciences/geology.html" },
+      { "text": "Thermodynamics",                  "url": "pages/natural-sciences/thermodynamics.html" }
+    ]
+  },
+  {
+    "label": "Life Sciences",
+    "links": [
+      { "text": "Life Sciences — All Articles", "url": "pages/life-sciences/index.html" },
+      { "text": "Cell Biology",                 "url": "pages/life-sciences/cell-biology.html" },
+      { "text": "Genetics",                     "url": "pages/life-sciences/genetics.html" },
+      { "text": "Evolution",                    "url": "pages/life-sciences/evolution.html" },
+      { "text": "Ecology",                      "url": "pages/life-sciences/ecology.html" },
+      { "text": "Human Anatomy",                "url": "pages/life-sciences/human-anatomy.html" }
+    ]
+  },
+  {
+    "label": "Social Sciences",
+    "links": [
+      { "text": "Social Sciences — All Articles", "url": "pages/social-sciences/index.html" },
+      { "text": "Economics",                      "url": "pages/social-sciences/economics.html" },
+      { "text": "Political Science",              "url": "pages/social-sciences/political-science.html" },
+      { "text": "Sociology",                      "url": "pages/social-sciences/sociology.html" },
+      { "text": "Psychology",                     "url": "pages/social-sciences/psychology.html" },
+      { "text": "Anthropology",                   "url": "pages/social-sciences/anthropology.html" }
+    ]
+  },
+  {
+    "label": "Music",
+    "links": [
+      { "text": "Music — All Articles",    "url": "pages/music/index.html" },
+      { "text": "Music Theory",            "url": "pages/music/music-theory.html" },
+      { "text": "Classical Music",         "url": "pages/music/classical-music.html" },
+      { "text": "Musical Instruments",     "url": "pages/music/musical-instruments.html" },
+      { "text": "Folk and Traditional Music", "url": "pages/music/folk-music.html" },
+      { "text": "Counterpoint",            "url": "pages/music/counterpoint.html" }
+    ]
   }
 ]

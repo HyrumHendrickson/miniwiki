@@ -27,5 +27,33 @@
   { "title": "The Restoration",                "url": "pages/theology/the-restoration.html",             "desc": "Restoration of the gospel and priesthood.",                 "tags": ["theology", "lds", "restoration", "joseph smith"] },
   { "title": "Theology — All Articles",        "url": "pages/theology/index.html",                       "desc": "All theology articles.",                                    "tags": ["theology", "category"] },
 
-  { "title": "Component Reference",            "url": "pages/components.html",                           "desc": "All wiki components demonstrated.",                         "tags": ["reference", "components"] }
+  { "title": "Component Reference",            "url": "pages/components.html",                           "desc": "All wiki components demonstrated.",                         "tags": ["reference", "components"] },
+
+  { "title": "Physics",                        "url": "pages/natural-sciences/physics.html",              "desc": "Newton's laws, motion, forces, and the foundations of classical mechanics.", "tags": ["natural sciences", "physics", "mechanics", "newton"] },
+  { "title": "Chemistry",                      "url": "pages/natural-sciences/chemistry.html",            "desc": "Atoms, elements, the periodic table, chemical bonding, and reactions.", "tags": ["natural sciences", "chemistry", "atoms", "periodic table"] },
+  { "title": "Astronomy",                      "url": "pages/natural-sciences/astronomy.html",            "desc": "The solar system, stars, galaxies, and the scale of the universe.", "tags": ["natural sciences", "astronomy", "stars", "solar system"] },
+  { "title": "Geology",                        "url": "pages/natural-sciences/geology.html",              "desc": "Earth's structure, plate tectonics, rocks, minerals, and geological time.", "tags": ["natural sciences", "geology", "plate tectonics", "earth"] },
+  { "title": "Thermodynamics",                 "url": "pages/natural-sciences/thermodynamics.html",       "desc": "Heat, energy, entropy, and the laws governing energy transfer.", "tags": ["natural sciences", "thermodynamics", "heat", "entropy"] },
+  { "title": "Natural Sciences — All Articles", "url": "pages/natural-sciences/index.html",              "desc": "All natural sciences articles.",                             "tags": ["natural sciences", "category"] },
+
+  { "title": "Cell Biology",                   "url": "pages/life-sciences/cell-biology.html",            "desc": "The structure and function of cells, organelles, and cellular processes.", "tags": ["life sciences", "biology", "cells", "organelles"] },
+  { "title": "Genetics",                       "url": "pages/life-sciences/genetics.html",                "desc": "DNA, heredity, genes, chromosomes, and genetic variation.", "tags": ["life sciences", "genetics", "dna", "heredity"] },
+  { "title": "Evolution",                      "url": "pages/life-sciences/evolution.html",               "desc": "Natural selection, adaptation, Darwin, and the history of life.", "tags": ["life sciences", "evolution", "darwin", "natural selection"] },
+  { "title": "Ecology",                        "url": "pages/life-sciences/ecology.html",                 "desc": "Ecosystems, food webs, populations, and the relationships among living organisms.", "tags": ["life sciences", "ecology", "ecosystems", "environment"] },
+  { "title": "Human Anatomy",                  "url": "pages/life-sciences/human-anatomy.html",           "desc": "The structure and organization of the human body and its systems.", "tags": ["life sciences", "anatomy", "human body", "physiology"] },
+  { "title": "Life Sciences — All Articles",   "url": "pages/life-sciences/index.html",                  "desc": "All life sciences articles.",                               "tags": ["life sciences", "category"] },
+
+  { "title": "Economics",                      "url": "pages/social-sciences/economics.html",             "desc": "Supply, demand, markets, and the principles governing economic activity.", "tags": ["social sciences", "economics", "markets", "supply and demand"] },
+  { "title": "Political Science",              "url": "pages/social-sciences/political-science.html",     "desc": "Forms of government, political theory, democracy, and the state.", "tags": ["social sciences", "political science", "government", "democracy"] },
+  { "title": "Sociology",                      "url": "pages/social-sciences/sociology.html",             "desc": "Society, social institutions, culture, and human social behavior.", "tags": ["social sciences", "sociology", "society", "culture"] },
+  { "title": "Psychology",                     "url": "pages/social-sciences/psychology.html",            "desc": "The mind, behavior, cognition, emotion, and mental processes.", "tags": ["social sciences", "psychology", "mind", "behavior"] },
+  { "title": "Anthropology",                   "url": "pages/social-sciences/anthropology.html",          "desc": "Human origins, cultures, societies, and the diversity of human civilization.", "tags": ["social sciences", "anthropology", "culture", "human origins"] },
+  { "title": "Social Sciences — All Articles", "url": "pages/social-sciences/index.html",                "desc": "All social sciences articles.",                             "tags": ["social sciences", "category"] },
+
+  { "title": "Music Theory",                   "url": "pages/music/music-theory.html",                    "desc": "Scales, intervals, chords, harmony, and the fundamentals of musical language.", "tags": ["music", "music theory", "harmony", "scales"] },
+  { "title": "Classical Music",                "url": "pages/music/classical-music.html",                 "desc": "The Western classical tradition from Baroque to Romantic — Bach, Mozart, Beethoven.", "tags": ["music", "classical music", "bach", "beethoven", "mozart"] },
+  { "title": "Musical Instruments",            "url": "pages/music/musical-instruments.html",             "desc": "The families of musical instruments — strings, winds, brass, percussion, and keyboard.", "tags": ["music", "instruments", "strings", "winds", "percussion"] },
+  { "title": "Folk and Traditional Music",     "url": "pages/music/folk-music.html",                      "desc": "Oral traditions, folk songs, ballads, and music as cultural inheritance.", "tags": ["music", "folk music", "traditional", "ballad"] },
+  { "title": "Counterpoint",                   "url": "pages/music/counterpoint.html",                    "desc": "The art of combining independent melodic lines — species counterpoint, fugue, and Bach.", "tags": ["music", "counterpoint", "fugue", "polyphony", "bach"] },
+  { "title": "Music — All Articles",           "url": "pages/music/index.html",                           "desc": "All music articles.",                                       "tags": ["music", "category"] }
 ]
